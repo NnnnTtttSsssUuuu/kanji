@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+body {
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+}
+
+h1 {
+  font-family: 'Noto Serif JP', serif;
+  background-color: steelblue;
+  color: white;
+  margin: 0 0 10px 0;
+  position: fixed;
+  padding: 0 0 0 26px;
+  top: 0;
+  width: 100%;
+}
+
+#toKaisetsu{
+  font-family:  "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  font-size: 15px;
+  margin: 0 0 0 100px;
+  text-align: end;
+  /* padding: 5px; */
+  /* border: solid 1px; */
+}
+
+.maintable {
+  table-layout: fixed;
+  width: 450px;
+  border-collapse: collapse;
+  margin: 0 2em;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.maintable th {
+  background-color: dodgerblue;
+  color: white;
+  border: solid 1px;
+  font-weight: normal;
+  text-align: center;
+  height: 80px;
+  position: sticky;
+  top: 45px;
+}
+
+
+.maintable td {
+  font-weight: normal;
+  /* border-bottom: solid 1px; */
+  /* border: solid 1px; */
+  margin: 1em;
+  padding: 5px;
+  height: 20px;
+  /* background: #eee; */
+  background: #eee;
+}
+
+.maintable tr:nth-child(odd) td {
+  background: #fff;
+}
+
+.maintable tr td:nth-child(3) {
+  font-size: 40px;
+  font-family: 'Noto Serif JP', serif;
+  text-align: center;
+}
+
+.maintable tr td:nth-child(6) {
+  font-size: 40px;
+  font-family: 'Noto Serif JP', serif;
+  text-align: center;
+}
+
+.maintable tr td:nth-child(7) {
+  font-size: 40px;
+  font-family: 'Noto Serif JP', serif;
+  text-align: center;
+}
+
+.maintable tr td:nth-child(8) {
+  font-size: 40px;
+  font-family: 'Noto Serif JP', serif;
+  text-align: center;
+}
+
+.mini {
+  font-size: 11px;
+}
+
+pre {
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  /* font-size: 120%; */
+  white-space: pre-wrap;
+  margin: 0;
+  padding: 0, 1em, 0, 1em;
+}
+
+
+
+.oyaji,
+.itaiji,
+.itaiji1,
+.itaiji2,
+.itaiji3,
+.itaiji4
+{
+  float: left;
+  margin: 0 0 10px 0;
+  background:white;
+}
+
+
+.hanrei {
+  float: left;
+  margin: 0 0 10px 0;
+  /* padding-top: 195px; */
+  padding-top: 195px;
+  text-align: right;
+}
+
+.kanjigun {
+  background-color: yellow;
+  margin: 10px 10px 10px 1px;
+  /* padding: 100px; */
+}
+
+
+.midashi {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 80px;
+  /* background-color: beige; */
+  height: 110px;
+  margin-top: -20px;
+}
+
+.jikei {
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  font-size: 10px;
+  text-align: center;
+  background-color: bisque;
+  /* display: inline-block;   */
+}
+
+.youso {
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  line-height: 120%;
+  margin-top: 8px;
+}
+
+
+.mojigun,
+.unicode,
+.menkuten,
+.jiscode,
+.bushu,
+.kakusu{
+  background-color: lightcyan;
+  padding-right: 1em;
+}
+
+.jislevel,
+.menkuten,
+.bushu,
+.chuui  {
+  background-color: white;
+  padding-right: 1em;
+}
+
+.jishu {
+  margin: 0 0 0 2px;
+  border: 2px solid black;
+  background-color: black;
+  color: white
+}
+
+.chuui {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0 0 10px;
+  padding: 2px 0 2px 0;
+  /* background-color: red; */
+  color: red;
+}
+
+
+.kaisetsu {
+  display: block;
+  clear: both;
+  /* padding-top: 1em; */
+  margin: 0, 1em, 1em, 1em;
+}
+
+
+
+.menkutenran {
+  width: 90px;
+}
+
+.moji {
+  font-size: 30px;
+}
+
+.reiji {
+  font-family: 'Noto Serif JP', serif;
+  border: solid 1px;
+  margin-right: 5px;
+}
+
+
+
+
+.gazomoji_image {
+  width: 44px;
+  height: 54px;
+  object-position: center 8px;
+
+}
+
+.subtable {
+  border-collapse: collapse;
+}
+
+.subtable th {
+  border: solid 1px;
+  background-color: #eee;
+}
+
+.subtable tr th:nth-child(1) {
+  width: 70px;
+}
+
+.subtable tr th:nth-child(2) {
+  width: 70px;
+}
+
+.subtable tr th:nth-child(3) {
+  width: 70px;
+}
+
+.subtable tr th:nth-child(4) {
+  width: 70px;
+}
+
+.subtable td {
+  border: solid 1px;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="icon" href="img/QCfavicon.ico"> -->
+  <title>${theKanji.midashi}</title>
+</head>
+
+<body>
+  <header id="headpart">
+    <h1>漢字字体使い分け字典</h1>
+  </header>
+  <p>
+    　　
+  </p>
+
+  <div class="kanjigun">
+
+    <section class="hanrei">
+      <div class="youso">
+        <div class="mojigun">文字群</div>
+        <div class="jislevel">JIS</div>
+        <div class="unicode">Unicode</div>
+        <div class="menkuten">面区点番号</div>
+        <div class="jiscode">JISコード</div>
+        <div class="chuui">注意</div>
+    </section>
+
+    <section class="oyaji">1
+      <span class="jishu">
+        親字</span>
+      <div class="midashi">
+        ${theKanji.midashi}</div>
+      <div class="jikei">画像データ<br>
+        <img src="${theKanji.jikei}" width="60">
+      </div>
+      <div class="youso">
+        <div class="mojigun">
+          ${theKanji.mojigun}</div>
+        <div class="jislevel">
+          ${theKanji.jislevel}</div>
+        <div class="unicode"><span　class="unicode_">
+            ${theKanji.Unicode_}</span></div>
+        <div class="menkuten"><span class="menkuten_">
+            ${theKanji.menkuten_}</span></div>
+        <div class="jiscode">
+          <spanclass="jiscode_">
+            ${theKanji.jiscode_}</span>
+        </div>
+        <div class="chuui">
+          ${theKanji.chuki_}<span class="chuui_">
+          </span></div>
+      </div>
+    </section>
+
+
+    <section class="itaiji itaiji2">2
+      <span class="jishu">
+        ${theItaiji[2].jishu}</span>
+      <div class="midashi">
+        ${theItaiji[2].midashi}</div>
+      <div class="jikei">画像データ<br>
+        <img src="${theItaiji[2].jikei}" width="60">
+      </div>
+
+      <div class="youso">
+        <div class="mojigun">
+          ${theItaiji[2].mojigun}</div>
+        <div class="jislevel">
+          ${theItaiji[2].jislevel}</div>
+        <div class="unicode"><span class="unicode_">
+            ${theItaiji[2].Unicode_}</span></div>
+        <div class="menkuten"><span class="menkuten_">
+            ${theItaiji[2].menkuten_}</span></div>
+        <div class="jiscode"><span class="jiscode_">
+            ${theItaiji[2].jiscode_}</span></div>
+        <div class="chuui"><span class="chuui_">
+            ${theItaiji[2].chuki_}</span></div>
+      </div>
+    </section>
+
+
+
+    <section class="itaiji itaiji3">3
+      <span class="jishu">
+        ${theItaiji[3].jishu}</span>
+      <div class="midashi">
+        ${theItaiji[3].midashi}</div>
+      <div class="jikei">画像データ<br>
+        <img src="${theItaiji[3].jikei}" width="60">
+      </div>
+
+      <div class="youso">
+        <div class="mojigun">
+          ${theItaiji[3].mojigun}</div>
+        <div class="jislevel">
+          ${theItaiji[3].jislevel}</div>
+        <div class="unicode"><span class="unicode_">
+            ${theItaiji[3].Unicode_}</span></div>
+        <div class="menkuten"><span class="menkuten_">
+            ${theItaiji[3].menkuten_}</span></div>
+        <div class="jiscode"><span class="jiscode_">
+            ${theItaiji[3].jiscode_}</span></div>
+        <div class="chuui"><span class="chuui_">
+            ${theItaiji[3].chuki_}</span></div>
+      </div>
+    </section>
+
+    <section class="itaiji itaiji4">4
+      <span class="jishu">
+        ${theItaiji[4].jishu}</span>
+      <div class="midashi">
+        ${theItaiji[4].midashi}</div>
+      <div class="jikei">画像データ<br>
+        <img src="${theItaiji[4].jikei}" width="60">
+      </div>
+
+      <div class="youso">
+        <div class="mojigun">
+          ${theItaiji[4].mojigun}</div>
+        <div class="jislevel">
+          ${theItaiji[4].jislevel}</div>
+        <div class="unicode"><span class="unicode_">
+            ${theItaiji[4].Unicode_}</span></div>
+        <div class="menkuten"><span class="menkuten_">
+            ${theItaiji[4].menkuten_}</span></div>
+        <div class="jiscode"><span class="jiscode_">
+            ${theItaiji[4].jiscode_}</span></div>
+        <div class="chuui"><span class="chuui_">
+            ${theItaiji[4].chuki_}</span></div>
+      </div>
+    </section>
+
+  </div>
+
+
+
+  <div class="kaisetsu">
+    ●読み：<span class="yomi">
+      ${theKanji.yomi}
+    </span>
+
+    <div>●来歴</div>
+    <pre class="raireki"> ${theKanji.raireki}</pre>
+    <div>●使い分け</div>
+    <pre>
+<span class="tsukai1"> ${theKanji.tsukai_}</span>
+<span class="tsukaihoki"> ${theKanji.tsukaihoki}</span>
+  </pre>
+  </div>
+</body>
+
+</html>
