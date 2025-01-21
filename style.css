@@ -15,11 +15,22 @@ h1 {
   width: 100%;
 }
 
+#searchForm{
+  position: fixed;
+  top: 6px;
+  left: 500px;
+  font-size: 20px;
+
+}
+
 #toKaisetsu{
-  font-family:  "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
-  font-size: 15px;
-  margin: 0 0 0 100px;
-  text-align: end;
+  position: fixed;
+  top: 10px;
+  left: 380px;
+  /* font-family:  "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  font-size: 15px; */
+  /* margin: 0 0 0 30px;
+  text-align: end; */
   /* padding: 5px; */
   /* border: solid 1px; */
 }
@@ -42,7 +53,7 @@ h1 {
   text-align: center;
   height: 80px;
   position: sticky;
-  top: 45px;
+  top: 55px;
 }
 
 
@@ -204,20 +215,16 @@ pre {
   font-size: 30px;
 }
 
-.reiji {
-  font-family: 'Noto Serif JP', serif;
+.ji {
   border: solid 1px;
   margin-right: 5px;
 }
-
-
 
 
 .gazomoji_image {
   width: 44px;
   height: 54px;
   object-position: center 8px;
-
 }
 
 .subtable {
@@ -247,4 +254,8 @@ pre {
 
 .subtable td {
   border: solid 1px;
+}
+
+.highlight {
+  background-color: yellow;
 }

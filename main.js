@@ -1,45 +1,106 @@
 `use strict`;
 {
-
-  const nullKanji = {
-    "No.": 0,
-    "nOfJitai": 3,
-    "kanjiCode": "",
-    "jishu": "",
-    "midashi": "",
-    "jikei": "",
-    "mojigun": "",
-    "jislevel": "",
-    "Unicode_": "",
-    "menkuten_": "",
-    "jiscode_": "",
-    "chuki_": "",
-    "tsukai_": "",
-    "yomi": "",
-    "raireki": "",
-    "tsukaihoki": "",
-    "sanko": ""
-  }
-
   let jsonKanji;
   let target = 0;
   let jtarget = 0;
   let kariItaiji = [];
-  // let theItaiji = [];
+  let oldQuery = "";
+  let queryNo = 0;
 
   //JSON読み込み
-  fetch('fortest.json')
+  fetch('kanjiFile.json')
     .then(response => {
       if (!response.ok) {
         throw new Error('HTTP error! status: ' + response.status);
       }
       return response.json();
     })
-    .then(fortest => {
-      jsonKanji = fortest;
-
+    .then(kanjiFile => {
+      jsonKanji = kanjiFile;
     })
     .catch(error => console.error('Error loading JSON:', error));
+
+
+  //検索ボタン
+  function highlightText(query) {
+
+    document.querySelectorAll(".highlight").forEach(el => {
+      el.classList.remove("highlight");
+      console.log("ハイライト消去");
+    });
+
+    if (!query) return;// キーワードが空なら何もしない
+
+    console.log("検索ファンクション起動", query);
+
+    const regex = new RegExp(`(${query})`, "gi"); // 検索キーワードを正規表現化
+
+    // const regex = new RegExp(`(${query})`, "g"); // 検索キーワードを正規表現化
+
+    // const regex = new RegExp(`(${query})`); // 検索キーワードを正規表現化
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+
+    console.log("regex",regex);
+
+    let count = 0;
+    let countmatch = 0;
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (node.nodeValue.match(regex)) {
+        const span = document.createElement("span");
+        span.innerHTML = node.nodeValue.replace(regex, `<span class="highlight">$1</span>`);
+        node.parentNode.replaceChild(span, node);
+        countmatch = countmatch + 1;
+      }
+      count = count + 1;
+    }
+    console.log("count",count,"countmatch",countmatch);
+
+  }
+
+  document.getElementById("searchForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    console.log("検索イベントリスナー起動");
+
+
+    const query = document.getElementById("searchInput").value.trim();
+    highlightText(query);
+
+    if (oldQuery === query) {
+      queryNo = queryNo + 1;
+    } else {
+      oldQuery = query;
+      queryNo = 0;
+    }
+    console.log("oldQuery,queryNo", oldQuery, queryNo);
+
+    //スクロール
+    gotoHighlight(queryNo);
+
+
+  });
+
+  function gotoHighlight(queryNo) {
+
+    const firstHighlight = document.querySelector(".highlight");
+    if (firstHighlight) {
+      firstHighlight.scrollIntoView({ behavior: "instant", block: "center" });
+    }
+
+
+   const highlightsAll = document.querySelectorAll(".highlight");
+   console.log("highlightsAll",highlightsAll[0]);
+
+
+
+
+  }
+
+
+
 
 
   // 解説へ
@@ -48,26 +109,15 @@
   });
 
 
-
-
-  // 倶
-  // document.getElementById('4FF1').addEventListener('click', () => {
-  //   window.open('4FF1.html', '_blank');
-  // });
-
-
   // 各文字の説明へ
   document.querySelectorAll('.kanji').forEach(tr => {
     tr.addEventListener('click', () => {
       //ユーザーが選んだ漢字（親字）はtKanji
       const tKanji = Array.from(tr.querySelectorAll('td')).map(td => td.textContent.trim());
-      // const nwin = window.open('', '_blank');
       const nwin = window.open('kanji.html', '_blank');
 
-      //初期化
-      for (let i = 0; i < 5; i++) {
-        // theItaiji[i] = nullKanji;
-      }
+
+      // console.log("jsonKanji.length", jsonKanji.length);
 
 
       //jsonKanjiのなかで、tKanjiと合致するものを選ぶ
@@ -80,7 +130,6 @@
       }
       //ユーザーが選んだ漢字（親字）は、jsonKanji内のtheKanji
       let theKanji = jsonKanji[target];
-
 
 
       nwin.onload = () => {
@@ -98,7 +147,7 @@
         let jikei = nwin.document.querySelector('#jikei_');
         // let jikeiSrc = jikei.getAttribute('src');
         jikei.setAttribute('src', theKanji.jikei);
-      
+
 
         let mojigun = nwin.document.querySelector('#mojigun_');
         mojigun.textContent = theKanji.mojigun;
@@ -122,10 +171,10 @@
         yomi.textContent = theKanji.yomi;
 
         let raireki = nwin.document.querySelector('#raireki_');
-        raireki.textContent = theKanji.raireki;
+        raireki.innerHTML = theKanji.raireki;
 
         let tsukaiwake = nwin.document.querySelector('#tsukaiwake_');
-        tsukaiwake.textContent = theKanji.tsukaiwake;
+        tsukaiwake.innerHTML = theKanji.tsukaiwake;
 
         let sanko = nwin.document.querySelector('#sanko_');
         sanko.textContent = theKanji.sanko;
@@ -154,46 +203,46 @@
 
           const newSection = document.createElement('section');
           newSection.className = "itaiji";
-          newSection.textContent = i+1;
-          
-          const newDiv1 =document.createElement('span');
+          newSection.textContent = i + 1;
+
+          const newDiv1 = document.createElement('span');
           newDiv1.className = "jishu";
           newDiv1.textContent = theItaiji.jishu;
 
-          const newDiv2 =document.createElement('div');
+          const newDiv2 = document.createElement('div');
           newDiv2.className = "midashi";
           newDiv2.textContent = theItaiji.midashi;
 
-          const newDiv3 =document.createElement('div');
+          const newDiv3 = document.createElement('div');
           newDiv3.setAttribute('src', theItaiji.jikei);
           let jikeiContent = `画像データ<br><img  src="${theItaiji.jikei}" width="60">`
-          newDiv3.innerHTML =jikeiContent;
+          newDiv3.innerHTML = jikeiContent;
           newDiv3.className = "jikei";
 
-          const newDiv4 =document.createElement('div');
+          const newDiv4 = document.createElement('div');
           newDiv4.className = "youso";
 
-          const newDiv5 =document.createElement('div');
+          const newDiv5 = document.createElement('div');
           newDiv5.className = "mojigun";
           newDiv5.textContent = theItaiji.mojigun;
 
-          const newDiv6 =document.createElement('div');
+          const newDiv6 = document.createElement('div');
           newDiv6.className = "jislevel";
           newDiv6.textContent = theItaiji.jislevel;
 
-          const newDiv7 =document.createElement('div');
+          const newDiv7 = document.createElement('div');
           newDiv7.className = "unicode";
           newDiv7.textContent = theItaiji.unicode;
 
-          const newDiv8 =document.createElement('div');
+          const newDiv8 = document.createElement('div');
           newDiv8.className = "menkuten";
           newDiv8.textContent = theItaiji.menkuten;
 
-          const newDiv9 =document.createElement('div');
+          const newDiv9 = document.createElement('div');
           newDiv9.className = "jiscode";
           newDiv9.textContent = theItaiji.jiscode;
 
-          const newDiv10 =document.createElement('div');
+          const newDiv10 = document.createElement('div');
           newDiv10.className = "chuui";
           newDiv10.textContent = theItaiji.chuui;
 
