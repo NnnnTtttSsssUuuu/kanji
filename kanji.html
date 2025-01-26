@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <!-- <link rel="icon" href="img/QCfavicon.ico"> -->
   <title id="title_">
-    タイトル</title>
+    　</title>
 </head>
 
 <body>
@@ -34,22 +34,22 @@
 
 
     <section class="oyaji">1
-      <span class="jishu" id="jishu_">字種</span>
-      <div class="midashi" id="midashi_">見出し</div>
+      <span class="jishu" id="jishu_"></span>
+      <div class="midashi" id="midashi_">　</div>
       <div class="jikei">画像データ<br>
-        <img id="jikei_" src="字形" width="60">
+        <img id="jikei_" src="" width="60">
       </div>
       <div class="youso">
-        <div class="mojigun" id="mojigun_">文字群</div>
-        <div class="jislevel" id="jislevel_">JISレベル</div>
-        <div class="unicode"><span id="unicode_">ユニコード</span></div>
-        <div class="menkuten"><span id="menkuten_">面区点</span></div>
-        <div class="jiscode"><span id="jiscode_">JISコード</span></div>
-        <div><span class="chuui" id="chuui_">注意</span></div>
+        <div class="mojigun" id="mojigun_">　</div>
+        <div class="jislevel" id="jislevel_">　</div>
+        <div class="unicode"><span id="unicode_">　</span></div>
+        <div class="menkuten"><span id="menkuten_">　</span></div>
+        <div class="jiscode"><span id="jiscode_">　</span></div>
+        <div><span class="chuui" id="chuui_">　</span></div>
       </div>
     </section>
 
-    <section class="itaiji" id = "itaiji_">
+    <section class="itaiji" id="itaiji_">
       <!-- <div class="midashi">仮</div> -->
     </section>
 
@@ -60,13 +60,122 @@
 
 
   <div class="kaisetsu">
-    <span>●読み：</span><span class="yomi" id="yomi_">読み</span>
+    <span>●読み：</span><span class="yomi" id="yomi_"></span>
     <div>●来歴</div>
-    <pre class="raireki" id="raireki_">来歴</pre>
+    <pre class="raireki" id="raireki_"></pre>
     <div>●使い分け</div>
-    <pre class="tsukaiwake" id="tsukaiwake_">使い分け</pre>
+    <pre class="tsukaiwake" id="tsukaiwake_"></pre>
     <pre class="sanko" id="sanko_"></pre>
   </div>
+
+  <div>
+    <hr>
+    ＜使い分けを編集する＞　　
+    <button id="save">データを上書き保存する</button>
+    <br><button id="csvButton">csvで出力する</button>
+    <button id="jsonButton">jsonで出力する</button>
+    <br><textarea id="tsukaiwakeEdit_"></textarea>
+    <div id="theTargetKanji"></div>
+  </div>
+
+
+  <script>
+    // let targetKanji = sessionStorage.getItem('checkKanji');
+    // let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+
+    document.querySelector('#save').addEventListener('click', () => {
+      let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+      let targetKanji = document.querySelector('#theTargetKanji').textContent;
+      let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+      console.log("targetKanji,newTsukaiwake,kanjiShugo", targetKanji, newTsukaiwake, kanjiShugo);
+      kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
+      localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
+
+    });
+
+
+    // document.querySelector('#save').addEventListener('click', () => {
+    //   console.log("saveに入る");
+    //   console.log("targetKanji",targetKanji);
+    //   console.log("kanjiShugo",kanjiShugo);
+    //   let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+    //   kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
+    //   localStorage.setItem('kanjiLocal',JSON.stringify(kanjiShugo));
+    //   console.log("修正後データ",kanjiShugo[targetKanji]);
+    // });
+
+    document.querySelector('#jsonButton').addEventListener('click', () => {
+
+      let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+      let targetKanji = document.querySelector('#theTargetKanji').textContent;
+
+
+
+      let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+      kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
+      localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
+      const newJson = JSON.stringify(kanjiShugo);
+      const bom = new Uint8Array([0xef, 0xbb, 0xbf]) //ここでUTF-8を指定
+      const blob = new Blob([bom, newJson], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "new_jsonKanjiFile.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+
+    document.querySelector('#csvButton').addEventListener('click', () => {
+
+      let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+      let targetKanji = document.querySelector('#theTargetKanji').textContent;
+
+
+      let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+
+      kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
+      localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
+      const newJson = JSON.stringify(kanjiShugo);
+      // console.log("修正後のkanjiShugo…csv", kanjiShugo[targetKanji].tsukaiwake);
+      // console.log("修正後のkanjiShugo…csv", kanjiShugo);
+      // console.log("修正後のnewJson",newJson);
+
+      //  https://zenn.dev/aiq_dev/articles/fa9dc673cbd554 を参考に
+      const convertToCSV = (objArray) => {
+        const array = typeof objArray !== "object" ? JSON.parse(objArray) : objArray;
+
+        //1. Objectの Key を headerとして取り出す
+        let str =
+          `${Object.keys(array[0])
+            .map((value) => `"${value}"`)
+            .join(",")}` + "\r\n";
+
+        // 2. 各オブジェクトの値をCSVの行として追加する
+        return array.reduce((str, next) => {
+          str +=
+            `${Object.values(next)
+              .map((value) => `"${value}"`)
+              .join(",")}` + "\r\n";
+          return str;
+        }, str);
+      };
+
+      const csvData = convertToCSV(newJson);
+      // console.log(csvData);
+
+      const bom = new Uint8Array([0xef, 0xbb, 0xbf]) //ここでUTF-8を指定
+      const blob = new Blob([bom, csvData], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "new_csvKanjiFile.csv";
+      a.click();
+      URL.revokeObjectURL(url);
+
+
+    });
+  </script>
 </body>
 
 </html>
