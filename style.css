@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
 
 body {
+  margin: 0;
+  padding: 5px;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
 }
 
@@ -9,11 +11,11 @@ h1 {
   font-family: 'Noto Serif JP', serif;
   background-color: steelblue;
   color: white;
-  margin: 0 0 10px 0;
+  margin: 0;
   position: fixed;
   padding: 0 0 0 26px;
-  top: 0;
-  width: 100%;
+  top: 0px;
+  width: 80%;
 }
 
 #searchForm{
@@ -37,6 +39,13 @@ font-size: 16px;
   text-align: end; */
   /* padding: 5px; */
   /* border: solid 1px; */
+}
+
+.close{
+  position: fixed;
+  top: 8px;
+  left: 380px;
+  font-size: 16px;
 }
 
 .maintable {
@@ -72,7 +81,7 @@ font-size: 16px;
   line-height: 20px;
   /* background: #eee; */
   background: #eee;
-  text-align: center;
+  text-align: left;
 }
 
 .maintable tr:nth-child(odd) td {
@@ -85,6 +94,13 @@ font-size: 16px;
   text-align: center;
 }
 
+.maintable tr td:nth-child(5) {
+  font-size: 40px;
+  /* font-family: 'Noto Serif JP', serif; */
+  font-family: IPAmjMincho,'IPAmj明朝','Noto Serif JP', serif;
+  text-align: center;
+}
+
 .maintable tr td:nth-child(6) {
   font-size: 40px;
   font-family: 'Noto Serif JP', serif;
@@ -92,12 +108,6 @@ font-size: 16px;
 }
 
 .maintable tr td:nth-child(7) {
-  font-size: 40px;
-  font-family: 'Noto Serif JP', serif;
-  text-align: center;
-}
-
-.maintable tr td:nth-child(8) {
   font-size: 40px;
   font-family: 'Noto Serif JP', serif;
   text-align: center;
@@ -115,6 +125,24 @@ pre {
   padding: 0, 1em, 0, 1em;
 }
 
+.mainTr{
+ height: 60px;
+}
+
+.mainMenkuten, .mainUnicode{
+  width: 90px;
+}
+
+.mainJitai1, .mainJitai2, .mainJitai3, .mainJitai4{
+  width: 50px;
+}
+
+.mainMojigun{
+  width: 80px;
+}
+.mainSetsumei, .mainYomi{
+width: 100px;
+}
 
 
 .oyaji,
@@ -281,3 +309,38 @@ pre {
   width: 600px;
   height: 200px;
 }
+
+
+@media screen and (max-width: 380px) {
+
+  .mainTr{
+    height: 60px;
+   }
+   
+   .mainMenkuten, .mainUnicode{
+     display:none;
+   }
+   
+   .mainJitai1, .mainJitai2, .mainJitai3, .mainJitai4{
+     width: 30px;
+   }
+   
+   .mainMojigun{
+     width: 50px;
+   }
+
+   .mainSetsumei{
+   width: 50px;
+   }
+
+   .mainYomi{
+    display:none;
+    }
+ 
+
+   .menkuten_, .unicode_, .yomi_ {
+    display: none;
+   }
+
+}
+

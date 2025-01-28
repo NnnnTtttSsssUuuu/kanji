@@ -6,13 +6,20 @@
   let oldQuery = "";
   let queryNo = 0;
   let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-  sessionStorage.setItem('checkKanji', 0); 
+  sessionStorage.setItem('checkKanji', 0);
 
-  window.onload = function () {
-    if (!kanjiShugo) {
-      getJson();
-    }
+  // window.onload = function () {
+  //   if (!kanjiShugo) {
+  //     getJson();
+  //   }
+  // }
+
+
+  if (!kanjiShugo) {
+    alert("jsonを読み込みます");
+    getJson();
   }
+
 
   document.querySelector('#getJson').addEventListener('click', () => {
     getJson();
@@ -76,9 +83,9 @@
         kanjiMojigun.className = "jishu_";
         kanjiMojigun.textContent = kanjiShugo[i].mojigun;
 
-        const kanjiYomi = document.createElement('td');
-        kanjiYomi.className = "yomi_";
-        kanjiYomi.textContent = kanjiShugo[i].yomi;
+        // const kanjiYomi = document.createElement('td');
+        // kanjiYomi.className = "yomi_";
+        // kanjiYomi.textContent = kanjiShugo[i].yomi;
 
         const kanjiJitai2 = document.createElement('td');
         kanjiJitai2.className = "jitai2_";
@@ -96,15 +103,22 @@
         kanjiRyakusetsu.className = "ryakusetsu_";
         kanjiRyakusetsu.textContent = kanjiShugo[i].ryakusetsu;
 
+        const kanjiYomi = document.createElement('td');
+        kanjiYomi.className = "yomi_";
+        kanjiYomi.textContent = kanjiShugo[i].yomi;
+
+
+
         kanjiRow.appendChild(kanjiMenkuten);
         kanjiRow.appendChild(kanjiUnicode);
         kanjiRow.appendChild(kanjiMidashi);
         kanjiRow.appendChild(kanjiMojigun);
-        kanjiRow.appendChild(kanjiYomi);
+        // kanjiRow.appendChild(kanjiYomi);
         kanjiRow.appendChild(kanjiJitai2);
         kanjiRow.appendChild(kanjiJitai3);
         kanjiRow.appendChild(kanjiJitai4);
         kanjiRow.appendChild(kanjiRyakusetsu);
+        kanjiRow.appendChild(kanjiYomi);
 
         kanjiHyo.appendChild(kanjiRow);
       }

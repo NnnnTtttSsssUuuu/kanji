@@ -12,7 +12,8 @@
 
 <body>
   <header id="headpart">
-    <h1>漢字字体使い分け字典 <span class="mini">※クリックで戻る</span></h1>
+    <h1>漢字字体使い分け字典 
+      <input type="button" onclick="window.open('','_self').close();" value="閉じる" class="close"></h1>
   </header>
   <p>
     　　
@@ -90,7 +91,6 @@
       console.log("targetKanji,newTsukaiwake,kanjiShugo", targetKanji, newTsukaiwake, kanjiShugo);
       kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
       localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
-
     });
 
 
