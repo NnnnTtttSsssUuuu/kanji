@@ -25,11 +25,13 @@ h1 {
   top: 8px;
   left: 420px;
   font-size: 16px;
+
 }
 
 #searchInput {
   /* position: fixed; */
   font-size: 16px;
+
 }
 
 #toKaisetsu {
@@ -42,19 +44,20 @@ h1 {
   text-align: end; */
   /* padding: 5px; */
   /* border: solid 1px; */
+
 }
 
 #getJson {
   position: fixed;
   top: 10px;
   font-size: 10px;
-  right: 5px;
+  left: 560px;
 }
 
 .close {
   position: fixed;
   top: 8px;
-  left: 380px;
+  left: 350px;
   font-size: 16px;
 }
 
@@ -62,10 +65,11 @@ h1 {
   table-layout: fixed;
   width: 450px;
   border-collapse: collapse;
-  margin: 0 0 0 10px;
+  margin: -16px 0 0 10px;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   font-size: 14px;
   font-weight: normal;
+
 }
 
 .maintable th {
@@ -352,6 +356,7 @@ pre {
     top: 0px;
     left: 200px;
     font-size: 12px;
+    z-index: 1;
   }
 
   #toKaisetsu {
@@ -373,17 +378,38 @@ pre {
     table-layout: fixed;
     width: 375px;
     border-collapse: collapse;
-    margin: 0;
+    margin: -32px 0 0 0;
     font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
     font-size: 14px;
     font-weight: normal;
     top: 0;
+
+  }
+
+  .mini{
+    font-size: 10px;
+    line-height: 12px;
   }
 
 
+  .maintable th {
+    background-color: dodgerblue;
+    color: white;
+    border: solid 1px;
+    border-collapse: collapse;
+    font-weight: normal;
+    text-align: center;
+    height: 50px;
+    /* position: sticky; */
+    /* position:fixed; */
+    top: 0px;
+  }
+
+
+
   .mainTr {
-    height: 40px;
-    /* top: 0; */
+    height: 20px;
+    line-height: 14px;
   }
 
   .mainMenkuten,
