@@ -12,32 +12,29 @@ h1 {
   font-size: 32px;
   background-color: steelblue;
   color: white;
-  margin: 0;
   position: fixed;
-  /* padding: 0 0 0 26px; */
-  padding: 0 0 0 10px;
   top: 0px;
+  margin: 0;
+  padding: 0 0 0 10px;
   width: 100%;
+  z-index: 1;
 }
 
 #searchForm {
   position: fixed;
+  z-index: 2;
   top: 8px;
-  left: 420px;
-  font-size: 16px;
-
+  left: 350px;
 }
 
 #searchInput {
-  /* position: fixed; */
-  font-size: 16px;
-
+  font-size: 20px;
 }
 
 #toKaisetsu {
-  position: fixed;
-  top: 10px;
-  left: 350px;
+  /* position: fixed; */
+  /* top: 10px; */
+  /* left: 50px; */
   /* font-family:  "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   font-size: 15px; */
   /* margin: 0 0 0 30px;
@@ -48,10 +45,7 @@ h1 {
 }
 
 #getJson {
-  position: fixed;
-  top: 10px;
   font-size: 10px;
-  left: 560px;
 }
 
 .close {
@@ -63,9 +57,16 @@ h1 {
 
 .maintable {
   table-layout: fixed;
+  /* position:ralative; */
+  position:absolute;
+  /* position: sticky; */
+  top: 45px;
   width: 450px;
   border-collapse: collapse;
-  margin: -16px 0 0 10px;
+  /* border-collapse: separate; */
+  /* margin: -16px 0 0 10px; */
+  margin: 0;
+  padding: 0 0 0 10px;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -73,6 +74,7 @@ h1 {
 }
 
 .maintable th {
+/* .mainTr { */
   background-color: dodgerblue;
   color: white;
   border: solid 1px;
@@ -80,27 +82,30 @@ h1 {
   font-weight: normal;
   text-align: center;
   height: 80px;
+  /* position:absolute; */
   position: sticky;
-  top: 0px;
+  /* position: fixed; */
+  top: 45px;
+  /* top: 0px; */
 }
 
 
 .maintable td {
   font-weight: normal;
-  /* border-bottom: solid 1px; */
-  /* border: solid 1px; */
-  /* margin: 1em; */
   margin: 0;
-  padding: 5px 0 5px 0;
   height: 40px;
   line-height: 20px;
-  /* background: #eee; */
   background: #eee;
   text-align: left;
 }
 
 .maintable tr:nth-child(odd) td {
   background: #fff;
+}
+
+.maintable tr td:nth-child(1) {
+ padding: 0 0 0 10px;
+  text-align: left;
 }
 
 .maintable tr td:nth-child(3) {
@@ -111,8 +116,8 @@ h1 {
 
 .maintable tr td:nth-child(5) {
   font-size: 40px;
-  /* font-family: 'Noto Serif JP', serif; */
-  font-family: IPAmjMincho, 'IPAmj明朝', 'Noto Serif JP', serif;
+  font-family: 'Noto Serif JP', serif;
+  /* font-family: IPAmjMincho, 'IPAmj明朝', 'Noto Serif JP', serif; */
   text-align: center;
 }
 
@@ -316,7 +321,11 @@ pre {
 }
 
 .highlight {
-  background-color: yellow;
+  background-color: yellow !important;
+}
+
+.biglight {
+  background-color: yellow !important;
 }
 
 .mj {
@@ -337,6 +346,12 @@ pre {
 
 @media screen and (max-width: 380px) {
 
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  }
+
   h1 {
     font-family: 'Noto Serif JP', serif;
     font-size: 18px;
@@ -351,8 +366,8 @@ pre {
   }
 
   #searchForm {
-    /* position: fixed; */
-    display: flex;
+    position: fixed;
+    /* display: flex; */
     top: 0px;
     left: 200px;
     font-size: 12px;
@@ -360,9 +375,9 @@ pre {
   }
 
   #toKaisetsu {
-    position: fixed;
+    /* position: fixed;
     top: 6px;
-    left: 340px;
+    left: 340px; */
     font-size: 6px;
   }
 
@@ -376,14 +391,13 @@ pre {
 
   .maintable {
     table-layout: fixed;
+    position: absolute; 
+    top: 61px;
     width: 375px;
     border-collapse: collapse;
     margin: -32px 0 0 0;
-    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
     font-size: 14px;
     font-weight: normal;
-    top: 0;
-
   }
 
   .mini{
@@ -400,9 +414,9 @@ pre {
     font-weight: normal;
     text-align: center;
     height: 50px;
-    /* position: sticky; */
+    position: sticky;
     /* position:fixed; */
-    top: 0px;
+    top: 28px;
   }
 
 

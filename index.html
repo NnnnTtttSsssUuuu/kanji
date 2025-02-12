@@ -15,44 +15,31 @@
     <h1>漢字字体使い分け字典 </h1>
 
   </header>
-  <p>　</p>
+  <!-- <p>　</p> -->
 
 
 
   <form id="searchForm" action="#" method="get">
     <input type="search" name="search" placeholder="漢字/読み" autofocus id="searchInput" size="9"> <input type="submit" value="検索">
-    <button id="getJson">json読み込み</button>
     <button id="toKaisetsu">解説へ</button>
+    <button id="getJson">json読み込み</button>
   </form>
   <!-- <button id="toKaisetsu">解説へ</button> -->
 
   <table class="maintable" id="maintableid">
 
     <thead>
-      <!-- <tr style='height:60px'>
-        <th style='width:65pt'>面区点番号</td>
-        <th style='width:65pt'>Unicode</td>
-        <th style='width:48pt'>字体1<br><span class="mini">(標準的な<br>字体)</span></td>
-        <th style='width:86pt'>その説明</td>
-        <th style='width:34pt'>字体2<br><span class="mini">(異体字)</span></td>
-        <th style='width:34pt'>字体3<br><span class="mini">(異体字)</span></td>
-        <th style='width:34pt'>字体4<br><span class="mini">(異体字)</span></td>
-        <th style='width:100pt'>字体2～4の説明</td>
-        <th style='width:100pt'>音訓<br><span class="mini">（常用漢字は常用音訓、<br>他は代表的な音訓）</span></td>
-      </tr> -->
-
       <tr class='mainTr'>
         <th class='mainMenkuten'>面区点番号</td>
         <th class='mainUnicode'>Unicode</td>
         <th class='mainJitai1'>字体1<br><span class="mini">(標準的な<br>字体)</span></td>
         <th class='mainMojigun'>その説明</td>
-        <th class='mainJitai2'>字体2<br><span class="mini">(異体字)</span></td>
-        <th class='mainJitai3'>字体3<br><span class="mini">(異体字)</span></td>
-        <th class='mainJitai4'>字体4<br><span class="mini">(異体字)</span></td>
-        <th class='mainSetsumei'>字体2～4の説明</td>
+        <th class='mainJitai2'>字体2<br></td>
+        <th class='mainJitai3'>字体3<br></td>
+        <th class='mainJitai4'>字体4<br></td>
+        <th class='mainSetsumei'>字体2～4の<br>説明</td>
         <th class='mainYomi'>音訓<br><span class="mini">（常用漢字は常用音訓、<br>他は代表的な音訓）</span></td>
       </tr>
-
     </thead>
     <tbody id="kanjiHyo">
     </tbody>

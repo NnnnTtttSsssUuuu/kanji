@@ -145,34 +145,44 @@
     document.querySelectorAll(".highlight").forEach(el => {
       el.classList.remove("highlight");
     });
+    document.querySelectorAll(".biglight").forEach(el => {
+      el.classList.remove("biglight");
+    });
+
     if (!query) return;// キーワードが空なら何もしない
     const regex = new RegExp(`(${query})`, "gi"); // 検索キーワードを正規表現化
     //body内のツリー構造を探索し、テキストだけを取り出す
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-    let count = 0;
-    let countmatch = 0;
     let currentNode = walker.nextNode(); // 最初のノードを取得
     // while (walker.nextNode()) {
     while (currentNode) {
-      // const node = walker.currentNode;
       const node = currentNode; //現在のノードを保存
       currentNode = walker.nextNode(); //探索を続ける
       if (node.nodeValue.match(regex)) {
-        const span = document.createElement("span");
-        span.innerHTML = node.nodeValue.replace(regex, `<span class="highlight">$1</span>`);
-        node.parentNode.replaceChild(span, node);
-        countmatch = countmatch + 1;
+        // const span = document.createElement("span");
+        // span.innerHTML = node.nodeValue.replace(regex, `<span class="highlight">$1</span>`);
+        // node.parentNode.replaceChild(span, node);
+
+        node.parentNode.classList.add("highlight");
+        node.parentNode.parentNode.children[2].classList.add("biglight");
+
+        //文字列全体を色付けする
+        // const oyaNode = span.closest("tr");
+        // oyaNode.classList.add("biglight");
+
+        // const oyaNode = span.closest("tr");
+        // oyaNode.querySelectorAll("td").forEach(td => {
+        //   td.classList.add("biglight");
+        // });
       }
-      count = count + 1;
     }
   }
 
   function gotoHighlight(queryNo) {
-    const highlightsAll = document.querySelectorAll(".highlight");
+    const highlightsAll = document.querySelectorAll(".biglight");
+    queryNo = queryNo % highlightsAll.length;
     if (highlightsAll.length > 0) {
-      if (highlightsAll.length > queryNo) {
-        highlightsAll[queryNo].scrollIntoView({ behavior: "instant", block: "center" });
-      }
+      highlightsAll[queryNo].scrollIntoView({ behavior: "instant", block: "center" });
     }
   }
 
