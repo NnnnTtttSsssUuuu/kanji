@@ -83,21 +83,49 @@
         kanjiMojigun.className = "jishu_";
         kanjiMojigun.textContent = kanjiShugo[i].mojigun;
 
-        // const kanjiYomi = document.createElement('td');
-        // kanjiYomi.className = "yomi_";
-        // kanjiYomi.textContent = kanjiShugo[i].yomi;
+        // const kanjiJitai2 = document.createElement('td');
+        // kanjiJitai2.className = "jitai2_";
+        // kanjiJitai2.textContent = kanjiShugo[i].jitai2;
+
+        // const kanjiJitai3 = document.createElement('td');
+        // kanjiJitai3.className = "jitai3_";
+        // kanjiJitai3.textContent = kanjiShugo[i].jitai3;
+
+        // const kanjiJitai4 = document.createElement('td');
+        // kanjiJitai4.className = "jitai4_";
+        // kanjiJitai4.textContent = kanjiShugo[i].jitai4;
 
         const kanjiJitai2 = document.createElement('td');
-        kanjiJitai2.className = "jitai2_";
-        kanjiJitai2.textContent = kanjiShugo[i].jitai2;
+        if (kanjiShugo[i].jitai2glyph) {
+          kanjiJitai2.setAttribute('src', kanjiShugo[i].jitai2glyph);
+          let jikeiContent = `<img  src="${kanjiShugo[i].jitai2glyph}" width="42">`
+          kanjiJitai2.innerHTML = jikeiContent;
+        } else {
+          kanjiJitai2.className = "jitai2_";
+          kanjiJitai2.textContent = kanjiShugo[i].jitai2;
+        }
+
 
         const kanjiJitai3 = document.createElement('td');
-        kanjiJitai3.className = "jitai3_";
-        kanjiJitai3.textContent = kanjiShugo[i].jitai3;
+        if (kanjiShugo[i].jitai3glyph) {
+          kanjiJitai3.setAttribute('src', kanjiShugo[i].jitai3glyph);
+          let jikeiContent = `<img  src="${kanjiShugo[i].jitai3glyph}" width="42">`
+          kanjiJitai3.innerHTML = jikeiContent;
+        } else {
+          kanjiJitai3.className = "jitai3_";
+          kanjiJitai3.textContent = kanjiShugo[i].jitai3;
+        }
 
         const kanjiJitai4 = document.createElement('td');
-        kanjiJitai4.className = "jitai4_";
-        kanjiJitai4.textContent = kanjiShugo[i].jitai4;
+        if (kanjiShugo[i].jitai4glyph) {
+          kanjiJitai4.setAttribute('src', kanjiShugo[i].jitai4glyph);
+          let jikeiContent = `<img  src="${kanjiShugo[i].jitai4glyph}" width="42">`
+          kanjiJitai4.innerHTML = jikeiContent;
+        } else {
+          kanjiJitai4.className = "jitai4_";
+          kanjiJitai4.textContent = kanjiShugo[i].jitai4;
+        }
+
 
         const kanjiRyakusetsu = document.createElement('td');
         kanjiRyakusetsu.className = "ryakusetsu_";

@@ -20,117 +20,18 @@ h1 {
   z-index: 1;
 }
 
-#searchForm {
-  position: fixed;
-  z-index: 2;
-  top: 8px;
-  left: 350px;
-}
-
-#searchInput {
-  font-size: 20px;
-}
-
-#toKaisetsu {
-  /* position: fixed; */
-  /* top: 10px; */
-  /* left: 50px; */
-  /* font-family:  "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
-  font-size: 15px; */
-  /* margin: 0 0 0 30px;
-  text-align: end; */
-  /* padding: 5px; */
-  /* border: solid 1px; */
-
-}
 
 #getJson {
   font-size: 10px;
 }
 
-
-.maintable {
-  table-layout: fixed;
-  /* position:ralative; */
-  position:absolute;
-  /* position: sticky; */
-  top: 45px;
-  width: 450px;
-  border-collapse: collapse;
-  /* border-collapse: separate; */
-  /* margin: -16px 0 0 10px; */
-  margin: 0;
-  padding: 0 0 0 10px;
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-
+.close {
+  position: fixed;
+  top: 8px;
+  left: 350px;
+  font-size: 16px;
 }
 
-.maintable th {
-/* .mainTr { */
-  background-color: dodgerblue;
-  color: white;
-  border: solid 1px;
-  border-collapse: collapse;
-  font-weight: normal;
-  text-align: center;
-  height: 80px;
-  /* position:absolute; */
-  position: sticky;
-  /* position: fixed; */
-  top: 45px;
-  /* top: 0px; */
-}
-
-
-.maintable td {
-  font-weight: normal;
-  margin: 0;
-  height: 40px;
-  line-height: 20px;
-  background: #eee;
-  text-align: left;
-}
-
-.maintable tr:nth-child(odd) td {
-  background: #fff;
-}
-
-.maintable tr td:nth-child(1) {
- padding: 0 0 0 10px;
-  text-align: left;
-}
-
-.maintable tr td:nth-child(3) {
-  font-size: 40px;
-  font-family: 'Noto Serif JP', serif;
-  text-align: center;
-}
-
-.maintable tr td:nth-child(5) {
-  font-size: 40px;
-  font-family: 'Noto Serif JP', serif;
-  /* font-family: IPAmjMincho, 'IPAmj明朝', 'Noto Serif JP', serif; */
-  text-align: center;
-}
-
-.maintable tr td:nth-child(6) {
-  font-size: 40px;
-  font-family: 'Noto Serif JP', serif;
-  text-align: center;
-}
-
-.maintable tr td:nth-child(7) {
-  font-size: 40px;
-  font-family: 'Noto Serif JP', serif;
-  text-align: center;
-}
-
-.mini {
-  font-size: 11px;
-  line-height: 12px;
-}
 
 pre {
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
@@ -138,34 +39,6 @@ pre {
   white-space: pre-wrap;
   margin: 0;
   padding: 0, 1em, 0, 1em;
-}
-
-.mainTr {
-  height: 60px;
-}
-
-.mainMenkuten,
-.mainUnicode {
-  width: 90px;
-}
-
-.mainJitai1,
-.mainJitai2,
-.mainJitai3,
-.mainJitai4 {
-  width: 50px;
-}
-
-.mainMojigun {
-  width: 80px;
-}
-
-.mainSetsumei {
-  width: 100px;
-}
-
-.mainYomi {
-  width: 130px;
 }
 
 
@@ -177,7 +50,7 @@ pre {
 .itaiji4 {
   float: left;
   margin: 0 0 10px 0;
-  background: white;
+  /* background: pink; */
 }
 
 
@@ -190,9 +63,11 @@ pre {
 }
 
 .kanjigun {
-  background-color: yellow;
+  /* background-color: yellow; */
   margin: 45px 10px 10px 1px;
   /* padding: 100px; */
+  /* border: 1px solid black;
+  z-index: 1; */
 }
 
 
@@ -264,7 +139,7 @@ pre {
   font-weight: bold;
   margin: 0 0 0 10px;
   padding: 2px 0 2px 0;
-  /* background-color: red; */
+  /* background-color: pink; */
   color: red;
 }
 
@@ -350,13 +225,22 @@ pre {
   height: 200px;
 }
 
+.fontzone{
+  position: absolute;
+  top: 50px;
+}
 
+.fontbutton{
+  font-size: 9px;
+}
 @media screen and (max-width: 380px) {
 
   body {
     margin: 0;
     padding: 2px;
     font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+    font-size: 12px;
+    width: 380px;
   }
 
   h1 {
@@ -364,94 +248,24 @@ pre {
     font-size: 24px;
     background-color: steelblue;
     color: white;
-    margin: 0;
     position: fixed;
     top: 0px;
-    padding: 0 0 0 60px;
     width: 100%;
-    height: 70px;
+    height: 45px;
+    margin: 0;
+    padding: 0 0 0 20px;
     text-align: left;
   }
 
-  #searchForm {
+  .close {
     position: fixed;
-    top: 40px;
-    left: 20px;
-    font-size: 16px;
-    z-index: 1;
-  }
-
-  #toKaisetsu {
-
+    top: 6px;
+    left: 280px;
     font-size: 16px;
   }
 
-  #searchInput {
-    font-size: 20px;
-  }
 
   #getJson {
-    display: none;
-  }
-
-  .maintable {
-    table-layout: fixed;
-    position: absolute; 
-    top: 100px;
-    width: 375px;
-    border-collapse: collapse;
-    margin: -32px 0 0 0;
-    font-size: 14px;
-    font-weight: normal;
-  }
-
-  .mini{
-    font-size: 10px;
-    line-height: 12px;
-  }
-
-
-  .maintable th {
-    background-color: dodgerblue;
-    color: white;
-    border: solid 1px;
-    border-collapse: collapse;
-    font-weight: normal;
-    text-align: center;
-    height: 50px;
-    position: sticky;
-    /* position:fixed; */
-    top: 70px;
-  }
-
-
-
-  .mainTr {
-    height: 20px;
-    line-height: 14px;
-  }
-
-  .mainMenkuten,
-  .mainUnicode {
-    display: none;
-  }
-
-  .mainJitai1,
-  .mainJitai2,
-  .mainJitai3,
-  .mainJitai4 {
-    width: 30px;
-  }
-
-  .mainMojigun {
-    width: 50px;
-  }
-
-  .mainSetsumei {
-    width: 50px;
-  }
-
-  .mainYomi {
     display: none;
   }
 
@@ -461,5 +275,44 @@ pre {
   .yomi_ {
     display: none;
   }
+
+  .hanrei {
+    float: left;
+    margin: 0 0 10px 0;
+    padding-top: 170px;
+    text-align: right;
+  }
+
+
+
+  .midashi {
+    font-family: 'Noto Serif JP', sans-serif;
+    font-size: 60px;
+    height: 80px;
+    margin-top: -10px;
+    color: black;
+  }
+  
+  .jikei {
+    width: 60px;
+    height: 80px;
+    border: 1px solid black;
+    font-size: 8px;
+    text-align: center;
+    background-color: bisque;
+    /* display: inline-block;   */
+  }
+
+
+
+  .gazomoji_image {
+    width: 34px;
+    height: 44px;
+    object-position: center 8px;
+  }
+
+
+
+
 
 }

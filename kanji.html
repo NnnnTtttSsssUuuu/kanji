@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=no>
+  <link rel="stylesheet" href="kanji.css">
   <!-- <link rel="icon" href="img/QCfavicon.ico"> -->
   <title id="title_">
     　</title>
@@ -12,11 +12,18 @@
 
 <body>
   <header id="headpart">
-    <h1>漢字字体使い分け字典 
-      <input type="button" onclick="window.open('','_self').close();" value="閉じる" class="close"></h1>
+    <h1>漢字字体使い分け字典
+      <input type="button" onclick="window.open('','_self').close();" value="閉じる" class="close">
+    </h1>
   </header>
-  <p>
-    　　
+  <p class="fontzone">
+    
+     <select name="font" size="3" id="fontselect">
+      <option value="0" selected>Noto-Serif</option>
+      <option value="1">IPAmj明朝</option>
+      <option value="2">游明朝</option>
+    </select>
+    <br> <button class="fontbutton">表示フォント<br>変更</button>
   </p>
 
 
@@ -81,8 +88,20 @@
 
 
   <script>
-    // let targetKanji = sessionStorage.getItem('checkKanji');
-    // let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+    document.querySelector('.fontbutton').addEventListener('click', () => {
+      let fontElement = document.getElementById('fontselect');
+      let nowElement = document.querySelectorAll('.midashi');
+      if (fontElement.value == 1) {
+        nowElement.forEach(nowElement => nowElement.className = 'midashi ipamj');
+        console.log(document.body)
+      } else if (fontElement.value == 2) {
+        nowElement.forEach(nowElement => nowElement.className = 'midashi yumincho');
+      } else
+      nowElement.forEach(nowElement => nowElement.className = 'midashi');
+    });
+
+
+
 
     document.querySelector('#save').addEventListener('click', () => {
       let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
