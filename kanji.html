@@ -17,8 +17,8 @@
     </h1>
   </header>
   <p class="fontzone">
-    
-     <select name="font" size="3" id="fontselect">
+
+    <select name="font" size="3" id="fontselect">
       <option value="0" selected>Noto-Serif</option>
       <option value="1">IPAmj明朝</option>
       <option value="2">游明朝</option>
@@ -97,7 +97,7 @@
       } else if (fontElement.value == 2) {
         nowElement.forEach(nowElement => nowElement.className = 'midashi yumincho');
       } else
-      nowElement.forEach(nowElement => nowElement.className = 'midashi');
+        nowElement.forEach(nowElement => nowElement.className = 'midashi');
     });
 
 
@@ -191,6 +191,12 @@
       a.download = "new_csvKanjiFile.csv";
       a.click();
       URL.revokeObjectURL(url);
+
+      //リロード禁止…効果なし
+      window.addEventListener("beforeunload", function () {
+        console.log("リロード");
+        window.location.replace(location.href);
+      });
 
 
     });
