@@ -16,20 +16,31 @@
       <input type="button" onclick="window.open('','_self').close();" value="閉じる" class="close">
     </h1>
   </header>
-  <p class="fontzone">
 
+  <!-- <p class="fontzone">
     <select name="font" size="3" id="fontselect">
       <option value="0" selected>Noto-Serif</option>
       <option value="1">IPAmj明朝</option>
       <option value="2">游明朝</option>
     </select>
     <br> <button class="fontbutton">表示フォント<br>変更</button>
-  </p>
+  </p> -->
 
 
   <div class="kanjigun" id="kanjigun_">
 
+    <!-- <section class="jitaiByFont">
+
+    </section> -->
+
+
+
+
     <section class="hanrei">
+        <div class="fontname">Noto-Serif</div>
+        <div class="fontname">IPAmj明朝</div>
+        <div class="fontname">游明朝</div>
+
       <div class="youso">
         <div class="mojigun">文字群</div>
         <div class="jislevel">JIS</div>
@@ -37,16 +48,18 @@
         <div class="menkuten">面区点番号</div>
         <div class="jiscode">JISコード</div>
         <div class="menkuten">注意</div>
+      </div>
     </section>
-
-
 
     <section class="oyaji">1
       <span class="jishu" id="jishu_"></span>
-      <div class="midashi" id="midashi_">　</div>
-      <div class="jikei">画像データ<br>
-        <img id="jikei_" src="" width="60">
+      <div class="jikei">
+        <img id="jikei_" src="" width="80">
       </div>
+      <div class="midashi" id="midashi_">　</div>
+      <div class="midashi2" id="midashi2_">　</div>
+      <div class="midashi3" id="midashi3_">　</div>
+
       <div class="youso">
         <div class="mojigun" id="mojigun_">　</div>
         <div class="jislevel" id="jislevel_">　</div>
@@ -58,10 +71,7 @@
     </section>
 
     <section class="itaiji" id="itaiji_">
-      <!-- <div class="midashi">仮</div> -->
     </section>
-
-
   </div>
 
 
@@ -76,7 +86,7 @@
     <pre class="sanko" id="sanko_"></pre>
   </div>
 
-  <div>
+  <!-- <div>
     <hr>
     ＜使い分けを編集する＞　　
     <button id="save">データを上書き保存する</button>
@@ -84,122 +94,108 @@
     <button id="jsonButton">jsonで出力する</button>
     <br><textarea id="tsukaiwakeEdit_"></textarea>
     <div id="theTargetKanji"></div>
-  </div>
+  </div> -->
 
 
   <script>
-    document.querySelector('.fontbutton').addEventListener('click', () => {
-      let fontElement = document.getElementById('fontselect');
-      let nowElement = document.querySelectorAll('.midashi');
-      if (fontElement.value == 1) {
-        nowElement.forEach(nowElement => nowElement.className = 'midashi ipamj');
-        console.log(document.body)
-      } else if (fontElement.value == 2) {
-        nowElement.forEach(nowElement => nowElement.className = 'midashi yumincho');
-      } else
-        nowElement.forEach(nowElement => nowElement.className = 'midashi');
-    });
+    // document.querySelector('.fontbutton').addEventListener('click', () => {
+    //   let fontElement = document.getElementById('fontselect');
+    //   let nowElement = document.querySelectorAll('.midashi');
+    //   if (fontElement.value == 1) {
+    //     nowElement.forEach(nowElement => nowElement.className = 'midashi ipamj');
+    //     console.log(document.body)
+    //   } else if (fontElement.value == 2) {
+    //     nowElement.forEach(nowElement => nowElement.className = 'midashi yumincho');
+    //   } else
+    //     nowElement.forEach(nowElement => nowElement.className = 'midashi');
+    // });
 
 
-
-
-    document.querySelector('#save').addEventListener('click', () => {
-      let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-      let targetKanji = document.querySelector('#theTargetKanji').textContent;
-      let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
-      console.log("targetKanji,newTsukaiwake,kanjiShugo", targetKanji, newTsukaiwake, kanjiShugo);
-      kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
-      localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
-    });
 
 
     // document.querySelector('#save').addEventListener('click', () => {
-    //   console.log("saveに入る");
-    //   console.log("targetKanji",targetKanji);
-    //   console.log("kanjiShugo",kanjiShugo);
+    //   let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+    //   let targetKanji = document.querySelector('#theTargetKanji').textContent;
     //   let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+    //   console.log("targetKanji,newTsukaiwake,kanjiShugo", targetKanji, newTsukaiwake, kanjiShugo);
     //   kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
-    //   localStorage.setItem('kanjiLocal',JSON.stringify(kanjiShugo));
-    //   console.log("修正後データ",kanjiShugo[targetKanji]);
+    //   localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
     // });
 
-    document.querySelector('#jsonButton').addEventListener('click', () => {
 
-      let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-      let targetKanji = document.querySelector('#theTargetKanji').textContent;
+    // document.querySelector('#jsonButton').addEventListener('click', () => {
 
+    //   let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+    //   let targetKanji = document.querySelector('#theTargetKanji').textContent;
 
-
-      let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
-      kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
-      localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
-      const newJson = JSON.stringify(kanjiShugo);
-      const bom = new Uint8Array([0xef, 0xbb, 0xbf]) //ここでUTF-8を指定
-      const blob = new Blob([bom, newJson], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "new_jsonKanjiFile.json";
-      a.click();
-      URL.revokeObjectURL(url);
-    });
-
-
-    document.querySelector('#csvButton').addEventListener('click', () => {
-
-      let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-      let targetKanji = document.querySelector('#theTargetKanji').textContent;
+    //   let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+    //   kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
+    //   localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
+    //   const newJson = JSON.stringify(kanjiShugo);
+    //   const bom = new Uint8Array([0xef, 0xbb, 0xbf]) //ここでUTF-8を指定
+    //   const blob = new Blob([bom, newJson], { type: "application/json" });
+    //   const url = URL.createObjectURL(blob);
+    //   const a = document.createElement("a");
+    //   a.href = url;
+    //   a.download = "new_jsonKanjiFile.json";
+    //   a.click();
+    //   URL.revokeObjectURL(url);
+    // });
 
 
-      let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+    // document.querySelector('#csvButton').addEventListener('click', () => {
 
-      kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
-      localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
-      const newJson = JSON.stringify(kanjiShugo);
-      // console.log("修正後のkanjiShugo…csv", kanjiShugo[targetKanji].tsukaiwake);
-      // console.log("修正後のkanjiShugo…csv", kanjiShugo);
-      // console.log("修正後のnewJson",newJson);
-
-      //  https://zenn.dev/aiq_dev/articles/fa9dc673cbd554 を参考に
-      const convertToCSV = (objArray) => {
-        const array = typeof objArray !== "object" ? JSON.parse(objArray) : objArray;
-
-        //1. Objectの Key を headerとして取り出す
-        let str =
-          `${Object.keys(array[0])
-            .map((value) => `"${value}"`)
-            .join(",")}` + "\r\n";
-
-        // 2. 各オブジェクトの値をCSVの行として追加する
-        return array.reduce((str, next) => {
-          str +=
-            `${Object.values(next)
-              .map((value) => `"${value}"`)
-              .join(",")}` + "\r\n";
-          return str;
-        }, str);
-      };
-
-      const csvData = convertToCSV(newJson);
-      // console.log(csvData);
-
-      const bom = new Uint8Array([0xef, 0xbb, 0xbf]) //ここでUTF-8を指定
-      const blob = new Blob([bom, csvData], { type: "text/csv" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "new_csvKanjiFile.csv";
-      a.click();
-      URL.revokeObjectURL(url);
-
-      //リロード禁止…効果なし
-      window.addEventListener("beforeunload", function () {
-        console.log("リロード");
-        window.location.replace(location.href);
-      });
+    //   let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+    //   let targetKanji = document.querySelector('#theTargetKanji').textContent;
 
 
-    });
+    //   let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+
+    //   kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
+    //   localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
+    //   const newJson = JSON.stringify(kanjiShugo);
+
+
+    //   //  https://zenn.dev/aiq_dev/articles/fa9dc673cbd554 を参考に
+    //   const convertToCSV = (objArray) => {
+    //     const array = typeof objArray !== "object" ? JSON.parse(objArray) : objArray;
+
+    //     //1. Objectの Key を headerとして取り出す
+    //     let str =
+    //       `${Object.keys(array[0])
+    //         .map((value) => `"${value}"`)
+    //         .join(",")}` + "\r\n";
+
+    //     // 2. 各オブジェクトの値をCSVの行として追加する
+    //     return array.reduce((str, next) => {
+    //       str +=
+    //         `${Object.values(next)
+    //           .map((value) => `"${value}"`)
+    //           .join(",")}` + "\r\n";
+    //       return str;
+    //     }, str);
+    //   };
+
+    //   const csvData = convertToCSV(newJson);
+    //   // console.log(csvData);
+
+    //   const bom = new Uint8Array([0xef, 0xbb, 0xbf]) //ここでUTF-8を指定
+    //   const blob = new Blob([bom, csvData], { type: "text/csv" });
+    //   const url = URL.createObjectURL(blob);
+    //   const a = document.createElement("a");
+    //   a.href = url;
+    //   a.download = "new_csvKanjiFile.csv";
+    //   a.click();
+    //   URL.revokeObjectURL(url);
+
+    //   //リロード禁止…効果なし
+    //   window.addEventListener("beforeunload", function () {
+    //     console.log("リロード");
+    //     window.location.replace(location.href);
+    //   });
+
+
+    // });
   </script>
 </body>
 

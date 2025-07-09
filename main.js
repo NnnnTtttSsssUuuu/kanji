@@ -8,22 +8,40 @@
   let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
   sessionStorage.setItem('checkKanji', 0);
 
-  // window.onload = function () {
-  //   if (!kanjiShugo) {
-  //     getJson();
-  //   }
-  // }
+  let sortCheck = 0;
 
+  window.onload = function () {
+    getJson();
+  }
 
   if (!kanjiShugo) {
     alert("jsonを読み込みます");
     getJson();
   }
 
-
-  document.querySelector('#getJson').addEventListener('click', () => {
-    getJson();
+  document.querySelector('.mainTr').addEventListener('mouseover', () => {
+  if(sortCheck === 0){toSort()}
+  sortCheck = 1;
   });
+
+  //List.js対応
+  function toSort() {
+    const options = {
+      valueNames: [
+        'menkuten_',
+        'unicode_',
+        'jitai1_',
+        'mojigun_',
+        'yomi_',
+        'jitai2_',
+        'jitai3_',
+        'jitai4_',
+        'ryakusetsu_',
+      ],
+    };
+    const searchList = new List('mainList', options);
+    // console.log("List.jS読み込み", searchList);
+  };
 
   //JSON読み込み
   function getJson() {
@@ -42,20 +60,7 @@
       .catch(error => console.error('Error loading JSON:', error));
   }
 
-  //List.js対応
-  // const options = {
-  //   valueNames: [
-  //     'menkuten',
-  //     'unicode',
-  //     'jitai1',
-  //     'jishu',
-  //     'yomi',
-  //     'jitai2',
-  //     'jitai3',
-  //     'jitai4'
-  //   ],
-  // };
-  // const searchList = new FileList('maintableid', options);
+
 
 
   //大漢字表を作成する
@@ -80,20 +85,8 @@
         kanjiMidashi.textContent = kanjiShugo[i].midashi;
 
         const kanjiMojigun = document.createElement('td');
-        kanjiMojigun.className = "jishu_";
+        kanjiMojigun.className = "mojigun_";
         kanjiMojigun.textContent = kanjiShugo[i].mojigun;
-
-        // const kanjiJitai2 = document.createElement('td');
-        // kanjiJitai2.className = "jitai2_";
-        // kanjiJitai2.textContent = kanjiShugo[i].jitai2;
-
-        // const kanjiJitai3 = document.createElement('td');
-        // kanjiJitai3.className = "jitai3_";
-        // kanjiJitai3.textContent = kanjiShugo[i].jitai3;
-
-        // const kanjiJitai4 = document.createElement('td');
-        // kanjiJitai4.className = "jitai4_";
-        // kanjiJitai4.textContent = kanjiShugo[i].jitai4;
 
         const kanjiJitai2 = document.createElement('td');
         if (kanjiShugo[i].jitai2glyph) {
@@ -141,7 +134,6 @@
         kanjiRow.appendChild(kanjiUnicode);
         kanjiRow.appendChild(kanjiMidashi);
         kanjiRow.appendChild(kanjiMojigun);
-        // kanjiRow.appendChild(kanjiYomi);
         kanjiRow.appendChild(kanjiJitai2);
         kanjiRow.appendChild(kanjiJitai3);
         kanjiRow.appendChild(kanjiJitai4);
@@ -151,7 +143,6 @@
         kanjiHyo.appendChild(kanjiRow);
       }
     }
-    // console.log(kanjiHyo);
   }, 200); //1秒間タイマー
 
 
@@ -256,6 +247,12 @@
       let midashi = nwin.document.querySelector('#midashi_');
       midashi.textContent = theKanji.midashi;
 
+      let midashi2 = nwin.document.querySelector('#midashi2_');
+      midashi2.textContent = theKanji.midashi;
+
+      let midashi3 = nwin.document.querySelector('#midashi3_');
+      midashi3.textContent = theKanji.midashi;
+
       let jikei = nwin.document.querySelector('#jikei_');
       // let jikeiSrc = jikei.getAttribute('src');
       jikei.setAttribute('src', theKanji.jikei);
@@ -290,11 +287,11 @@
       let sanko = nwin.document.querySelector('#sanko_');
       sanko.textContent = theKanji.sanko;
 
-      let tsukaiwakeEdit = nwin.document.querySelector('#tsukaiwakeEdit_');
-      tsukaiwakeEdit.innerHTML = theKanji.tsukaiwake;
+      // let tsukaiwakeEdit = nwin.document.querySelector('#tsukaiwakeEdit_');
+      // tsukaiwakeEdit.innerHTML = theKanji.tsukaiwake;
 
-      let theTargetKanji = nwin.document.querySelector('#theTargetKanji');
-      theTargetKanji.textContent = targetKanji;
+      // let theTargetKanji = nwin.document.querySelector('#theTargetKanji');
+      // theTargetKanji.textContent = targetKanji;
 
       //異体字の情報を得る
       for (let i = 1; i < theKanji.nOfJitai; i++) {
@@ -317,15 +314,36 @@
         newDiv1.className = "jishu";
         newDiv1.textContent = theItaiji.jishu;
 
+
+
         const newDiv2 = document.createElement('div');
-        newDiv2.className = "midashi";
-        newDiv2.textContent = theItaiji.midashi;
+        newDiv2.setAttribute('src', theItaiji.jikei);
+        let jikeiContent = `<img  src="${theItaiji.jikei}" width="80">`
+        // let jikeiContent = `画像データ<br><img  src="${theItaiji.jikei}" width="60">`
+        newDiv2.innerHTML = jikeiContent;
+        newDiv2.className = "jikei";
 
         const newDiv3 = document.createElement('div');
-        newDiv3.setAttribute('src', theItaiji.jikei);
-        let jikeiContent = `画像データ<br><img  src="${theItaiji.jikei}" width="60">`
-        newDiv3.innerHTML = jikeiContent;
-        newDiv3.className = "jikei";
+        newDiv3.className = "midashi";
+        newDiv3.textContent = theItaiji.midashi;
+
+        const newDiv3b = document.createElement('div');
+        newDiv3b.className = "midashi2";
+        newDiv3b.textContent = theItaiji.midashi;
+
+        const newDiv3c = document.createElement('div');
+        newDiv3c.className = "midashi3";
+        newDiv3c.textContent = theItaiji.midashi;
+
+        // const newDiv2 = document.createElement('div');
+        // newDiv2.className = "midashi";
+        // newDiv2.textContent = theItaiji.midashi;
+
+        // const newDiv3 = document.createElement('div');
+        // newDiv3.setAttribute('src', theItaiji.jikei);
+        // let jikeiContent = `画像データ<br><img  src="${theItaiji.jikei}" width="60">`
+        // newDiv3.innerHTML = jikeiContent;
+        // newDiv3.className = "jikei";
 
         const newDiv4 = document.createElement('div');
         newDiv4.className = "youso";
@@ -357,6 +375,9 @@
         newSection.appendChild(newDiv1);
         newSection.appendChild(newDiv2);
         newSection.appendChild(newDiv3);
+        newSection.appendChild(newDiv3b);
+        newSection.appendChild(newDiv3c);
+
 
         newDiv4.appendChild(newDiv5);
         newDiv4.appendChild(newDiv6);
