@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="style.css">
   <!-- <link rel="icon" href="img/QCfavicon.ico"> -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+
   <title>漢字字体字典</title>
 </head>
 
@@ -20,7 +24,7 @@
 
 
   <form id="searchForm" action="#" method="get">
-    <input type="search" name="search" placeholder="漢字/読み" autofocus id="searchInput" size="9"> <input type="submit"
+    <input type="search" name="search" placeholder="漢字/読み" autofocus id="searchInput" size="9"> <input type="submit" id="searchButton"
       value="検索">
     <button id="toKaisetsu">解説へ</button>
     <!-- <button id="toSort">ソート機能起動</button> -->
@@ -35,11 +39,11 @@
           <th class='sort  mainMenkuten' data-sort="menkuten_">面区点番号</th>
           <th class='sort  mainUnicode' data-sort="unicode_">Unicode</th>
           <th class='sort  mainJitai1' data-sort="jitai1_">字体1<br><span class="mini">(標準的な<br>字体)</span></th>
-          <th class='sort  mainMojigun' data-sort="mojigun_">その説明</th>
+          <th class='sort  mainMojigun' data-sort="mojigun_">字体1の<br>種別</th>
           <th class='sort  mainJitai2' data-sort="jitai2_">字体2<br></th>
           <th class='sort  mainJitai3' data-sort="jitai3_">字体3<br></th>
           <th class='sort  mainJitai4' data-sort="jitai4_">字体4<br></th>
-          <th class='sort  mainSetsumei' data-sort="ryakusetsu_">字体2～4の<br>説明</th>
+          <th class='sort  mainSetsumei' data-sort="ryakusetsu_">字体2～4の<br>種別と頻度</th>
           <th class='sort  mainYomi' data-sort="yomi_">音訓<br><span class="mini">（常用漢字は常用音訓、<br>他は代表的な音訓）</span></th>
         </tr>
       </thead>
@@ -50,7 +54,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
-    <script src="main.js"></script>
+  <script src="main.js"></script>
 
 </body>
 

@@ -25,23 +25,21 @@ h1 {
   z-index: 2;
   top: 8px;
   left: 350px;
+
+  font-size: 20px;
 }
+
 
 #searchInput {
   font-size: 20px;
 }
 
-#toKaisetsu {
-  /* position: fixed; */
-  /* top: 10px; */
-  /* left: 50px; */
-  /* font-family:  "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
-  font-size: 15px; */
-  /* margin: 0 0 0 30px;
-  text-align: end; */
-  /* padding: 5px; */
-  /* border: solid 1px; */
+#searchButton {
+  font-size: 15px;
+}
 
+#toKaisetsu {
+  font-size: 15px;
 }
 
 #getJson {
@@ -80,22 +78,22 @@ h1 {
   position: sticky;
   top: 45px;
 
-    /* ソート時に矢印を付ける */
-    &.sort {
-      cursor: pointer;
+  /* ソート時に矢印を付ける */
+  &.sort {
+    cursor: pointer;
 
-      &.desc::after {
-        content: "▼";
-        margin-left: 10px;
-        font-size: 16px;
-      }
-
-      &.asc::after {
-        content: "▲";
-        margin-left: 10px;
-        font-size: 16px;
-      }
+    &.desc::after {
+      content: "▼";
+      margin-left: 10px;
+      font-size: 16px;
     }
+
+    &.asc::after {
+      content: "▲";
+      margin-left: 10px;
+      font-size: 16px;
+    }
+  }
 
 
 }
@@ -367,8 +365,8 @@ pre {
   height: 200px;
 }
 
-
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 440px) {
+/* @media screen and (max-width: 380px) { */
 
   body {
     margin: 0;
@@ -398,15 +396,18 @@ pre {
     z-index: 1;
   }
 
-  #toKaisetsu {
-    font-size: 14px;
-    /* font-size: 16px; */
+  #searchInput {
+    font-size: 16px;
   }
 
-  #searchInput {
-        font-size: 16px;
-    /* font-size: 20px; */
+  #searchButton {
+    font-size: 14px;
   }
+
+  #toKaisetsu {
+    font-size: 14px;
+  }
+
 
   #getJson {
     display: none;

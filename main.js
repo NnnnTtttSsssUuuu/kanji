@@ -20,8 +20,8 @@
   }
 
   document.querySelector('.mainTr').addEventListener('mouseover', () => {
-  if(sortCheck === 0){toSort()}
-  sortCheck = 1;
+    if (sortCheck === 0) { toSort() }
+    sortCheck = 1;
   });
 
   //List.js対応
@@ -171,7 +171,8 @@
     if (!query) return;// キーワードが空なら何もしない
     const regex = new RegExp(`(${query})`, "gi"); // 検索キーワードを正規表現化
     //body内のツリー構造を探索し、テキストだけを取り出す
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    const searchScope = document.getElementById("kanjiHyo");
+    const walker = document.createTreeWalker(searchScope, NodeFilter.SHOW_TEXT, null, false);
     let currentNode = walker.nextNode(); // 最初のノードを取得
     // while (walker.nextNode()) {
     while (currentNode) {
