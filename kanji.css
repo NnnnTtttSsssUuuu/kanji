@@ -20,6 +20,12 @@ h1 {
   z-index: 1;
 }
 
+pre {
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  white-space: pre-wrap;
+  margin: 0;
+  padding: 0, 1em, 0, 1em;
+}
 
 #getJson {
   font-size: 10px;
@@ -33,12 +39,7 @@ h1 {
 }
 
 
-pre {
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
-  white-space: pre-wrap;
-  margin: 0;
-  padding: 0, 1em, 0, 1em;
-}
+
 
 
 .oyaji,
@@ -81,7 +82,7 @@ pre {
 
 
 .midashi {
-  font-family: "Noto Serif JP", sans-serif;
+  font-family: "Noto Serif JP", sans-serif; font-weight: 500;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -97,7 +98,7 @@ pre {
   font-family: 'IPAmj明朝', sans-serif;
   font-size: 40px;
   height: 45px;
-    margin: 10px 0 0 20px;
+  margin: 10px 0 0 20px;
   color: black;
 }
 
@@ -105,7 +106,7 @@ pre {
   font-family: "游明朝体", "Yu Mincho", YuMincho, sans-serif;
   font-size: 40px;
   height: 45px;
-    margin: -8px 0 0 20px;
+  margin: -8px 0 0 20px;
   /* margin-top: -8px;
   margin-left: 20px; */
   color: black;
@@ -148,10 +149,13 @@ pre {
   margin-top: 15px;
 }
 
+.kisuRetsu {
+  background-color: lightcyan;
+  padding-right: 1em;
+}
 
 .mojigun,
 .unicode,
-.menkuten,
 .jiscode,
 .bushu,
 .kakusu {
@@ -165,6 +169,11 @@ pre {
 .chuui {
   background-color: white;
   padding-right: 1em;
+}
+
+.menkuten,
+.jiscode {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .jishu {
@@ -207,6 +216,16 @@ pre {
 .ji {
   border: solid 1px;
   margin-right: 5px;
+}
+
+.unicode {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.unicode.narrow {
+  font-family: Arial narrow, Helvetica, sans-serif;
+  font-size: 15px;
 }
 
 
@@ -278,7 +297,7 @@ pre {
 }
 
 @media screen and (max-width: 440px) {
-/* @media screen and (max-width: 380px) { */
+  /* @media screen and (max-width: 380px) { */
 
   body {
     margin: 0;
@@ -324,6 +343,19 @@ pre {
     padding-top: 100px;
     text-align: right;
   }
+
+  .unicode {
+    font-family: Arial narrow, Helvetica, sans-serif;
+    font-size: 12px;
+  }
+
+.unicode.narrow {
+  font-family: Arial narrow, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+
+
 
   .fontname {
     font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;

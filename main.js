@@ -81,7 +81,8 @@
         kanjiUnicode.textContent = kanjiShugo[i].unicode;
 
         const kanjiMidashi = document.createElement('td');
-        kanjiMidashi.className = "midashi_";
+        kanjiMidashi.className = "jitai1_";
+        // kanjiMidashi.className = "midashi_";
         kanjiMidashi.textContent = kanjiShugo[i].midashi;
 
         const kanjiMojigun = document.createElement('td');
@@ -119,6 +120,14 @@
           kanjiJitai4.textContent = kanjiShugo[i].jitai4;
         }
 
+        const kanjiJitai4over = document.createElement('td');
+        // kanjiJitai4over.className = "ryakusetsu_";
+        let kanjiOver = "";
+        if (kanjiShugo[i].nOfJitai > 4) {
+          kanjiOver = "▶";
+        }
+        kanjiJitai4over.textContent = kanjiOver;
+
 
         const kanjiRyakusetsu = document.createElement('td');
         kanjiRyakusetsu.className = "ryakusetsu_";
@@ -137,6 +146,7 @@
         kanjiRow.appendChild(kanjiJitai2);
         kanjiRow.appendChild(kanjiJitai3);
         kanjiRow.appendChild(kanjiJitai4);
+        kanjiRow.appendChild(kanjiJitai4over);
         kanjiRow.appendChild(kanjiRyakusetsu);
         kanjiRow.appendChild(kanjiYomi);
 
@@ -213,6 +223,7 @@
   });
 
 
+  
   // 各文字の説明へ
   const tableClick = document.getElementById('maintableid');
   tableClick.addEventListener('click', (event) => {
@@ -224,7 +235,11 @@
   });
 
   function openKanji(theUnicode) {
-    const nwin = window.open('kanji.html', '_blank');
+    // const nwin = window.open('kanji.html', '_blank');
+
+    const nwin = window.open('kanji.html?unicode=' + theUnicode, '_blank');
+
+
     kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
 
     //kanjiShugoのなかで、tKanjiと合致するものを選ぶ
@@ -360,6 +375,11 @@
         const newDiv7 = document.createElement('div');
         newDiv7.className = "unicode";
         newDiv7.textContent = theItaiji.unicode;
+
+        if (theItaiji.unicode.length > 8) {
+          newDiv7.classList.add("narrow");
+        }
+
 
         const newDiv8 = document.createElement('div');
         newDiv8.className = "menkuten";
