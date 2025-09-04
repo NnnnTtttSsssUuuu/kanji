@@ -222,7 +222,7 @@ pre {
 
 
 .midashi {
-  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'Noto Serif JP', serif;
   font-size: 80px;
   /* background-color: beige; */
   height: 110px;
@@ -232,13 +232,13 @@ pre {
 
 
 .ipamj {
-  font-family: 'IPAmj明朝', sans-serif;
+  font-family: 'IPAmj明朝', serif;
   margin: 0 0 -20px 0;
   line-height: 1.1;
 }
 
 .yumincho {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, sans-serif;
+  font-family: "游明朝体", "Yu Mincho", "YuMincho", serif;
   /* background-color: beige; */
 }
 

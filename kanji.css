@@ -126,7 +126,7 @@ pre {
 }
 
 .midashi3 {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, sans-serif;
+  font-family: "游明朝体", "Yu Mincho", "YuMincho", sans-serif;
   font-size: 40px;
   height: 45px;
   margin: -15px 0 0 20px;
@@ -143,7 +143,7 @@ pre {
 }
 
 .yumincho {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, sans-serif;
+  font-family: "游明朝体", "Yu Mincho", "YuMincho", sans-serif;
   /* background-color: beige; */
 }
 
@@ -437,7 +437,7 @@ background-color: bisque;
   }
 
   .midashi3 {
-    font-family: "游明朝体", "Yu Mincho", YuMincho, sans-serif;
+    font-family: "游明朝体", "Yu Mincho", "YuMincho", sans-serif;
     font-size: 40px;
     height: 40px;
     margin-top: -8px;
