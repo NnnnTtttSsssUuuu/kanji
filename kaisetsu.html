@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="kaisetsu.css">
   <!-- <link rel="icon" href="img/QCfavicon.ico"> -->
   <title>漢字字体字典</title>
 </head>
 
 <body>
   <header id="headpart">
-    <h1>漢字字体使い分け字典  <span class="mini">※クリックで戻る</span></h1>
+    <h1>漢字字体使い分け字典  <span class="mini">※クリックで閉じる</span></h1>
   </header>
   <p>　</p>
   <h2>本webアプリの目的</h2>
@@ -111,7 +111,7 @@ Noto-Serifで正しい表示ができない漢字に、たとえば「逍󠄂」
 
   </p>
 
-  <P>
+  <P class="mini">
     <h3>参考文献・引用資料</h3>
     『新潮日本語漢字辞典』（新潮社）
     <br>『増補改訂JIS漢字字典』芝野耕司編著（日本規格協会）
@@ -127,7 +127,7 @@ Noto-Serifで正しい表示ができない漢字に、たとえば「逍󠄂」
 
 <script>
   document.getElementById('headpart').addEventListener('click', () => {
-  window.location.href = 'index.html';
+    window.close();
   });
   </script>
     </body>
