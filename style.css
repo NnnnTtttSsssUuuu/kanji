@@ -136,20 +136,20 @@ pre {
 
 .maintable tr td:nth-child(5) {
   font-size: 40px;
-  font-family: 'Noto Serif JP',sans-serif; font-weight: 500;
+  font-family: 'Noto Serif JP',serif; font-weight: 500;
   /* font-family: IPAmjMincho, 'IPAmj明朝', 'Noto Serif JP', serif; */
   text-align: center;
 }
 
 .maintable tr td:nth-child(6) {
   font-size: 40px;
-  font-family: 'Noto Serif JP', sans-serif; font-weight: 500;
+  font-family: 'Noto Serif JP', serif; font-weight: 500;
   text-align: center;
 }
 
 .maintable tr td:nth-child(7) {
   font-size: 40px;
-  font-family: 'Noto Serif JP', sans-serif; font-weight: 500;
+  font-family: 'Noto Serif JP', serif; font-weight: 500;
   text-align: center;
 }
 

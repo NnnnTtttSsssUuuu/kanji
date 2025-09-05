@@ -8,7 +8,30 @@
   let jtarget = 0;
   let kariItaiji = [];
 
-  openKanji(unicodeValue);
+  // console.log("generateKanjiContentsに入る");
+
+  if (!localStorage.getItem('kanjiLocal')) {
+    // console.log("初回訪問");
+    fetch('kanjiFile.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('HTTP error! status: ' + response.status);
+        }
+        return response.json();
+      })
+      .then(kanjiFile => {
+        kanjiShugo = kanjiFile;
+        // console.log("kanjiShugo", kanjiShugo);
+        localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
+        setTimeout(() => {
+          openKanji(unicodeValue);
+        }, 200); //1秒間タイマー
+      })
+      .catch(error => console.error('Error loading JSON:', error));
+  } else {
+    openKanji(unicodeValue);
+  }
+
 
   function openKanji(theUnicode) {
     kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
@@ -17,7 +40,7 @@
     for (let i = 0; i < kanjiShugo.length; i++) {
       if (kanjiShugo[i].unicode === theUnicode) {
         targetKanji = i;
-        sessionStorage.setItem('checkKanji', targetKanji); //セッション内にtargetKanjiを保存
+        // sessionStorage.setItem('checkKanji', targetKanji); //セッション内にtargetKanjiを保存
         continue;
       }
     }

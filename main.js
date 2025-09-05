@@ -2,14 +2,15 @@
 {
   let oldQuery = "";
   let queryNo = 0;
-  // let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-  let kanjiShugo = "";
-  sessionStorage.setItem('checkKanji', 0);
+  let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+  // let kanjiShugo = "";
+  // sessionStorage.setItem('checkKanji', 0);
 
   let sortCheck = 0;
 
   window.onload = function () {
     // alert("jsonを読み込みます");
+    console.log("window.onload起動");
     getJson();
   }
 
@@ -58,8 +59,10 @@
 
 
 
-  //大漢字表を作成する
+  //json村読み込み後
   setTimeout(() => {
+
+    //大漢字表を作成する
     const kanjiHyo = document.querySelector('#kanjiHyo');
     for (let i = 0; i < kanjiShugo.length; i++) {
       if (kanjiShugo[i].junOfJitai < 2) {
@@ -215,7 +218,7 @@
   document.querySelector('#toKaisetsu').addEventListener('click', () => {
     // window.location.href = 'kaisetsu.html';
     const url = 'kaisetsu.html';
-        window.open(url, '_blank');
+    window.open(url, '_blank');
   });
 
   // 各文字の説明へ
