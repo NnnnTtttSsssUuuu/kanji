@@ -8,10 +8,8 @@
   let jtarget = 0;
   let kariItaiji = [];
 
-  // console.log("generateKanjiContentsに入る");
-
+//localStorageを調べ、必要ならjsonを取り込む
   if (!localStorage.getItem('kanjiLocal')) {
-    // console.log("初回訪問");
     fetch('kanjiFile.json')
       .then(response => {
         if (!response.ok) {
@@ -23,6 +21,7 @@
         kanjiShugo = kanjiFile;
         // console.log("kanjiShugo", kanjiShugo);
         localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
+        
         setTimeout(() => {
           openKanji(unicodeValue);
         }, 200); //1秒間タイマー
@@ -32,7 +31,7 @@
     openKanji(unicodeValue);
   }
 
-
+//漢字ごとの表を作る
   function openKanji(theUnicode) {
     kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
 
@@ -40,12 +39,12 @@
     for (let i = 0; i < kanjiShugo.length; i++) {
       if (kanjiShugo[i].unicode === theUnicode) {
         targetKanji = i;
-        // sessionStorage.setItem('checkKanji', targetKanji); //セッション内にtargetKanjiを保存
         continue;
       }
     }
 
     let theKanji = kanjiShugo[targetKanji];
+
     //親字の情報を入れる
     let title = document.querySelector('#title_');
     title.textContent = theKanji.midashi;
@@ -63,7 +62,6 @@
     midashi3.textContent = theKanji.midashi;
 
     let jikei = document.querySelector('#jikei_');
-    // let jikeiSrc = jikei.getAttribute('src');
     jikei.setAttribute('src', theKanji.jikei);
 
     let mojigun = document.querySelector('#mojigun_');
@@ -188,4 +186,10 @@
       kanjigun.appendChild(newSection);
     }
   }
+
+    document.getElementById('headpart').addEventListener('click', () => {
+      window.close();
+    });
+
+
 }

@@ -2,39 +2,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
 
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 5px;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
 }
 
+main {
+  flex: 1;
+}
+
 h1 {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 32px;
-  background-color: steelblue;
-  color: white;
   position: fixed;
   top: 0px;
   margin: 0;
   padding: 0 0 0 10px;
   width: 100%;
   z-index: 1;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 32px;
+  background-color: steelblue;
+  color: white;
 }
-
-pre {
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
-  white-space: pre-wrap;
-  margin: 0;
-  padding: 0, 1em, 0, 1em;
-}
-
-
 
 #searchForm {
   position: fixed;
   z-index: 2;
   top: 8px;
   left: 350px;
-
   font-size: 20px;
 }
 
@@ -51,43 +47,31 @@ pre {
   font-size: 15px;
 }
 
-/* #getJson {
-  font-size: 10px;
-} */
-
 
 .maintable {
   table-layout: fixed;
-  /* position:ralative; */
-  position: absolute;
-  /* position: sticky; */
+  position: static;
   top: 45px;
   width: 450px;
   border-collapse: collapse;
-  /* border-collapse: separate; */
-  /* margin: -16px 0 0 10px; */
-  margin: 0;
+  margin: 40px 0 0 0;
   padding: 0 0 0 10px;
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   font-size: 14px;
   font-weight: normal;
 
 }
 
 .maintable th {
-  /* .mainTr { */
+  position: sticky;
+  height: 80px;
+  top: 45px;
+  font-weight: normal;
+  text-align: center;
   background-color: dodgerblue;
   color: white;
-  /* color: white; */
   border: solid 1px;
   border-collapse: collapse;
   border-color: white white dodgerblue dodgerblue;
-  font-weight: normal;
-  text-align: center;
-  height: 80px;
-  /* position:absolute; */
-  position: sticky;
-  top: 45px;
 
   /* ソート時に矢印を付ける */
   &.sort {
@@ -105,8 +89,6 @@ pre {
       font-size: 16px;
     }
   }
-
-
 }
 
 
@@ -130,26 +112,29 @@ pre {
 
 .maintable tr td:nth-child(3) {
   font-size: 40px;
-  font-family: 'Noto Serif JP', serif; font-weight: 500;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 500;
   text-align: center;
 }
 
 .maintable tr td:nth-child(5) {
   font-size: 40px;
-  font-family: 'Noto Serif JP',serif; font-weight: 500;
-  /* font-family: IPAmjMincho, 'IPAmj明朝', 'Noto Serif JP', serif; */
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 500;
   text-align: center;
 }
 
 .maintable tr td:nth-child(6) {
   font-size: 40px;
-  font-family: 'Noto Serif JP', serif; font-weight: 500;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 500;
   text-align: center;
 }
 
 .maintable tr td:nth-child(7) {
   font-size: 40px;
-  font-family: 'Noto Serif JP', serif; font-weight: 500;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -157,7 +142,6 @@ pre {
   font-size: 11px;
   line-height: 12px;
 }
-
 
 
 .mainTr {
@@ -186,171 +170,12 @@ pre {
 
 .mainSetsumei {
   width: 100px;
-
 }
 
 .mainYomi {
   width: 130px;
 }
 
-
-.oyaji,
-.itaiji,
-.itaiji1,
-.itaiji2,
-.itaiji3,
-.itaiji4 {
-  float: left;
-  margin: 0 0 10px 0;
-  background: white;
-}
-
-
-.hanrei {
-  float: left;
-  margin: 0 0 10px 0;
-  /* padding-top: 195px; */
-  padding-top: 105px;
-  text-align: right;
-}
-
-.kanjigun {
-  background-color: yellow;
-  margin: 45px 10px 10px 1px;
-  /* padding: 100px; */
-}
-
-
-.midashi {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 80px;
-  /* background-color: beige; */
-  height: 110px;
-  margin-top: -20px;
-  color: black;
-}
-
-
-.ipamj {
-  font-family: 'IPAmj明朝', serif;
-  margin: 0 0 -20px 0;
-  line-height: 1.1;
-}
-
-.yumincho {
-  font-family: "游明朝体", "Yu Mincho", "YuMincho", serif;
-  /* background-color: beige; */
-}
-
-.jikei {
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-  font-size: 10px;
-  text-align: center;
-  background-color: bisque;
-  /* display: inline-block;   */
-}
-
-.youso {
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
-  line-height: 120%;
-  margin-top: 8px;
-}
-
-
-.mojigun,
-.unicode,
-.menkuten,
-.jiscode,
-.bushu,
-.kakusu {
-  background-color: lightcyan;
-  padding-right: 1em;
-}
-
-.jislevel,
-.menkuten,
-.bushu,
-.chuui {
-  background-color: white;
-  padding-right: 1em;
-}
-
-.jishu {
-  margin: 0 0 0 2px;
-  border: 2px solid black;
-  background-color: black;
-  color: white
-}
-
-.chuui {
-  font-size: 12px;
-  font-weight: bold;
-  margin: 0 0 0 10px;
-  padding: 2px 0 2px 0;
-  /* background-color: red; */
-  color: red;
-}
-
-
-.kaisetsu {
-  display: block;
-  clear: both;
-  /* padding-top: 1em; */
-  margin: 0, 1em, 1em, 1em;
-}
-
-
-
-.menkutenran {
-  width: 90px;
-}
-
-.moji {
-  font-size: 30px;
-}
-
-.ji {
-  border: solid 1px;
-  margin-right: 5px;
-}
-
-
-.gazomoji_image {
-  width: 44px;
-  height: 54px;
-  object-position: center 8px;
-}
-
-.subtable {
-  border-collapse: collapse;
-}
-
-.subtable th {
-  border: solid 1px;
-  background-color: #eee;
-}
-
-.subtable tr th:nth-child(1) {
-  width: 70px;
-}
-
-.subtable tr th:nth-child(2) {
-  width: 70px;
-}
-
-.subtable tr th:nth-child(3) {
-  width: 70px;
-}
-
-.subtable tr th:nth-child(4) {
-  width: 70px;
-}
-
-.subtable td {
-  border: solid 1px;
-}
 
 .highlight {
   background-color: yellow !important;
@@ -360,30 +185,28 @@ pre {
   background-color: yellow !important;
 }
 
-.mj {
-  font-family: 'IPAmj明朝', 'Noto Serif JP', serif;
+
+footer {
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  padding: 0 0 15px 0;
+  text-align: center;
+  font-family: 'Noto Serif JP', serif;
+  color: white;
+  background-color: steelblue;
 }
 
-
-
-
-
-
-#theTargetKanji {
-  display: none;
-}
-
-#tsukaiwakeEdit_ {
-  font-size: 16px;
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
-  width: 600px;
-  height: 200px;
+ul.footer-menu li {
+  display: inline;
 }
 
 @media screen and (max-width: 440px) {
   /* @media screen and (max-width: 380px) { */
 
   body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 2px;
     font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
@@ -424,22 +247,15 @@ pre {
   }
 
 
-  #getJson {
-    display: none;
-  }
-
   .maintable {
     table-layout: fixed;
-    position: absolute;
-    top: 100px;
+    position: static;
+    top: 45px;
     width: 375px;
     border-collapse: collapse;
-    margin: -32px 0 0 0;
+    margin: 69px 0 0 0;
     font-size: 14px;
     font-weight: normal;
-
-
-
   }
 
   .mini {
@@ -476,11 +292,6 @@ pre {
         font-size: 16px;
       }
     }
-
-
-
-
-
   }
 
 
@@ -515,11 +326,24 @@ pre {
   }
 
 
-
   .menkuten_,
   .unicode_,
   .yomi_ {
     display: none;
   }
 
+  footer {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0 0 10px 0;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+    color: white;
+    background-color: steelblue;
+  }
+
+  ul.footer-menu li {
+    display: inline;
+  }
 }

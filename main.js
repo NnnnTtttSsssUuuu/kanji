@@ -10,7 +10,7 @@
 
   window.onload = function () {
     // alert("jsonを読み込みます");
-    console.log("window.onload起動");
+    // console.log("window.onload起動");
     getJson();
   }
 
@@ -178,30 +178,18 @@
 
     if (!query) return;// キーワードが空なら何もしない
     const regex = new RegExp(`(${query})`, "gi"); // 検索キーワードを正規表現化
+
     //body内のツリー構造を探索し、テキストだけを取り出す
     const searchScope = document.getElementById("kanjiHyo");
     const walker = document.createTreeWalker(searchScope, NodeFilter.SHOW_TEXT, null, false);
     let currentNode = walker.nextNode(); // 最初のノードを取得
-    // while (walker.nextNode()) {
+
     while (currentNode) {
       const node = currentNode; //現在のノードを保存
       currentNode = walker.nextNode(); //探索を続ける
       if (node.nodeValue.match(regex)) {
-        // const span = document.createElement("span");
-        // span.innerHTML = node.nodeValue.replace(regex, `<span class="highlight">$1</span>`);
-        // node.parentNode.replaceChild(span, node);
-
         node.parentNode.classList.add("highlight");
         node.parentNode.parentNode.children[2].classList.add("biglight");
-
-        //文字列全体を色付けする
-        // const oyaNode = span.closest("tr");
-        // oyaNode.classList.add("biglight");
-
-        // const oyaNode = span.closest("tr");
-        // oyaNode.querySelectorAll("td").forEach(td => {
-        //   td.classList.add("biglight");
-        // });
       }
     }
   }
@@ -216,7 +204,6 @@
 
   // 解説へ
   document.querySelector('#toKaisetsu').addEventListener('click', () => {
-    // window.location.href = 'kaisetsu.html';
     const url = 'kaisetsu.html';
     window.open(url, '_blank');
   });

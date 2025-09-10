@@ -11,98 +11,88 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
 
-  <title id="title_">
-    　</title>
+  <title id="title_">漢字字体字典</title>
 </head>
 
 <body>
   <header id="headpart">
     <h1>漢字字体使い分け字典
-      <input type="button" onclick="window.open('','_self').close();" value="閉じる" class="close">
+      <span class="mini">※表から開いたときは、クリックで閉じる</span>
+      <!-- <input type="button" onclick="window.open('','_self').close();" value="閉じる" class="close"> -->
+      <!-- <button onclick="location.href='index.html'">漢字表へ</button> -->
     </h1>
   </header>
 
-  <!-- <p class="fontzone">
-    <select name="font" size="3" id="fontselect">
-      <option value="0" selected>Noto-Serif</option>
-      <option value="1">IPAmj明朝</option>
-      <option value="2">游明朝</option>
-    </select>
-    <br> <button class="fontbutton">表示フォント<br>変更</button>
-  </p> -->
+  <main>
+    <div class="kanjigun" id="kanjigun_">
+      <section class="hanrei">
+        <div class="gazoname">画像</div>
+        <div class="fontname">Noto-Serif</div>
+        <div class="fontname">IPAmj明朝</div>
+        <div class="fontname">游明朝</div>
+
+        <div class="youso1">
+          <div class="kisuRetsu">文字群</div>
+          <div class="jislevel">JIS水準</div>
+          <div class="kisuRetsu">Unicode</div>
+          <div class="menkuten">面区点番号</div>
+          <div class="kisuRetsu">JISコード</div>
+          <div class="menkuten">注意</div>
+        </div>
+      </section>
+
+      <section class="oyaji">1
+        <span class="jishu" id="jishu_"></span>
+        <div class="jikei">
+          <img id="jikei_" src="" width="80">
+        </div>
+        <div class="midashi" id="midashi_">　</div>
+        <div class="midashi2" id="midashi2_">　</div>
+        <div class="midashi3" id="midashi3_">　</div>
+
+        <div class="youso">
+          <div class="mojigun" id="mojigun_">　</div>
+          <div class="jislevel" id="jislevel_">　</div>
+          <div class="unicode"><span id="unicode_">　</span></div>
+          <div class="menkuten"><span id="menkuten_">　</span></div>
+          <div class="jiscode"><span id="jiscode_">　</span></div>
+          <div><span class="chuui" id="chuui_">　</span></div>
+        </div>
+      </section>
+
+      <section class="itaiji" id="itaiji_">
+      </section>
+    </div>
 
 
-  <div class="kanjigun" id="kanjigun_">
+    <div class="kaisetsu">
+      <span>●読み：</span><span class="yomi" id="yomi_"></span>
+      <div>●来歴</div>
+      <pre class="raireki" id="raireki_"></pre>
+      <div>●使い分け</div>
+      <pre class="tsukaiwake" id="tsukaiwake_"></pre>
+      <pre class="sanko" id="sanko_"></pre>
+    </div>
 
-    <!-- <section class="jitaiByFont">
-
-    </section> -->
-
-
-
-
-    <section class="hanrei">
-      <div class="gazoname">画像</div>
-      <div class="fontname">Noto-Serif</div>
-      <div class="fontname">IPAmj明朝</div>
-      <div class="fontname">游明朝</div>
-
-      <div class="youso">
-        <div class="kisuRetsu">文字群</div>
-        <div class="jislevel">JIS水準</div>
-        <div class="kisuRetsu">Unicode</div>
-        <div class="menkuten">面区点番号</div>
-        <div class="kisuRetsu">JISコード</div>
-        <div class="menkuten">注意</div>
-      </div>
-    </section>
-
-    <section class="oyaji">1
-      <span class="jishu" id="jishu_"></span>
-      <div class="jikei">
-        <img id="jikei_" src="" width="80">
-      </div>
-      <div class="midashi" id="midashi_">　</div>
-      <div class="midashi2" id="midashi2_">　</div>
-      <div class="midashi3" id="midashi3_">　</div>
-
-      <div class="youso">
-        <div class="mojigun" id="mojigun_">　</div>
-        <div class="jislevel" id="jislevel_">　</div>
-        <div class="unicode"><span id="unicode_">　</span></div>
-        <div class="menkuten"><span id="menkuten_">　</span></div>
-        <div class="jiscode"><span id="jiscode_">　</span></div>
-        <div><span class="chuui" id="chuui_">　</span></div>
-      </div>
-    </section>
-
-    <section class="itaiji" id="itaiji_">
-    </section>
-  </div>
-
-
-
-
-  <div class="kaisetsu">
-    <span>●読み：</span><span class="yomi" id="yomi_"></span>
-    <div>●来歴</div>
-    <pre class="raireki" id="raireki_"></pre>
-    <div>●使い分け</div>
-    <pre class="tsukaiwake" id="tsukaiwake_"></pre>
-    <pre class="sanko" id="sanko_"></pre>
-  </div>
-
-  <!-- <div>
-    <hr>
-    ＜使い分けを編集する＞　　
+   <!-- <div>
+    ＜使い分けを編集する＞
     <button id="save">データを上書き保存する</button>
     <br><button id="csvButton">csvで出力する</button>
     <button id="jsonButton">jsonで出力する</button>
     <br><textarea id="tsukaiwakeEdit_"></textarea>
     <div id="theTargetKanji"></div>
-  </div> -->
+   </div> -->
 
+  </main>
 
+  <footer>
+    <!-- <ul class="footer-menu">
+      <li>home ｜</li>
+      <li>about ｜</li>
+      <li>Contact Us</li>
+    </ul> -->
+    <p>©Nobuo Tsukahara</p>
+  </footer>
 
 
   <script src="generateKanjiConents.js"></script>
@@ -135,10 +125,8 @@
 
 
     // document.querySelector('#jsonButton').addEventListener('click', () => {
-
     //   let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
     //   let targetKanji = document.querySelector('#theTargetKanji').textContent;
-
     //   let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
     //   kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
     //   localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
@@ -155,17 +143,12 @@
 
 
     // document.querySelector('#csvButton').addEventListener('click', () => {
-
     //   let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
     //   let targetKanji = document.querySelector('#theTargetKanji').textContent;
-
-
     //   let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
-
     //   kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
     //   localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
     //   const newJson = JSON.stringify(kanjiShugo);
-
 
     //   //  https://zenn.dev/aiq_dev/articles/fa9dc673cbd554 を参考に
     //   const convertToCSV = (objArray) => {
@@ -205,8 +188,8 @@
     //     window.location.replace(location.href);
     //   });
 
-
     // });
+
   </script> -->
 </body>
 
