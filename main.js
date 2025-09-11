@@ -62,7 +62,7 @@
   //json村読み込み後
   setTimeout(() => {
 
-    //大漢字表を作成する
+  //大漢字表を作成する
     const kanjiHyo = document.querySelector('#kanjiHyo');
     for (let i = 0; i < kanjiShugo.length; i++) {
       if (kanjiShugo[i].junOfJitai < 2) {

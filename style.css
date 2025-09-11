@@ -138,6 +138,15 @@ h1 {
   text-align: center;
 }
 
+.maintable tr td:nth-child(9) {
+  padding: 0 5px 0 0;
+}
+
+
+.maintable tr td:nth-child(10) {
+  padding: 0 0 0 5px;
+}
+
 .mini {
   font-size: 11px;
   line-height: 12px;

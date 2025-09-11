@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=no>
   <link rel="stylesheet" href="kanji.css">
-  <!-- <link rel="icon" href="img/QCfavicon.ico"> -->
+  <link rel="icon" href="img/kanfavicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
 <body>
   <header id="headpart">
     <h1>漢字字体使い分け字典
-      <span class="mini">※表から開いたときは、クリックで閉じる</span>
+      <span class="mini">※クリックで閉じる</span>
       <!-- <input type="button" onclick="window.open('','_self').close();" value="閉じる" class="close"> -->
       <!-- <button onclick="location.href='index.html'">漢字表へ</button> -->
     </h1>
@@ -35,7 +35,8 @@
           <div class="kisuRetsu">文字群</div>
           <div class="jislevel">JIS水準</div>
           <div class="kisuRetsu">Unicode</div>
-          <div class="menkuten">面区点番号</div>
+          <div class="menkuten" id="widemenkuten">面区点番号</div>
+          <div class="narrow menkuten">面区点</div>
           <div class="kisuRetsu">JISコード</div>
           <div class="menkuten">注意</div>
         </div>
