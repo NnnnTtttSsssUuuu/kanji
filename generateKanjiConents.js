@@ -9,7 +9,8 @@
   let needJson = 0;
   console.log("リファラ", ref);
   if (ref === "http://127.0.0.1:5501/index.html" || 
-  ref === "https://nnnnttttssssuuuu.github.io/kanji/"){ //VCS or githubサーバ
+  ref === "https://nnnnttttssssuuuu.github.io/kanji/" || 
+  ref === "https://nnnnttttssssuuuu.github.io/kanji/index.html"){ //VCS or githubサーバ
 
     console.log("内部から来ました");
 }else {
