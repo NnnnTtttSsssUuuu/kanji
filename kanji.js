@@ -23,7 +23,8 @@
   //外部からならjsonを読み込む
   if (needJson) {
     console.log("外部として処理");
-    fetch('kanjiFile.json') 
+    // fetch('kanjiFile.json') 
+    fetch(location.origin + '/kanjiFile.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('HTTP error! status: ' + response.status);
@@ -34,9 +35,11 @@
         kanjiShugo = kanjiFile;
         localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
 
-              openKanji(unicodeValue);
+        openKanji(unicodeValue);
       })
       .catch(error => console.error('Error loading JSON:', error));
+        alert('JSONの読み込みに失敗しました: ' + error.message);
+      
 
     // setTimeout(() => {
 
@@ -46,7 +49,7 @@
   } else {
     console.log("内部として処理");
     kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-    
+
     setTimeout(() => {
       openKanji(unicodeValue);
     }, 200); //1秒間タイマー

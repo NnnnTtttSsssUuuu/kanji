@@ -222,14 +222,18 @@
   tableClick.addEventListener('click', (event) => {
     // クリックされた要素が .kanji クラスを持つか確認
     const clickedElement = event.target.closest('.kanji');
-    if (clickedElement) {
-      const checkPdf = document.getElementById('toKaisetsu').textContent;
-      //PDF化の場合は分岐する
-      if (checkPdf === "kai") {
-        window.open(`kanji_pdfoutput.html?unicode=${encodeURIComponent(clickedElement.id)}`, "_blank");
-      } else {
-        window.open(`kanji.html?unicode=${encodeURIComponent(clickedElement.id)}`, "_blank");
-      }
-    }
+
+    window.open(`kanji.html?unicode=${encodeURIComponent(clickedElement.id)}`, "_blank");
+
+
+    // if (clickedElement) {
+    //   const checkPdf = document.getElementById('toKaisetsu').textContent;
+    //   //PDF化の場合は分岐する
+    //   if (checkPdf === "kai") {
+    //     window.open(`kanji_pdfoutput.html?unicode=${encodeURIComponent(clickedElement.id)}`, "_blank");
+    //   } else {
+    //     window.open(`kanji.html?unicode=${encodeURIComponent(clickedElement.id)}`, "_blank");
+    //   }
+    // }
   });
 }
