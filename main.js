@@ -2,15 +2,15 @@
 {
   let oldQuery = "";
   let queryNo = 0;
-  let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-  // let kanjiShugo = "";
+  // let kanjiShugo = JSON.parse(kanjiFile.json);
+  // let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+  let kanjiShugo = [];
   // sessionStorage.setItem('checkKanji', 0);
 
   let sortCheck = 0;
 
   window.onload = function () {
-    // alert("jsonを読み込みます");
-    // console.log("window.onload起動");
+    console.log("window.onload起動");
     getJson();
   }
 
@@ -41,16 +41,16 @@
 
   //JSON読み込み
   function getJson() {
-    fetch('kanjiFile.json')
+    fetch('kanjiFile.json') 
       .then(response => {
         if (!response.ok) {
           throw new Error('HTTP error! status: ' + response.status);
         }
-        return response.json();
+        return response.json();  //内部でparseされ、配列となる
       })
       .then(kanjiFile => {
+        // console.log("kanjiFileを取得", kanjiFile);
         kanjiShugo = kanjiFile;
-        // console.log("kanjiShugo", kanjiShugo);
         localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
       })
       .catch(error => console.error('Error loading JSON:', error));
@@ -59,10 +59,10 @@
 
 
 
-  //json村読み込み後
+  //json村読み込み後1
   setTimeout(() => {
 
-  //大漢字表を作成する
+    //大漢字表を作成する
     const kanjiHyo = document.querySelector('#kanjiHyo');
     for (let i = 0; i < kanjiShugo.length; i++) {
       if (kanjiShugo[i].junOfJitai < 2) {
@@ -214,7 +214,13 @@
     // クリックされた要素が .kanji クラスを持つか確認
     const clickedElement = event.target.closest('.kanji');
     if (clickedElement) {
-      window.open(`kanji.html?unicode=${encodeURIComponent(clickedElement.id)}`, "_blank");
+      const checkPdf = document.getElementById('toKaisetsu').textContent;
+      //PDF化の場合は分岐する
+      if (checkPdf === "kai") {
+        window.open(`kanji_pdfoutput.html?unicode=${encodeURIComponent(clickedElement.id)}`, "_blank");
+      } else {
+        window.open(`kanji.html?unicode=${encodeURIComponent(clickedElement.id)}`, "_blank");
+      }
     }
   });
 }

@@ -13,6 +13,7 @@ main {
   flex: 1;
 }
 
+
 h1 {
   font-family: 'Noto Serif JP', serif;
   font-size: 32px;
@@ -36,6 +37,7 @@ pre {
 
   /* background-color: skyblue; */
 }
+
 
 .mini {
   font-size: 10px;
