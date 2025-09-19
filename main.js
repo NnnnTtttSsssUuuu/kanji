@@ -41,15 +41,17 @@
 
   //JSON読み込み
   function getJson() {
+                console.log("getJsonに入る");
     fetch('kanjiFile.json') 
       .then(response => {
         if (!response.ok) {
           throw new Error('HTTP error! status: ' + response.status);
         }
         return response.json();  //内部でparseされ、配列となる
+                        console.log("return response.json()に入る");
       })
       .then(kanjiFile => {
-        // console.log("kanjiFileを取得", kanjiFile);
+        console.log("kanjiFileを取得");
         kanjiShugo = kanjiFile;
         localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
       })
@@ -65,6 +67,7 @@
     //大漢字表を作成する
     const kanjiHyo = document.querySelector('#kanjiHyo');
     for (let i = 0; i < kanjiShugo.length; i++) {
+      console.log("大漢字表作成に入る");
       if (kanjiShugo[i].junOfJitai < 2) {
         const kanjiRow = document.createElement('tr');
         kanjiRow.className = "kanji";

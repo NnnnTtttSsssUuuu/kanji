@@ -20,17 +20,6 @@
   let needJson = !thisUrls.includes(ref);
 
 
-  // if (ref === "http://127.0.0.1:5501/" ||
-  //   ref === "http://127.0.0.1:5501/index.html" ||
-  //   ref === "https://nnnnttttssssuuuu.github.io/kanji/" ||
-  //   ref === "https://nnnnttttssssuuuu.github.io/kanji/index.html") {
-
-  //   console.log("内部から来ました");
-  // } else {
-  //   console.log("外部から来ました");
-  //   needJson = 1;
-  // }
-
   //外部からならjsonを読み込む
   if (needJson) {
     console.log("外部として処理");
@@ -54,35 +43,14 @@
 
   } else {
     console.log("内部として処理");
+    kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
     openKanji(unicodeValue);
   }
 
-  //localStorageを調べ、必要ならjsonを取り込む
-  // if (!localStorage.getItem('kanjiLocal')) {
-  //   // if (!localStorage.getItem('kanjiLocal') || needJson === 1) {
-  //   fetch('kanjiFile.json')
-  //     .then(response => {
-  //       if (!response.ok) {
-  //         throw new Error('HTTP error! status: ' + response.status);
-  //       }
-  //       return response.json();
-  //     })
-  //     .then(kanjiFile => {
-  //       kanjiShugo = kanjiFile;
-  //       localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
-  //       console.log("json読み込み");
-  //       setTimeout(() => {
-  //         openKanji(unicodeValue);
-  //       }, 200); //1秒間タイマー
-  //     })
-  //     .catch(error => console.error('Error loading JSON:', error));
-  // } else {
-  //   openKanji(unicodeValue);
-  // }
 
   //漢字ごとの表を作る
   function openKanji(theUnicode) {
-    kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+    // kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
 
     //kanjiShugoのなかで、tKanjiと合致するものを選ぶ
     for (let i = 0; i < kanjiShugo.length; i++) {
