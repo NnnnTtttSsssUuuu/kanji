@@ -33,13 +33,15 @@
       .then(kanjiFile => {
         kanjiShugo = kanjiFile;
         localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
+
+              openKanji(unicodeValue);
       })
       .catch(error => console.error('Error loading JSON:', error));
 
-    setTimeout(() => {
+    // setTimeout(() => {
 
-      openKanji(unicodeValue);
-    }, 200); //1秒間タイマー
+    //   openKanji(unicodeValue);
+    // }, 200); //1秒間タイマー
 
   } else {
     console.log("内部として処理");
