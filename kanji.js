@@ -46,7 +46,10 @@
   } else {
     console.log("内部として処理");
     kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-    openKanji(unicodeValue);
+    
+    setTimeout(() => {
+      openKanji(unicodeValue);
+    }, 200); //1秒間タイマー
   }
 
 

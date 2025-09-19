@@ -71,7 +71,7 @@
     const kanjiHyo = document.querySelector('#kanjiHyo');
     console.log("kanjiHyo", kanjiHyo);
     for (let i = 0; i < kanjiShugo.length; i++) {
-      console.log("大漢字表作成に入る");
+      // console.log("大漢字表作成に入る");
       if (kanjiShugo[i].junOfJitai < 2) {
         const kanjiRow = document.createElement('tr');
         kanjiRow.className = "kanji";
