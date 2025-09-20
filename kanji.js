@@ -47,9 +47,9 @@
     // }, 200); //1秒間タイマー
 
   } else {
-    console.log("内部として処理",kanjiShugo);
-    kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
 
+    kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+    console.log("内部として処理",kanjiShugo);
     setTimeout(() => {
       openKanji(unicodeValue);
     }, 200); //1秒間タイマー
@@ -125,6 +125,7 @@
     // let theTargetKanji = document.querySelector('#theTargetKanji');
     // theTargetKanji.textContent = targetKanji;
 
+    console.log("異体字の情報を得る直前",theKanji.nOfJitai);
     //異体字の情報を得る
     for (let i = 1; i < theKanji.nOfJitai; i++) {
       kariItaiji[i + 1] = theKanji.kanjiCode + "_" + (i + 1);
@@ -134,6 +135,7 @@
           continue;
         }
       }
+      console.log("異体字の情報を入れ始める");
       theItaiji = kanjiShugo[jtarget];  //異体字はtheItaiji
 
       //異体字のデータを追加
