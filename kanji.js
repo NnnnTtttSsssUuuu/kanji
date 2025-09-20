@@ -34,7 +34,7 @@
       .then(kanjiFile => {
         kanjiShugo = kanjiFile;
         localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
-
+        console.log("外部として入手", kanjiShugo);
         openKanji(unicodeValue);
       })
       .catch(error => console.error('Error loading JSON:', error));
@@ -47,7 +47,7 @@
     // }, 200); //1秒間タイマー
 
   } else {
-    console.log("内部として処理");
+    console.log("内部として処理",kanjiShugo);
     kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
 
     setTimeout(() => {
