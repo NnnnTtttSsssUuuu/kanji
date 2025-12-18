@@ -91,7 +91,8 @@ function openKanji(theUnicode) {
   mojigun.textContent = theKanji.mojigun;
 
   let jislevel = document.querySelector('#jislevel_');
-  jislevel.textContent = theKanji.jislevel;
+  // jislevel.textContent = theKanji.jislevel;
+  jislevel.textContent = "第" + theKanji.jislevel + "水準";
 
   let unicode = document.querySelector('#unicode_');
   unicode.textContent = theKanji.unicode;
@@ -110,6 +111,114 @@ function openKanji(theUnicode) {
 
   let raireki = document.querySelector('#raireki_');
   raireki.innerHTML = theKanji.raireki;
+
+
+  //異体字のリストを作る
+  let thisKanji = [];
+  thisKanji[0] = theKanji;
+  for (let i = 1; i < theKanji.nOfJitai; i++) {
+    oneItaiji = theKanji.kanjiCode + "_" + (i + 1);
+    for (let j = 0; j < kanjiShugo.length; j++) {
+      if (kanjiShugo[j].kanjiCode === oneItaiji) {
+        thisKanji[i] = kanjiShugo[j];
+        continue;
+      }
+    }
+  }
+
+  // console.log("thisKanji", thisKanji);
+
+
+  //JIS字形の表を作成する
+  const jisTableBody = document.querySelector('#jisTableBody');
+  for (let i = 0; i < theKanji.nOfJitai; i++) {
+    // if(thisKanji[i].menkuten === "-") continue;
+
+    let j = 0;
+    const jisRow = document.createElement('tr');
+
+    const jisMidashi = document.createElement('td');
+    jisMidashi.className = "jisMidashi";
+    // jisMidashi.textContent = thisKanji[i].midashi + "(" + `${thisKanji[i].junOfJitai}` + ")";
+        jisMidashi.innerHTML = `<img src="${thisKanji[i].jikei}" width="40">` + "(" + `${thisKanji[i].junOfJitai}` + ")";
+    // jisMidashi.textContent = "(" + `${thisKanji[i].junOfJitai}` + ")";
+
+
+    const jisMenkuten = document.createElement('td');
+    jisMenkuten.className = "jisMenkuten";
+    jisMenkuten.textContent = thisKanji[i].menkuten;
+
+
+    const jisSuijun = document.createElement('td');
+    jisSuijun.className = "jisSuijun";
+    jisSuijun.textContent = thisKanji[i].jislevel;
+
+
+
+    const jikeiJis78 = document.createElement('td');
+    if (thisKanji[i].JIS78) {
+      jikeiJis78.innerHTML = `<img src="${thisKanji[thisKanji[i].JIS78 - 1].jikei}" width="40">` + "(" + `${thisKanji[i].JIS78}` + ")";
+      j = j + 1;
+    }
+    jikeiJis78.className = "moji" + `${j}`;
+
+    const jikeiJis83 = document.createElement('td');
+    if (thisKanji[i].JIS83) {
+      // jikeiJis83.innerHTML = `<img src="${thisKanji[i].JIS83}" width="40">`;
+      jikeiJis83.innerHTML = `<img src="${thisKanji[thisKanji[i].JIS83 - 1].jikei}" width="40">` + "(" + `${thisKanji[i].JIS83}` + ")";
+      j = j + 1;
+    }
+    jikeiJis83.className = "moji" + `${j}`;
+
+
+    const jikeiJis90 = document.createElement('td');
+    if (thisKanji[i].JIS90) {
+      // jikeiJis90.innerHTML = `<img src="${thisKanji[i].JIS90}" width="40">`;
+      jikeiJis90.innerHTML = `<img src="${thisKanji[thisKanji[i].JIS90 - 1].jikei}" width="40">` + "(" + `${thisKanji[i].JIS90}` + ")";
+      j = j + 1;
+    }
+    jikeiJis90.className = "moji" + `${j}`;
+
+
+    const jikeiJis2000 = document.createElement('td');
+    if (thisKanji[i].JIS2000) {
+      // jikeiJis2000.innerHTML = `<img src="${thisKanji[i].JIS2000}" width="40">`;
+      jikeiJis2000.innerHTML = `<img src="${thisKanji[thisKanji[i].JIS2000 - 1].jikei}" width="40">` + "(" + `${thisKanji[i].JIS2000}` + ")";
+      j = j + 1;
+    }
+    jikeiJis2000.className = "moji" + `${j}`;
+
+
+    const jikeiJis2004 = document.createElement('td');
+    if (thisKanji[i].JIS2004) {
+      // jikeiJis2004.innerHTML = `<img src="${thisKanji[i].JIS2004}" width="40">`;
+      jikeiJis2004.innerHTML = `<img src="${thisKanji[thisKanji[i].JIS2004 - 1].jikei}" width="40">` + "(" + `${thisKanji[i].JIS2004}` + ")";
+      j = j + 1;
+    }
+    jikeiJis2004.className = "moji" + `${j}`;
+
+
+    // const jikeiNow = document.createElement('td');
+    // jikeiNow.innerHTML = `<img src="${thisKanji[i].jikei}" width="40">` + "(" + `${thisKanji[i].junOfJitai}` + ")";
+    // jikeiNow.className = "mojiNow";
+
+
+
+
+    jisRow.appendChild(jisMidashi);
+    jisRow.appendChild(jisMenkuten);
+    jisRow.appendChild(jisSuijun);
+    jisRow.appendChild(jikeiJis78);
+    jisRow.appendChild(jikeiJis83);
+    jisRow.appendChild(jikeiJis90);
+    jisRow.appendChild(jikeiJis2000);
+    jisRow.appendChild(jikeiJis2004);
+    // jisRow.appendChild(jikeiNow);
+
+    jisTableBody.appendChild(jisRow);
+  }
+
+
 
   let tsukaiwake = document.querySelector('#tsukaiwake_');
   tsukaiwake.innerHTML = theKanji.tsukaiwake;
@@ -171,7 +280,11 @@ function openKanji(theUnicode) {
 
     const newDiv6 = document.createElement('div');
     newDiv6.className = "jislevel";
-    newDiv6.textContent = theItaiji.jislevel;
+    if (theItaiji.jislevel == "-") {
+      newDiv6.textContent =  "-";
+    } else {
+      newDiv6.textContent = "第" + theItaiji.jislevel + "水準";
+    }
 
     const newDiv7 = document.createElement('div');
     newDiv7.className = "unicode";

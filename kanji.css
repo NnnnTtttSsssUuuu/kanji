@@ -344,6 +344,118 @@ pre {
   font-size: 9px;
 }
 
+
+.jisTable {
+  border: solid 1px;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  font-weight: 100;
+}
+
+
+.jisTable tr th:nth-child(1) {
+  width: 60px;
+  border: solid 1px;
+  border-collapse: collapse;
+}
+
+.jisTable tr th:nth-child(2) {
+  width: 60px;
+  border: solid 1px;
+  border-collapse: collapse;
+}
+
+
+.jisTable tr th:nth-child(3) {
+  width: 60px;
+  border: solid 1px;
+  border-collapse: collapse;
+}
+
+
+.jisTable tr th:nth-child(4) {
+  width: 60px;
+  border: solid 1px;
+  border-collapse: collapse;
+}
+
+
+.jisTable tr th:nth-child(5) {
+  width: 60px;
+  border: solid 1px;
+  border-collapse: collapse;
+}
+
+#jisTableBody tr {
+  border: solid;
+  border: 0px 0px;
+  border-collapse: collapse;
+}
+
+.jisMidashi {
+  height: 50px;
+  width: 80px;
+  text-align: center;
+  font-size: 18px;
+  border-right: solid 1px;
+    font-family: "Noto Serif JP", "游明朝体", "Yu Mincho", "YuMincho", serif;
+}
+
+
+.jisMenkuten {
+  height: 50px;
+  width: 70px;
+  text-align: center;
+  font-size: 14px;
+  border-right: solid 1px;
+
+}
+
+.jisSuijun{
+    width: 30px;
+    text-align: center;
+  font-size: 18px;
+  border-right: solid 1px;
+}
+
+.moji0 {
+  background-color: lightgray;
+}
+
+.moji1 {
+  text-align: center;
+  /* background-color: palegreen; */
+    background-color: paleturquoise;
+}
+
+
+.moji2 {
+  text-align: center;
+  /* background-color: honeydew; */
+      background-color: azure;
+}
+
+
+.moji3 {
+  text-align: center;
+  /* background-color: limegreen; */
+    background-color: mediumturquoise;
+
+}
+
+.moji4{
+  text-align: center;
+  /* background-color: palegreen; */
+    background-color: paleturquoise;
+}
+
+.mojiNow{
+    text-align: center;
+      border-left: solid 1px;
+}
+
+
 footer {
   width: 100%;
   height: 30px;

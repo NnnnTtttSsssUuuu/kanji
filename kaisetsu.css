@@ -7,11 +7,13 @@ body {
   margin: 0 10px 10px -5px;
   padding: 5px;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+
 }
 
 main {
   flex: 1;
   margin: 30px 0 0 0;
+
 }
 
 h1 {
@@ -27,13 +29,19 @@ h1 {
   z-index: 1;
 }
 
-h2,
-h3 {
+h2 {
   margin: 20px 5px 5px 5px;
 }
 
+
+h3 {
+  margin: 20px 5px 5px 5px;
+   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  font-weight: 1000;
+}
+
 p {
-  margin: 1em;
+  margin: 10px 0 10px 0;
 }
 
 pre {
@@ -41,6 +49,11 @@ pre {
   white-space: pre-wrap;
   margin: 0;
   padding: 0, 1em, 0, 1em;
+}
+
+.futoji{
+    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN","Yu Gothic", "Yu Gothic UI", sans-serif;
+    font-weight: 1000;
 }
 
 .moji {
@@ -56,6 +69,116 @@ pre {
   font-size: 10px;
   line-height: 12px;
 }
+
+.mincho1{
+  font-family: 'IPAmj明朝', serif;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.mincho2{
+  font-family:  "游明朝体", "Yu Mincho", "YuMincho" , serif;
+  font-weight: 500;
+  font-size: 60px;
+}
+
+.chuki{
+    font-size: 13px;
+    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN","Yu Gothic", "Yu Gothic UI", sans-serif;
+    font-weight: 400;
+    margin:0;
+    padding:5px 20px 5px 20px;
+}
+
+.noto{
+  font-family: 'Noto Serif JP', sans-serif;
+  font-size:40px;
+}
+
+.ipa{
+  font-family: 'IPAmj明朝', sans-serif;
+  font-size:40px;
+}
+
+dt {
+  font-size: 140%;
+  font-family: 'Noto Serif JP', serif;
+  border-bottom: 2px solid black;
+  margin: 0 1em;
+  padding: 1px 10px 0px 1.5em;
+}
+
+dd {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  padding: 1px 6px 6px 2em;
+  line-height: 1.8;
+  margin: 0 1em;
+}
+
+.accordion{
+  margin: 4em 0 0 0;
+}
+
+.accordion_title {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordion_title:hover {
+  background-color: #c1c7c7be;
+}
+
+.accordion_title::before,
+.accordion_title::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 2px;
+  background-color: #333;
+}
+
+.accordion_title::before {
+  top: 48%;
+  left: 15px;
+  transform: rotate(0deg);
+  transition-duration: .3s;
+}
+
+.accordion_title::after {
+  top: 48%;
+  left: 15px;
+  transform: rotate(-90deg);
+  transition-duration: .3s;
+}
+
+.accordion_title.is-active::before {
+  transform: rotate(45deg);
+}
+
+.accordion_title.is-active::after {
+  transform: rotate(-45deg);
+}
+
+.accordion_content {
+  line-height: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+.accordion_content.is-open {
+  line-height: normal;
+  height: auto;
+  opacity: 1;
+  line-height: normal;
+}
+
+
 
 footer {
   width: 100%;
@@ -100,6 +223,11 @@ ul.footer-menu li {
     font-size: 9px;
     line-height: 12px;
   }
+
+
+
+
+
 
   footer {
     width: 100%;
