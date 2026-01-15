@@ -1,5 +1,9 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
+@font-face {
+  font-family: "NotoSerifCJKJP-IVS";
+  src: url("fonts/NotoSerifCJKjp-IVS-Subset.woff2") format("woff2");
+}
 
 body {
   display: flex;
@@ -92,7 +96,7 @@ pre {
 
 
 .midashi {
-  font-family: "Noto Serif JP", sans-serif;
+ font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', sans-serif;
   font-weight: 500;
   font-size: 40px;
   height: 50px;
@@ -193,18 +197,20 @@ pre {
 .unicode,
 .jiscode,
 .bushu,
-.kakusu {
+.sokakusu {
   background-color: lightcyan;
   padding-right: 1em;
   font-feature-settings: "palt"
+
 }
 
 .jislevel,
 .menkuten,
-.bushu,
+.kakusu1,
 .chuui {
   background-color: white;
   padding-right: 1em;
+    font-feature-settings: "palt"
 }
 
 .menkuten,
@@ -388,7 +394,7 @@ pre {
 }
 
 #jisTableBody tr {
-  border: solid;
+  border: solid 1px;
   border: 0px 0px;
   border-collapse: collapse;
 }

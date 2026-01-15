@@ -1,5 +1,9 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
+@font-face {
+  font-family: "NotoSerifCJKJP-IVS";
+  src: url("fonts/NotoSerifCJKjp-IVS-Subset.woff2") format("woff2");
+}
 
 body {
   display: flex;
@@ -12,8 +16,8 @@ body {
 
 main {
   flex: 1;
-  margin: 30px 0 0 0;
 
+  margin: 0 0 0 0;
 }
 
 h1 {
@@ -44,12 +48,12 @@ p {
   margin: 10px 0 10px 0;
 }
 
-pre {
+/* pre {
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   white-space: pre-wrap;
   margin: 0;
   padding: 0, 1em, 0, 1em;
-}
+} */
 
 .futoji{
     font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN","Yu Gothic", "Yu Gothic UI", sans-serif;
@@ -69,6 +73,12 @@ pre {
   font-size: 10px;
   line-height: 12px;
 }
+
+.uetsuki {
+  font-size: 10px;
+vertical-align: super
+}
+
 
 .mincho1{
   font-family: 'IPAmj明朝', serif;
@@ -91,7 +101,7 @@ pre {
 }
 
 .noto{
-  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', sans-serif;
   font-size:40px;
 }
 
@@ -100,24 +110,29 @@ pre {
   font-size:40px;
 }
 
+.yumincho{
+  font-family:  "游明朝体", "Yu Mincho", "YuMincho" , sans-serif;
+  font-size:40px;
+}
+
 dt {
   font-size: 140%;
-  font-family: 'Noto Serif JP', serif;
+    font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', sans-serif;
   border-bottom: 2px solid black;
   margin: 0 1em;
   padding: 1px 10px 0px 1.5em;
 }
 
 dd {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 14px;
+    font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', sans-serif;
+  font-size: 16px;
   padding: 1px 6px 6px 2em;
   line-height: 1.8;
   margin: 0 1em;
 }
 
 .accordion{
-  margin: 4em 0 0 0;
+    margin: 3em 0 0 0;
 }
 
 .accordion_title {
@@ -178,7 +193,50 @@ dd {
   line-height: normal;
 }
 
+ .borderGazo{
+    border:1px solid;
+ }
 
+
+.blueshironuki{
+  background-color: dodgerblue;
+  color: white;
+}
+
+.red{
+  color: red;
+}
+
+table{
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align:center;
+ table-layout: ;fixed;
+ width:600px;
+}
+
+thead{
+    background-color: bisque;
+}
+
+th{
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td{
+    width: 1000px
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.koiblue{
+  background-color: mediumturquoise;
+}
+
+.usuiblue{
+  background-color: paleturquoise;
+}
 
 footer {
   width: 100%;

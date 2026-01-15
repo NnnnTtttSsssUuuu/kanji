@@ -100,8 +100,17 @@ function openKanji(theUnicode) {
   let menkuten = document.querySelector('#menkuten_');
   menkuten.textContent = theKanji.menkuten;
 
-  let jiscode = document.querySelector('#jiscode_');
-  jiscode.textContent = theKanji.jiscode;
+  // let jiscode = document.querySelector('#jiscode_');
+  // jiscode.textContent = theKanji.jiscode;
+
+  let bushu = document.querySelector('#bushu_');
+  bushu.textContent = theKanji.bushu + "("+theKanji.kakusu1 +")";
+
+ let kakusu2 = document.querySelector('#kakusu2_');
+ kakusu2.textContent = theKanji.kakusu2;
+
+  let sokakusu = document.querySelector('#sokakusu_');
+  sokakusu.textContent = Number(theKanji.kakusu1) + Number(theKanji.kakusu2);
 
   let chuui = document.querySelector('#chuui_');
   chuui.textContent = theKanji.chuui;
@@ -202,9 +211,6 @@ function openKanji(theUnicode) {
     // jikeiNow.innerHTML = `<img src="${thisKanji[i].jikei}" width="40">` + "(" + `${thisKanji[i].junOfJitai}` + ")";
     // jikeiNow.className = "mojiNow";
 
-
-
-
     jisRow.appendChild(jisMidashi);
     jisRow.appendChild(jisMenkuten);
     jisRow.appendChild(jisSuijun);
@@ -228,7 +234,6 @@ function openKanji(theUnicode) {
 
   // let tsukaiwakeEdit = document.querySelector('#tsukaiwakeEdit_');
   // tsukaiwakeEdit.innerHTML = theKanji.tsukaiwake;
-
   // let theTargetKanji = document.querySelector('#theTargetKanji');
   // theTargetKanji.textContent = targetKanji;
 
@@ -298,13 +303,27 @@ function openKanji(theUnicode) {
     newDiv8.className = "menkuten";
     newDiv8.textContent = theItaiji.menkuten;
 
+    // const newDiv9 = document.createElement('div');
+    // newDiv9.className = "jiscode";
+    // newDiv9.textContent = theItaiji.jiscode;
+
     const newDiv9 = document.createElement('div');
-    newDiv9.className = "jiscode";
-    newDiv9.textContent = theItaiji.jiscode;
+    newDiv9.className = "bushu";
+    newDiv9.textContent = theItaiji.bushu + "("+theItaiji.kakusu1 +")";
 
     const newDiv10 = document.createElement('div');
-    newDiv10.className = "chuui";
-    newDiv10.textContent = theItaiji.chuui;
+    newDiv10.className = "kakusu2";
+    newDiv10.textContent = theItaiji.kakusu2;
+
+    const newDiv11 = document.createElement('div');
+    newDiv11.className = "sokakusu";
+    newDiv11.textContent = Number(theItaiji.kakusu1) + Number(theItaiji.kakusu2);
+
+
+
+    const newDiv12 = document.createElement('div');
+    newDiv12.className = "chuui";
+    newDiv12.textContent = theItaiji.chuui;
 
     newSection.appendChild(newDiv1);
     newSection.appendChild(newDiv2);
@@ -318,6 +337,8 @@ function openKanji(theUnicode) {
     newDiv4.appendChild(newDiv8);
     newDiv4.appendChild(newDiv9);
     newDiv4.appendChild(newDiv10);
+    newDiv4.appendChild(newDiv11);
+   newDiv4.appendChild(newDiv12);
     newSection.appendChild(newDiv4);
     kanjigun.appendChild(newSection);
   }

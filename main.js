@@ -42,7 +42,8 @@
   //JSON読み込み
   function getJson() {
     // console.log("getJsonに入る");
-    fetch('kanjiFile.json')
+    // fetch('kanjiFile.json')
+      fetch('kanjiFile.json?t=${Date.now()}`')  //キャッシュ対策
       .then(response => {
         if (!response.ok) {
           throw new Error('HTTP error! status: ' + response.status);
