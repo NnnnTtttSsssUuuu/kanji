@@ -11,7 +11,7 @@ let kanjiShugo = [];
 
 //ユーザーのリファラ情報
 const ref = document.referrer;
-// console.log("リファラ", ref);
+console.log("リファラ", ref);
 // console.log("location.origin1", location.origin);
 
 
