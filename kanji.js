@@ -344,11 +344,18 @@ function openKanji(theUnicode) {
   }
 }
 
+// document.getElementById('headpart').addEventListener('click', () => {
+//   if (needJson === 0) {
+//     window.close();
+//   } else {
+//     const url = 'index.html';
+//     window.open(url, '_blank');
+//   }
+// });
+
+
 document.getElementById('headpart').addEventListener('click', () => {
-  if (needJson === 0) {
+
     window.close();
-  } else {
-    const url = 'index.html';
-    window.open(url, '_blank');
-  }
+
 });
