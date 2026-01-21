@@ -27,8 +27,9 @@ h1 {
   padding: 0 0 0 10px;
   width: 100%;
   z-index: 1;
-  font-family: 'Noto Serif JP', serif;
 
+
+  font-family: 'Noto Serif JP', serif;
   font-size: 32px;
   background-color: steelblue;
   color: white;
@@ -237,25 +238,27 @@ ul.footer-menu li {
   }
 
   h1 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 24px;
-    background-color: steelblue;
-    color: white;
-    margin: 0;
     position: fixed;
     top: 0px;
+    margin: 0;
     padding: 0 0 0 60px;
     width: 100%;
     height: 72px;
     text-align: left;
+
+    font-family: 'Noto Serif JP', serif;
+    font-size: 24px;
+    background-color: steelblue;
+    color: white;
   }
 
   #searchForm {
     position: fixed;
+    z-index: 1;
     top: 40px;
     left: 20px;
     font-size: 16px;
-    z-index: 1;
+
   }
 
   #searchInput {

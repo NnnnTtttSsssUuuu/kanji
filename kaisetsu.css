@@ -193,7 +193,14 @@ dd {
   line-height: normal;
 }
 
- .borderGazo{
+ .zenkanjiGazo{
+  width: 100%;
+  max-width: 800px;
+    border:1px solid;
+ }
+
+  .kanjigotoGazo{
+    width: 400px;
     border:1px solid;
  }
 
@@ -282,7 +289,21 @@ ul.footer-menu li {
     line-height: 12px;
   }
 
+dt {
+  font-size: 100%;
+    font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', sans-serif;
+  border-bottom: 2px solid black;
+  margin: 0 1em;
+  padding: 1px 10px 0px 1.5em;
+}
 
+dd {
+    font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', sans-serif;
+  font-size: 16px;
+  padding: 1px 6px 6px 2em;
+  line-height: 1.8;
+  margin: 0 1em;
+}
 
 
 
