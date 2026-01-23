@@ -230,7 +230,8 @@ function openKanji(theUnicode) {
   tsukaiwake.innerHTML = theKanji.tsukaiwake;
 
   let sanko = document.querySelector('#sanko_');
-  sanko.textContent = theKanji.sanko;
+  // sanko.textContent = theKanji.sanko;
+    sanko.innerHTML = theKanji.sanko;
 
   // let tsukaiwakeEdit = document.querySelector('#tsukaiwakeEdit_');
   // tsukaiwakeEdit.innerHTML = theKanji.tsukaiwake;
