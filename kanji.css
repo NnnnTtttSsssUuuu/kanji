@@ -457,6 +457,9 @@ pre {
       border-left: solid 1px;
 }
 
+.commentran {
+  margin: 70px 1em 1em 3em;
+}
 
 footer {
   width: 100%;

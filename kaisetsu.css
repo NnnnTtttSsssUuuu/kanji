@@ -260,6 +260,10 @@ ul.footer-menu li {
   display: inline;
 }
 
+.commentran {
+  margin: 70px 1em 1em 3em;
+}
+
 @media screen and (max-width: 440px) {
 
   body {
@@ -290,11 +294,11 @@ ul.footer-menu li {
   }
 
 dt {
-  font-size: 100%;
+  font-size: 120%;
     font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', sans-serif;
   border-bottom: 2px solid black;
   margin: 0 1em;
-  padding: 1px 10px 0px 1.5em;
+    padding: 1px 10px 0px 1.5em;
 }
 
 dd {
