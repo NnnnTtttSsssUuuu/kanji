@@ -208,6 +208,30 @@ h1 {
   background-color: yellow !important;
 }
 
+.noto-font{
+  font-family: 'Noto Serif JP', serif;
+  font-size: 120%;
+}
+
+.gothic{
+ font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  font-size: 80%;
+}
+
+.commentran {
+  margin: 50px 1em 1em 1em;
+}
+
+.commentnote {
+  width: auto ;
+  max-width: 45em;
+  margin: 1em ;
+  padding: 0 5px;
+  border-top: solid 1px black;
+   border-bottom: solid 1px black;
+
+}
+
 
 
 footer {
