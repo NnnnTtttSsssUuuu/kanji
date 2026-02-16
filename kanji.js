@@ -354,6 +354,11 @@ function openKanji(theUnicode) {
 //   }
 // });
 
+// 解説へ
+document.querySelector('.idou').addEventListener('click', () => {
+  const url = 'index.html';
+  window.open(url, '_blank');
+});
 
 document.getElementById('headpart').addEventListener('click', () => {
 

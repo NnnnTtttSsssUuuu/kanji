@@ -48,6 +48,11 @@ p {
   margin: 10px 0 10px 0;
 }
 
+.yellow{
+  font-size: 24px;
+  /* color:yellow */
+}
+
 /* pre {
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   white-space: pre-wrap;

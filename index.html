@@ -9,18 +9,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+
   <title>漢字字体字典</title>
 </head>
 
 <body>
   <header>
     <h1>漢字字体使い分け字典 </h1>
-    <form id="searchForm" action="#" method="get">
-      <input type="search" name="search" placeholder="漢字/読み" autofocus id="searchInput" size="9">
-      <input type="submit" id="searchButton" value="検索">
-      <button id="toKaisetsu">解説へ</button>
-      <!-- <button id="toJishyo">JIS表へ</button> -->
+    <form class="searchForm" action="#">
+      <label>
+        <input type="text" placeholder="漢字/読み" autofocus id="searchInput" size="9">
+      </label>
+
+      <button type="submit" id="searchButton" aria-label="検索"></button>
     </form>
+
+    <span class="idou">|<span class="idounaka">解説へ</span></span>
+
   </header>
 
 
@@ -52,7 +57,7 @@
       <li>about ｜</li>
       <li>Contact Us</li>
     </ul> -->
-    <p>©Nobuo Tsukahara</p>
+    <p>©Right to Be Lazy</p>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>

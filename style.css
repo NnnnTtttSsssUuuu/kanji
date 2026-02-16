@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
+
 @font-face {
   font-family: "NotoSerifCJKJP-IVS";
   src: url("fonts/NotoSerifCJKjp-IVS-Subset.woff2") format("woff2");
@@ -11,7 +12,7 @@ body {
   flex-direction: column;
   margin: 0;
   /* padding: 5px; */
-    padding: 5px 0 5px 0;
+  padding: 5px 0 5px 0;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   text-size-adjust: none;
 }
@@ -27,33 +28,74 @@ h1 {
   padding: 0 0 0 10px;
   width: 100%;
   z-index: 1;
-
-
   font-family: 'Noto Serif JP', serif;
   font-size: 32px;
   background-color: steelblue;
   color: white;
 }
 
-#searchForm {
+
+.searchForm {
   position: fixed;
   z-index: 2;
-  top: 8px;
-  left: 350px;
-  font-size: 20px;
+  top: 9px;
+  left: 340px;
+  height: 31px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
 }
 
-
-#searchInput {
+.searchForm input {
+  width: 100px;
+  padding: 2px 5px;
+  border: none;
+  box-sizing: border-box;
   font-size: 18px;
+  outline: none;
 }
 
-#searchButton {
-  font-size: 15px;
+.searchForm input::placeholder {
+  color: #777777;
 }
 
-#toKaisetsu {
+.searchForm button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 35px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.searchForm button::after {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z' fill='%23777777'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  content: '';
+}
+
+.idou {
+  position: fixed;
+  z-index: 2;
+  top: 20px;
+  left: 490px;
+  font-family: 'Noto Serif JP', serif;
   font-size: 15px;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.idounaka:hover {
+  border-bottom: 1px solid white;
 }
 
 
@@ -121,7 +163,7 @@ h1 {
 
 .maintable tr td:nth-child(3) {
   font-size: 40px;
-  font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP',  serif;
+  font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', serif;
 
   font-weight: 500;
   text-align: center;
@@ -129,7 +171,7 @@ h1 {
 
 .maintable tr td:nth-child(5) {
   font-size: 40px;
-  font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP',  serif;
+  font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', serif;
   font-weight: 500;
   text-align: center;
 }
@@ -170,7 +212,7 @@ h1 {
 .mainMenkuten,
 .mainUnicode {
   width: 90px;
-  min-width: 50px;  
+  min-width: 50px;
 }
 
 .mainJitai1,
@@ -178,7 +220,7 @@ h1 {
 .mainJitai3,
 .mainJitai4 {
   width: 50px;
-  min-width: 50px;  
+  min-width: 50px;
 }
 
 .mainJitai4over {
@@ -187,17 +229,17 @@ h1 {
 
 .mainMojigun {
   width: 80px;
-  min-width: 60px;  
+  min-width: 60px;
 }
 
 .mainSetsumei {
   width: 100px;
- min-width: 80px;  
+  min-width: 80px;
 }
 
 .mainYomi {
-   width: auto;
-  min-width: 130px;  
+  width: auto;
+  min-width: 130px;
 }
 
 .highlight {
@@ -208,13 +250,13 @@ h1 {
   background-color: yellow !important;
 }
 
-.noto-font{
+.noto-font {
   font-family: 'Noto Serif JP', serif;
   font-size: 120%;
 }
 
-.gothic{
- font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+.gothic {
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   font-size: 80%;
 }
 
@@ -223,12 +265,12 @@ h1 {
 }
 
 .commentnote {
-  width: auto ;
+  width: auto;
   max-width: 47em;
-  margin: 1em ;
+  margin: 1em;
   padding: 0 5px;
   border-top: solid 1px black;
-   border-bottom: solid 1px black;
+  border-bottom: solid 1px black;
 
 }
 
@@ -249,7 +291,8 @@ ul.footer-menu li {
   display: inline;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 560px) {
+/* @media screen and (max-width: 480px) { */
   /* @media screen and (max-width: 380px) { */
 
   body {
@@ -265,7 +308,8 @@ ul.footer-menu li {
     position: fixed;
     top: 0px;
     margin: 0;
-    padding: 0 0 0 60px;
+    /* padding: 0 0 0 60px; */
+        padding: 0 0 0 10px;
     width: 100%;
     height: 72px;
     text-align: left;
@@ -276,7 +320,7 @@ ul.footer-menu li {
     color: white;
   }
 
-    .h1_toko {
+  .h1_toko {
     position: fixed;
     top: 0px;
     margin: 0;
@@ -290,7 +334,8 @@ ul.footer-menu li {
     background-color: steelblue;
     color: white;
   }
-  #searchForm {
+
+  .searchForm {
     position: fixed;
     z-index: 1;
     top: 40px;
@@ -303,12 +348,26 @@ ul.footer-menu li {
     font-size: 16px;
   }
 
-  #searchButton {
+  /* #searchButton {
     font-size: 14px;
-  }
+  } */
 
   #toKaisetsu {
     font-size: 14px;
+  }
+
+  .idou {
+    position: fixed;
+    z-index: 2;
+    top: 44px;
+    left: 160px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 12px;
+    color: white;
+    background-color: steelblue;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
   }
 
 
@@ -379,16 +438,17 @@ ul.footer-menu li {
   }
 
   .mainJitai4over {
-  width: 13px;
-}
+    width: 13px;
+  }
+
   .mainMojigun {
     width: 60px;
   }
 
   .mainSetsumei {
     width: 50px;
-        width: auto;
-        min-width: 50px;
+    width: auto;
+    min-width: 50px;
   }
 
   .mainYomi {
