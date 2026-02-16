@@ -561,6 +561,10 @@ ul.footer-menu li {
   }
 
   .hanrei {
+    float:left;
+    text-align: right;
+
+
     padding-top: 60px;
   }
 
@@ -588,6 +592,7 @@ ul.footer-menu li {
 
   .gazoname {
     margin: 0 0 40px 30px;
+        padding: 0 0 0 0;
     width: 32px;
     font-size: 16px;
   }
@@ -596,7 +601,7 @@ ul.footer-menu li {
     font-family: Arial narrow, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
     font-size: 16px;
     line-height: 3px;
-    margin: 0 0 0 0;
+    margin-top: 0;
     text-align: right;
   }
 
