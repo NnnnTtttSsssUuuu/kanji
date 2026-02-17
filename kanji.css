@@ -19,8 +19,10 @@ main {
 }
 
 #headpart {
+    position: fixed;
   display: flex;
   align-items: flex-end;
+  z-index: 2;
 }
 
 h1 {

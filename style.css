@@ -11,7 +11,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  /* padding: 5px; */
   padding: 5px 0 5px 0;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   text-size-adjust: none;
@@ -296,90 +295,44 @@ ul.footer-menu li {
   /* @media screen and (max-width: 380px) { */
 
   body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
     padding: 2px 0 2px 0;
-    /* padding: 2px; */
-    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   }
 
   h1 {
     position: fixed;
-    top: 0px;
-    margin: 0;
-    /* padding: 0 0 0 60px; */
-        padding: 0 0 0 10px;
-    width: 100%;
     height: 72px;
     text-align: left;
-
-    font-family: 'Noto Serif JP', serif;
     font-size: 24px;
-    background-color: steelblue;
-    color: white;
   }
 
-  .h1_toko {
-    position: fixed;
-    top: 0px;
-    margin: 0;
-    padding: 0 0 0 60px;
-    width: 100%;
-    height: 44px;
-    text-align: left;
-
-    font-family: 'Noto Serif JP', serif;
-    font-size: 24px;
-    background-color: steelblue;
-    color: white;
-  }
 
   .searchForm {
     position: fixed;
     z-index: 1;
-    top: 40px;
+    top: 38px;
     left: 20px;
     font-size: 16px;
-
   }
 
-  #searchInput {
+  /* #searchInput {
     font-size: 16px;
-  }
+  } */
 
-  /* #searchButton {
+  /* #toKaisetsu {
     font-size: 14px;
   } */
 
-  #toKaisetsu {
-    font-size: 14px;
+  .idou {
+    top: 44px;
+    left: 190px;
+    font-size: 15px;
+    border: none;
   }
 
-  .idou {
-    position: fixed;
-    z-index: 2;
-    top: 44px;
-    left: 160px;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 12px;
-    color: white;
-    background-color: steelblue;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-  }
 
 
   .maintable {
-    table-layout: fixed;
-    position: static;
-    top: 45px;
-    /* width: 375px; */
-    border-collapse: collapse;
     margin: 69px 0 0 0;
-    font-size: 14px;
-    font-weight: normal;
   }
 
   .mini {
@@ -389,16 +342,7 @@ ul.footer-menu li {
 
 
   .maintable th {
-    background-color: dodgerblue;
-    color: white;
-    border: solid 1px;
-    border-collapse: collapse;
-    border-color: white white dodgerblue dodgerblue;
-
-    font-weight: normal;
-    text-align: center;
     height: 50px;
-    position: sticky;
     top: 70px;
 
     &.sort {
@@ -463,17 +407,7 @@ ul.footer-menu li {
   }
 
   footer {
-    width: 100%;
-    height: 30px;
-    margin: 0;
     padding: 0 0 10px 0;
-    text-align: center;
-    font-family: 'Noto Serif JP', serif;
-    color: white;
-    background-color: steelblue;
   }
 
-  ul.footer-menu li {
-    display: inline;
-  }
 }
