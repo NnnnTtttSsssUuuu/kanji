@@ -362,6 +362,13 @@ document.querySelector('.idou').addEventListener('click', () => {
 
 document.getElementById('headpart').addEventListener('click', () => {
 
+    // window.close();
+
+  if(window.opener){
     window.close();
+  } else {
+    location.href = 'index.html';
+        // location.href = 'https://nnnnttttssssuuuu.github.io/kanji/';
+  }
 
 });
