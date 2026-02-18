@@ -1,25 +1,29 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
 
+
 @font-face {
   font-family: "NotoSerifCJKJP-IVS";
   src: url("fonts/NotoSerifCJKjp-IVS-Subset.woff2") format("woff2");
+}
+@font-face {
+font-family: "ArchivoNarrow";
+ src: url("fonts/ArchivoNarrow-Regular.ttf") format("truetype");
 }
 
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 5px;
+  /* padding: 5px; */
+  padding: 5px 0 5px 0;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
 }
 
-main {
-  flex: 1;
-}
+
 
 #headpart {
-    position: fixed;
+  position: fixed;
   display: flex;
   align-items: flex-end;
   z-index: 2;
@@ -44,51 +48,25 @@ h1 {
   align-items: flex-end;
   top: 0px;
   left: 340px;
-  height: 44px;
+  height: 42px;
   margin: 0;
   padding: 0;
   font-family: 'Noto Serif JP', serif;
+  font-size: 10px;
   color: white;
 }
 
-.tojiru {
+/* .tojiru {
   display: flex;
   align-items: flex-end;
   padding: 0 0 3px 0;
-  font-size: 10px;
+
+} */
+
+main {
+  flex: 1;
+    padding: 0 0 0 5px;
 }
-
-.kugiri {
-  display: flex;
-  align-items: flex-end;
-  top: 0px;
-  height: 44px;
-  margin: 0 3px 0 8px;
-  font-size: 15px;
-}
-
-.idou {
-  display: flex;
-  align-items: flex-end;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-
-}
-
-.idounaka {
-    display: flex;
-  align-items: flex-end;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-}
-
-.idounaka:hover {
-  border-bottom: 1px solid white;
-}
-
-
 
 pre {
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
@@ -317,7 +295,7 @@ pre {
 }
 
 .unicode.narrow {
-  font-family: Arial narrow, Helvetica, sans-serif;
+  font-family: ArchivoNarrow, Helvetica, sans-serif;
   font-size: 15px;
 }
 
@@ -538,9 +516,11 @@ ul.footer-menu li {
   .h1after {
     left: 260px;
     height: 31px;
+        line-height: 12px;
+    padding: 0 0 0 0;
   }
 
-  .tojiru {
+  /* .tojiru {
     line-height: 12px;
     padding: 0 0 0 0;
   }
@@ -553,7 +533,7 @@ ul.footer-menu li {
     font-size: 12px;
     line-height: 14px;
     margin: 0 0 0 5px;
-  }
+  } */
 
 
   .menkuten_,
@@ -571,7 +551,7 @@ ul.footer-menu li {
   }
 
   .youso1 {
-    font-family: Arial narrow, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+    font-family: ArchivoNarrow, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
     line-height: 20px;
     margin-top: 30px;
     font-size: 16px;
@@ -600,7 +580,7 @@ ul.footer-menu li {
   }
 
   .fontname {
-    font-family: Arial narrow, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+    font-family: ArchivoNarrow, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
     font-size: 16px;
     line-height: 3px;
     margin-top: 0;

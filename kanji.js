@@ -53,6 +53,14 @@ if (needJson) {
   }, 200); //1秒間タイマー
 }
 
+//メニューバーの表示決定
+const menuBar = document.querySelector('.h1after');
+if (window.opener) {
+  menuBar.textContent = "※クリックで閉じる";
+} else {
+  menuBar.textContent = "※クリックで漢字表を開く";
+}
+
 
 //漢字ごとの表を作る
 function openKanji(theUnicode) {
@@ -354,21 +362,18 @@ function openKanji(theUnicode) {
 //   }
 // });
 
-// 解説へ
-document.querySelector('.idou').addEventListener('click', () => {
-  const url = 'index.html';
-  window.open(url, '_blank');
-});
+// 閉じる
+// document.querySelector('.idou').addEventListener('click', () => {
+//   const url = 'index.html';
+//   window.open(url, '_blank');
+// });
 
 document.getElementById('headpart').addEventListener('click', () => {
-
-    // window.close();
-
-  if(window.opener){
+  if(window.opener && !window.opener.closed){
     window.close();
   } else {
     location.href = 'index.html';
-        // location.href = 'https://nnnnttttssssuuuu.github.io/kanji/';
+    // location.href = 'https://nnnnttttssssuuuu.github.io/kanji/';
   }
 
 });
