@@ -12,15 +12,6 @@ let kanjiShugo = [];
 //ユーザーのリファラ情報
 const ref = document.referrer;
 console.log("リファラ", ref);
-// console.log("location.origin1", location.origin);
-
-
-// const thisUrls = [
-//   location.origin + "/",
-//   location.origin + "/index.html"
-// ];
-
-// let needJson = !thisUrls.includes(ref);
 
 let needJson = !ref.includes(location.origin);
 
@@ -55,10 +46,10 @@ if (needJson) {
 
 //メニューバーの表示決定
 const menuBar = document.querySelector('.h1after');
-if (window.opener) {
+if (window.opener && !window.opener.closed) {
   menuBar.textContent = "※クリックで閉じる";
 } else {
-  menuBar.textContent = "※クリックで漢字表を開く";
+  menuBar.textContent = "※クリックで漢字表へ";
 }
 
 
@@ -108,9 +99,6 @@ function openKanji(theUnicode) {
   let menkuten = document.querySelector('#menkuten_');
   menkuten.textContent = theKanji.menkuten;
 
-  // let jiscode = document.querySelector('#jiscode_');
-  // jiscode.textContent = theKanji.jiscode;
-
   let bushu = document.querySelector('#bushu_');
   bushu.textContent = theKanji.bushu + "("+theKanji.kakusu1 +")";
 
@@ -149,17 +137,13 @@ function openKanji(theUnicode) {
   //JIS字形の表を作成する
   const jisTableBody = document.querySelector('#jisTableBody');
   for (let i = 0; i < theKanji.nOfJitai; i++) {
-    // if(thisKanji[i].menkuten === "-") continue;
 
     let j = 0;
     const jisRow = document.createElement('tr');
 
     const jisMidashi = document.createElement('td');
     jisMidashi.className = "jisMidashi";
-    // jisMidashi.textContent = thisKanji[i].midashi + "(" + `${thisKanji[i].junOfJitai}` + ")";
         jisMidashi.innerHTML = `<img src="${thisKanji[i].jikei}" width="40">` + "(" + `${thisKanji[i].junOfJitai}` + ")";
-    // jisMidashi.textContent = "(" + `${thisKanji[i].junOfJitai}` + ")";
-
 
     const jisMenkuten = document.createElement('td');
     jisMenkuten.className = "jisMenkuten";
@@ -171,7 +155,6 @@ function openKanji(theUnicode) {
     jisSuijun.textContent = thisKanji[i].jislevel;
 
 
-
     const jikeiJis78 = document.createElement('td');
     if (thisKanji[i].JIS78) {
       jikeiJis78.innerHTML = `<img src="${thisKanji[thisKanji[i].JIS78 - 1].jikei}" width="40">` + "(" + `${thisKanji[i].JIS78}` + ")";
@@ -181,7 +164,6 @@ function openKanji(theUnicode) {
 
     const jikeiJis83 = document.createElement('td');
     if (thisKanji[i].JIS83) {
-      // jikeiJis83.innerHTML = `<img src="${thisKanji[i].JIS83}" width="40">`;
       jikeiJis83.innerHTML = `<img src="${thisKanji[thisKanji[i].JIS83 - 1].jikei}" width="40">` + "(" + `${thisKanji[i].JIS83}` + ")";
       j = j + 1;
     }
@@ -238,13 +220,8 @@ function openKanji(theUnicode) {
   tsukaiwake.innerHTML = theKanji.tsukaiwake;
 
   let sanko = document.querySelector('#sanko_');
-  // sanko.textContent = theKanji.sanko;
     sanko.innerHTML = theKanji.sanko;
 
-  // let tsukaiwakeEdit = document.querySelector('#tsukaiwakeEdit_');
-  // tsukaiwakeEdit.innerHTML = theKanji.tsukaiwake;
-  // let theTargetKanji = document.querySelector('#theTargetKanji');
-  // theTargetKanji.textContent = targetKanji;
 
   //異体字の情報を得る
   for (let i = 1; i < theKanji.nOfJitai; i++) {
@@ -353,20 +330,7 @@ function openKanji(theUnicode) {
   }
 }
 
-// document.getElementById('headpart').addEventListener('click', () => {
-//   if (needJson === 0) {
-//     window.close();
-//   } else {
-//     const url = 'index.html';
-//     window.open(url, '_blank');
-//   }
-// });
 
-// 閉じる
-// document.querySelector('.idou').addEventListener('click', () => {
-//   const url = 'index.html';
-//   window.open(url, '_blank');
-// });
 
 document.getElementById('headpart').addEventListener('click', () => {
   if(window.opener && !window.opener.closed){

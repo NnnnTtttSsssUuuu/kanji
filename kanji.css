@@ -15,7 +15,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  /* padding: 5px; */
   padding: 5px 0 5px 0;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
 }
@@ -36,6 +35,7 @@ h1 {
   height: 44px;
   margin: 0;
   padding: 0 0 0 10px;
+
   font-family: 'Noto Serif JP', serif;
   font-size: 32px;
   background-color: steelblue;
@@ -102,7 +102,8 @@ pre {
 .hanrei {
   float: left;
   margin: 0 0 0 0;
-  padding-top: 55px;
+  /* padding-top: 55px; */
+    padding:55px 0 0 0;
   text-align: right;
   /* background-color: blueviolet; */
 }
@@ -271,13 +272,8 @@ pre {
 }
 
 
-
 .menkutenran {
   width: 90px;
-}
-
-.narrow.menkuten {
-  display: none;
 }
 
 .moji {
@@ -545,9 +541,11 @@ ul.footer-menu li {
   .hanrei {
     float:left;
     text-align: right;
+    margin: 0 0 0 -20px;
+    padding: 60px 0 0 0;
+    /* padding-top: 60px; */
 
 
-    padding-top: 60px;
   }
 
   .youso1 {
@@ -580,20 +578,13 @@ ul.footer-menu li {
   }
 
   .fontname {
-    font-family: ArchivoNarrow, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+    /* font-family: ArchivoNarrow, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif; */
     font-size: 16px;
     line-height: 3px;
     margin-top: 0;
     text-align: right;
   }
 
-  #widemenkuten {
-    display: none;
-  }
-
-  .narrow.menkuten {
-    display: block;
-  }
 
   .jishu {
     font-size: 12px;
@@ -640,6 +631,9 @@ ul.footer-menu li {
     font-feature-settings: "palt";
   }
 
+  .chotai{
+    transform: scale(0.7,1) translate( 12px);
+  }
   footer {
     padding: 0 0 10px 0;
   }

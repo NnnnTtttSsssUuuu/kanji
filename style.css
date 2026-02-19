@@ -114,14 +114,12 @@ h1 {
 .maintable th {
   position: sticky;
   height: 80px;
-  top: 45px;
+  top: 42px;
   font-weight: normal;
   text-align: center;
   background-color: dodgerblue;
   color: white;
-  border: solid 1px;
-  border-collapse: collapse;
-  border-color: white white dodgerblue dodgerblue;
+  border-right: solid 1px white;
 
   /* ソート時に矢印を付ける */
   &.sort {
@@ -140,6 +138,7 @@ h1 {
     }
   }
 }
+
 
 
 .maintable td {
@@ -291,8 +290,6 @@ ul.footer-menu li {
 }
 
 @media screen and (max-width: 560px) {
-/* @media screen and (max-width: 480px) { */
-  /* @media screen and (max-width: 380px) { */
 
   body {
     padding: 2px 0 2px 0;
@@ -313,14 +310,6 @@ ul.footer-menu li {
     left: 20px;
     font-size: 16px;
   }
-
-  /* #searchInput {
-    font-size: 16px;
-  } */
-
-  /* #toKaisetsu {
-    font-size: 14px;
-  } */
 
   .idou {
     top: 44px;

@@ -16,21 +16,24 @@ body {
 
 main {
   flex: 1;
-
   margin: 0 0 0 0;
 }
 
+
+
 h1 {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  padding: 0 0 0 10px;
+  z-index: 1;
+
   font-family: 'Noto Serif JP', serif;
   font-size: 32px;
   background-color: steelblue;
   color: white;
-  position: fixed;
-  top: 0px;
-  margin: 0;
-  padding: 0 0 0 10px;
-  width: 100%;
-  z-index: 1;
 }
 
 h2 {
@@ -275,19 +278,12 @@ ul.footer-menu li {
   body {
     margin: 0 10px 10px -3px;
     padding: 3px 3px 3px 3px;
-    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   }
 
   h1 {
-    font-family: 'Noto Serif JP', serif;
     font-size: 24px;
-    background-color: steelblue;
-    color: white;
-    margin: 0;
     position: fixed;
-    top: 0px;
     padding: 0 0 0 5px;
-    width: 100%;
     height: 40px;
     text-align: left;
     z-index: 1;
@@ -301,36 +297,11 @@ ul.footer-menu li {
 
 dt {
   font-size: 120%;
-    font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', sans-serif;
-  border-bottom: 2px solid black;
-  margin: 0 1em;
-    padding: 1px 10px 0px 1.5em;
 }
-
-dd {
-    font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', sans-serif;
-  font-size: 16px;
-  padding: 1px 6px 6px 2em;
-  line-height: 1.8;
-  margin: 0 1em;
-}
-
-
 
 
   footer {
-    width: 100%;
-    height: 30px;
-    margin: 0;
     padding: 0 0 10px 0;
-    text-align: center;
-    font-family: 'Noto Serif JP', serif;
-    color: white;
-    background-color: steelblue;
-  }
-
-  ul.footer-menu li {
-    display: inline;
   }
 
 }
