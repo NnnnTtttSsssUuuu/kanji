@@ -100,10 +100,10 @@ function openKanji(theUnicode) {
   menkuten.textContent = theKanji.menkuten;
 
   let bushu = document.querySelector('#bushu_');
-  bushu.textContent = theKanji.bushu + "("+theKanji.kakusu1 +")";
+  bushu.textContent = theKanji.bushu + "(" + theKanji.kakusu1 + ")";
 
- let kakusu2 = document.querySelector('#kakusu2_');
- kakusu2.textContent = theKanji.kakusu2;
+  let kakusu2 = document.querySelector('#kakusu2_');
+  kakusu2.textContent = theKanji.kakusu2;
 
   let sokakusu = document.querySelector('#sokakusu_');
   sokakusu.textContent = Number(theKanji.kakusu1) + Number(theKanji.kakusu2);
@@ -143,7 +143,7 @@ function openKanji(theUnicode) {
 
     const jisMidashi = document.createElement('td');
     jisMidashi.className = "jisMidashi";
-        jisMidashi.innerHTML = `<img src="${thisKanji[i].jikei}" width="40">` + "(" + `${thisKanji[i].junOfJitai}` + ")";
+    jisMidashi.innerHTML = `<img src="${thisKanji[i].jikei}" width="40">` + "(" + `${thisKanji[i].junOfJitai}` + ")";
 
     const jisMenkuten = document.createElement('td');
     jisMenkuten.className = "jisMenkuten";
@@ -220,7 +220,7 @@ function openKanji(theUnicode) {
   tsukaiwake.innerHTML = theKanji.tsukaiwake;
 
   let sanko = document.querySelector('#sanko_');
-    sanko.innerHTML = theKanji.sanko;
+  sanko.innerHTML = theKanji.sanko;
 
 
   //異体字の情報を得る
@@ -243,6 +243,10 @@ function openKanji(theUnicode) {
     const newDiv1 = document.createElement('span');
     newDiv1.className = "jishu";
     newDiv1.textContent = theItaiji.jishu;
+
+    if (theItaiji.jishu.length > 4) {
+      newDiv1.classList.add("small");
+    }
 
     const newDiv2 = document.createElement('div');
     newDiv2.setAttribute('src', theItaiji.jikei);
@@ -272,7 +276,7 @@ function openKanji(theUnicode) {
     const newDiv6 = document.createElement('div');
     newDiv6.className = "jislevel";
     if (theItaiji.jislevel == "-") {
-      newDiv6.textContent =  "-";
+      newDiv6.textContent = "-";
     } else {
       newDiv6.textContent = "第" + theItaiji.jislevel + "水準";
     }
@@ -295,7 +299,7 @@ function openKanji(theUnicode) {
 
     const newDiv9 = document.createElement('div');
     newDiv9.className = "bushu";
-    newDiv9.textContent = theItaiji.bushu + "("+theItaiji.kakusu1 +")";
+    newDiv9.textContent = theItaiji.bushu + "(" + theItaiji.kakusu1 + ")";
 
     const newDiv10 = document.createElement('div');
     newDiv10.className = "kakusu2";
@@ -324,7 +328,7 @@ function openKanji(theUnicode) {
     newDiv4.appendChild(newDiv9);
     newDiv4.appendChild(newDiv10);
     newDiv4.appendChild(newDiv11);
-   newDiv4.appendChild(newDiv12);
+    newDiv4.appendChild(newDiv12);
     newSection.appendChild(newDiv4);
     kanjigun.appendChild(newSection);
   }
@@ -333,7 +337,7 @@ function openKanji(theUnicode) {
 
 
 document.getElementById('headpart').addEventListener('click', () => {
-  if(window.opener && !window.opener.closed){
+  if (window.opener && !window.opener.closed) {
     window.close();
   } else {
     location.href = 'index.html';
