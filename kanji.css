@@ -269,6 +269,7 @@ pre {
   clear: both;
   margin: 0 1em 1em 1em;
   /* background-color: yellow; */
+
 }
 
 .tsukaiwake,
@@ -276,6 +277,7 @@ pre {
   display: block;
   clear: both;
   margin: 0 0 0 -1em;
+
 }
 
 
@@ -481,8 +483,12 @@ pre {
   border-left: solid 1px;
 }
 
-.commentran {
+/* .commentran {
   margin: 70px 1em 1em 3em;
+} */
+
+#endOfKanji {
+  margin: 10px 1em 1em 3em;
 }
 
 footer {
@@ -629,7 +635,6 @@ ul.footer-menu li {
   }
 
 
-
   .gazomoji_image {
     width: 34px;
     height: 44px;
@@ -650,6 +655,7 @@ ul.footer-menu li {
     transform-origin: left;
       width: calc(100% * 0.9);
   } */
+
 
 
   footer {

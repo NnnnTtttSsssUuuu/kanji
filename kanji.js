@@ -345,3 +345,14 @@ document.getElementById('headpart').addEventListener('click', () => {
   }
 
 });
+
+
+// プリントボタン押下の処理
+document.querySelector('#printButton').addEventListener('click', () => {
+  document.getElementById('endOfKanji').style.display = 'none';
+  document.getElementById('h1chuki').style.display = 'none';
+  window.print()
+  document.getElementById('h1chuki').style.display = 'flex';
+  document.getElementById('endOfKanji').style.display = 'block';
+
+});
