@@ -210,6 +210,13 @@ document.querySelector('.idou').addEventListener('click', () => {
   window.open(url, '_blank');
 });
 
+// API検索へ
+// document.querySelector('#toApi').addEventListener('click', () => {
+//   console.log("解説へ移動");
+//   const url = 'apitest.html';
+//   window.open(url, '_blank');
+// });
+
 // 各文字の説明へ
 const tableClick = document.getElementById('maintableid');
 tableClick.addEventListener('click', (event) => {

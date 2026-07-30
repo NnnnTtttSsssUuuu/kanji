@@ -223,12 +223,17 @@ dd {
   color: red;
 }
 
+
+.table-wrap {
+  overflow-x: scroll;
+}
 table{
   border-collapse: collapse;
   border: 1px solid black;
   text-align:center;
  table-layout: ;fixed;
  width:600px;
+ white-space: nowrap;
 }
 
 thead{
@@ -297,7 +302,10 @@ ul.footer-menu li {
 
 dt {
   font-size: 120%;
+
 }
+
+
 
 
   footer {
