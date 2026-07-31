@@ -42,7 +42,8 @@ function toSort() {
 function getJson() {
   // console.log("getJsonに入る");
   // fetch('kanjiFile.json')
-  fetch('kanjiFile.json?t=${Date.now()}`')  //キャッシュ対策
+  // fetch('kanjiFile.json?t=${Date.now()}`')  //キャッシュ対策
+  fetch('kanjiFile.json?v=20260731')  //キャッシュ対策2
     .then(response => {
       if (!response.ok) {
         throw new Error('HTTP error! status: ' + response.status);

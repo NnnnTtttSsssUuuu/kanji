@@ -19,7 +19,7 @@ let needJson = !ref.includes(location.origin);
 //外部からならjsonを読み込む
 if (needJson) {
   console.log("外部から開く");
-  fetch('kanjiFile.json')
+  fetch('kanjiFile.json?v=20260731')
     // fetch(location.origin + '/kanjiFile.json')
     .then(response => {
       if (!response.ok) {
