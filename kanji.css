@@ -149,18 +149,6 @@ pre {
 
 
 
-/* .ipamj {
-  font-family: 'IPAmj明朝', sans-serif;
-  margin: 0 0 -20px 0;
-  line-height: 1.1;
-}
-
-.yumincho {
-  font-family: "游明朝体", "Yu Mincho", "YuMincho", sans-serif;
-  background-color: beige;
-} */
-
-
 
 .jikei {
   width: 100px;
@@ -210,17 +198,12 @@ pre {
 }
 
 
-.kisuRetsu {
-  background-color: lightcyan;
-  padding-right: 1em;
-  
-}
-
 .mojigun,
 .unicode,
-.jiscode,
-.bushu,
-.sokakusu {
+.menkuten,
+.kakusu2,
+.chuui
+{
   background-color: lightcyan;
   padding-right: 1em;
   font-feature-settings: "palt"
@@ -228,16 +211,17 @@ pre {
 }
 
 .jislevel,
-.menkuten,
-.kakusu1,
-.chuui {
+.block,
+.bushu,
+.sokakusu 
+{
   background-color: white;
   padding-right: 1em;
   font-feature-settings: "palt"
 }
 
 .menkuten,
-.jiscode {
+ {
   font-family: Arial, Helvetica, sans-serif;
   
 }
@@ -251,16 +235,16 @@ pre {
 
 }
 
-.chuui {
+.chuui.naiyo {
   min-height: 20px;
   font-size: 12px;
   font-weight: bold;
-  margin: 0 0 0 2px;
-  padding: 2px 0 2px 0;
   color: red;
   width: 100px;
   word-break: break-word;
   overflow-wrap: break-word;
+  
+
 }
 
 
@@ -268,7 +252,6 @@ pre {
   display: block;
   clear: both;
   margin: 0 1em 1em 1em;
-  /* background-color: yellow; */
 
 }
 
@@ -299,7 +282,9 @@ pre {
   font-size: 15px;
 }
 
-.unicode.narrow {
+.unicode.narrow,
+.block 
+{
   font-family: ArchivoNarrow, Helvetica, sans-serif;
   font-size: 15px;
 }
@@ -311,34 +296,6 @@ pre {
   object-position: center 8px;
 }
 
-/* .subtable {
-  border-collapse: collapse;
-}
-
-.subtable th {
-  border: solid 1px;
-  background-color: #eee;
-}
-
-.subtable tr th:nth-child(1) {
-  width: 70px;
-}
-
-.subtable tr th:nth-child(2) {
-  width: 70px;
-}
-
-.subtable tr th:nth-child(3) {
-  width: 70px;
-}
-
-.subtable tr th:nth-child(4) {
-  width: 70px;
-}
-
-.subtable td {
-  border: solid 1px;
-} */
 
 .highlight {
   background-color: yellow !important;
@@ -348,9 +305,6 @@ pre {
   background-color: yellow !important;
 }
 
-/* .mj {
-  font-family: 'IPAmj明朝', 'Noto Serif JP', serif;
-} */
 
 #theTargetKanji {
   display: none;

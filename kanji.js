@@ -67,6 +67,8 @@ function openKanji(theUnicode) {
 
   let theKanji = kanjiShugo[targetKanji];
 
+  let maxHofChuui = 1; //注意欄の高さ
+
   //親字の情報を入れる
   let title = document.querySelector('#title_');
   title.textContent = theKanji.midashi;
@@ -96,6 +98,12 @@ function openKanji(theUnicode) {
   let unicode = document.querySelector('#unicode_');
   unicode.textContent = theKanji.unicode;
 
+
+  let block = document.querySelector('#block_');
+  block.textContent = theKanji.block;
+
+
+
   let menkuten = document.querySelector('#menkuten_');
   menkuten.textContent = theKanji.menkuten;
 
@@ -110,6 +118,9 @@ function openKanji(theUnicode) {
 
   let chuui = document.querySelector('#chuui_');
   chuui.textContent = theKanji.chuui;
+
+
+
 
   let yomi = document.querySelector('#yomi_');
   yomi.textContent = theKanji.yomi;
@@ -289,6 +300,17 @@ function openKanji(theUnicode) {
       newDiv7.classList.add("narrow");
     }
 
+
+    const newDiv7b = document.createElement('div');
+    newDiv7b.className = "block";
+    newDiv7b.textContent = theItaiji.block;
+
+    if (theItaiji.block.length > 8) {
+      newDiv7b.classList.add("narrow");
+    }
+
+
+
     const newDiv8 = document.createElement('div');
     newDiv8.className = "menkuten";
     newDiv8.textContent = theItaiji.menkuten;
@@ -312,8 +334,14 @@ function openKanji(theUnicode) {
 
 
     const newDiv12 = document.createElement('div');
-    newDiv12.className = "chuui";
+    newDiv12.className = "chuui naiyo";
     newDiv12.textContent = theItaiji.chuui;
+
+    const chuuiHeight = Math.floor(theItaiji.chuui.length / 9) + 1;
+    // if (chuuiHeight > maxHofChuui) { maxHofChuui = chuuiHeight }
+    maxHofChuui = Math.max(maxHofChuui, chuuiHeight);
+
+
 
     newSection.appendChild(newDiv1);
     newSection.appendChild(newDiv2);
@@ -324,6 +352,7 @@ function openKanji(theUnicode) {
     newDiv4.appendChild(newDiv5);
     newDiv4.appendChild(newDiv6);
     newDiv4.appendChild(newDiv7);
+    newDiv4.appendChild(newDiv7b);
     newDiv4.appendChild(newDiv8);
     newDiv4.appendChild(newDiv9);
     newDiv4.appendChild(newDiv10);
@@ -332,6 +361,13 @@ function openKanji(theUnicode) {
     newSection.appendChild(newDiv4);
     kanjigun.appendChild(newSection);
   }
+
+
+  //「注意」欄の高さ設定
+  document.querySelectorAll('.chuui').forEach(el => {
+    el.style.height = maxHofChuui * 18 + 'px';
+  });
+
 }
 
 
