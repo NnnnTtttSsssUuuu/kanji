@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="checker.css">
+  <link rel="icon" href="img/kanfavicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+
+  <title>異体字チェッカー</title>
+</head>
+
+<body>
+  <header>
+    <h1>異体字<span class="percent80">Easy</span>サーチ</h1>
+    <span class="idou">|<span id="toJiten">字典へ　</span>|<span id="toKaisetsu">解説へ　</span></span>
+  </header>
+
+  <div id="topOfPage">
+    <span class="hanreimini">標準<br>字体</span>
+    <span class="noto-font-big">亜</span>
+    <span class="hanreimini">異体字</span>
+    <span class="itaiji noto-font-big">亞</span><span class="noto-font-big">[=亜]</span>
+    <span class="hanreimini">サロゲート<br>ペア</span>
+    <span class="surro noto-font-big">𠮟</span>
+    <span class="hanreimini">異体字<br>セレクタ</span>
+    <span class="ivs itaiji noto-font-big">辻󠄀</span>
+    <span class="hanreimini">サロゲートペア<br>＋異体字セレクタ</span>
+    <span class="itaiji surroivs noto-font-big">𣗄󠄁</span>
+
+    <!-- <span class="hanreimini">部首<br>コード</span>
+    <span class="itaiji noto-font-big">⽉</span><span class="noto-font-big">[←部首] -->
+
+  </div>
+
+
+
+
+  <main>
+
+      <div class="accordion_title js-accordion-title">　使い方</div> 
+      <div class="accordion_content">
+
+    <table class="checkertable">
+      <p class="tsukaikataText">
+     　下の文字入力ボックスに調べたいテキストをペーストしてください。
+     <br>　すぐにサーチが始まり、標準的でない字体と、注意が必要な文字コードを検出します。
+   <br> 「漢字字体使い分け字典」収録の全字体に対応しており、<br>　収録外の字体は原則検出しません。</p>
+
+      <tr>
+        <td>標準的な字体</td>
+        <td><span class="noto-font-big">亜</span></td>
+      </tr>
+      <tr>
+        <td>異体字・デザイン差 </td>
+        <td><span class="itaiji noto-font-big">亞</span><span class="noto-font-big">[=亜]</span></td>
+        <td>[=　]内は標準的な字体</td>
+      </tr>
+      <tr>
+        <td>サロゲートペア<img src="img/info.svg" alt="info" class="toInfo">
+          <div class="information">
+            サロゲートペア<br>Unicode規格で、基本多言語面(BMP)に含まれないマイナーな文字を、4桁のコード単位を2つ使って表示する方法。
+          </div>
+        </td>
+
+        <td><span class="surro noto-font-big">𠮟</span></td>
+        <td>標準的な字体の場合</td>
+      </tr>
+          <tr>
+        <td>
+        </td>
+
+        <td><span class="surro itaiji noto-font-big">𠮷</span><span
+            class="noto-font-big">[=吉]</span></td>
+        <td>異体字の場合</td>
+      </tr>
+      <tr>
+        <td>異体字セレクタ<img src="img/info.svg" alt="info" class="toInfo">
+          <div class="information">
+            異体字セレクタ<br>Unicode規格で、元の文字のユニコードに異体字セレクタ(IVS）というコードを付けて異体字を表示する方法。
+          </div>
+        </td>
+        <td><span class="ivs itaiji noto-font-big">辻󠄀</span><span class="noto-font-big">[=辻]</span></td>
+        <td>すべてが異体字</td>
+      </tr>
+      <tr>
+        <td>サロゲートペア<br>＋異体字セレクタ　</td>
+        <td><span class="itaiji surroivs noto-font-big">𣗄󠄁</span><span class="noto-font-big">[=<span
+              class="surro">𣗄</span>]</span></td>
+        <td>すべてが異体字</td>
+      </tr>
+
+        <tr>
+        <td>多重の異体字
+        </td>
+        <td><span class="itaiji ivs noto-font-big">芦󠄀</span><span class="noto-font-big">[=</span><span class="noto-font-big itaiji">芦</span><span class="noto-font-big">[=蘆] ]</span></td>
+                <td>　芦󠄀は芦の異体字、<br>　芦は蘆の異体字</td>
+      </tr>
+
+         <tr>
+        <td>部首コード<img src="img/info.svg" alt="info" class="toInfo">
+          <div class="information">
+            部首コード<br>Unicode規格に含まれる、漢字の部首を表示するためのコード。「⽉」と「月」のように文字と同形の場合があり、目視では違いがわからない。
+          </div>
+        </td>
+        <td><span class="itaiji noto-font-big">⽉</span><span class="noto-font-big">[←部首]</span></td>
+      </tr>
+
+    </table>
+
+
+      </div>
+
+
+
+
+    <div>
+      <textarea id="input" placeholder="調べたいテキストを入力してください。"></textarea>
+
+      <br><button id="clearButton">テキストクリア</button>
+      <br><button id="listup">出現数リスト表示</button>
+
+      <div id="chukiTable"><span class="noto-font-small">※標準的でない字体をカウントします。
+          <br>　テキストを変更した際は、再度「リスト表示」ボタンを押してリストを更新してください。</span>
+
+      </div>
+    </div>
+
+    <p id="chuuki"></p>
+    <div id="Lists">
+      <div id="letterList"></div>
+      <br>
+      <div data-color-scheme="greenyellow" id="letterList2"></div>
+    </div>
+
+
+    <div id="endOfTable">
+      <button id="printButton">リスト印刷</button>
+      <hr>
+    </div>
+
+    <p id="output"></p>
+
+<br><br><br>
+
+
+  </main>
+
+  <footer>
+    <p>©Right to Be Lazy</p>
+  </footer>
+
+  <script src="checker.js"></script>
+</body>
+
+</html>

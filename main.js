@@ -203,7 +203,7 @@ function gotoHighlight(queryNo) {
 }
 
 // 解説へ
-document.querySelector('.idou').addEventListener('click', () => {
+  document.querySelector('#toKaisetsu').addEventListener('click', () => {
   console.log("解説へ移動");
   const url = 'kaisetsu.html';
   window.open(url, '_blank');
@@ -215,6 +215,13 @@ document.querySelector('.idou').addEventListener('click', () => {
 //   const url = 'apitest.html';
 //   window.open(url, '_blank');
 // });
+
+// チェッカーへ
+document.querySelector('#toChecker').addEventListener('click', () => {
+  console.log("解説へ移動");
+  const url = 'checker.html';
+  window.open(url, '_blank');
+});
 
 // 各文字の説明へ
 const tableClick = document.getElementById('maintableid');

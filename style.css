@@ -10,37 +10,50 @@
 body {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 0 10px 0 20px;
   padding: 5px 0 5px 0;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   text-size-adjust: none;
 }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: steelblue;
+}
+
 
 main {
   flex: 1;
 }
 
 h1 {
-  position: fixed;
+  /* position: fixed; */
+  display: inline-block;
   top: 0px;
   margin: 0;
   padding: 0 0 0 10px;
-  width: 100%;
-  z-index: 1;
+  /* width: 100%; */
+  z-index: 2;
   font-family: 'Noto Serif JP', serif;
   font-size: 32px;
-  background-color: steelblue;
+  /* background-color: steelblue; */
   color: white;
+    /* font-feature-settings: "palt"; */
+        font-feature-settings: "pwid";
 }
 
 
 .searchForm {
-  position: fixed;
-  z-index: 2;
+  /* position: fixed; */
+    display: inline-block;
+  z-index: 1;
   top: 9px;
-  left: 340px;
+  /* left: 340px; */
   height: 31px;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
@@ -82,8 +95,9 @@ h1 {
 }
 
 .idou {
-  position: fixed;
-  z-index: 2;
+  /* position:  fixed; */
+     display: inline-block;
+  z-index: 1;
   top: 20px;
   left: 490px;
   font-family: 'Noto Serif JP', serif;
@@ -93,9 +107,23 @@ h1 {
   margin-left: 10px;
 }
 
-.idounaka:hover {
+#toKaisetsu:hover, #toChecker:hover
+ {
   border-bottom: 1px solid white;
 }
+
+
+/* #hanrei{
+  z-index: 1;
+  position: relative;
+  top: 26px;
+  left: 10px;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  font-size: 15px;
+  color: black;
+
+
+} */
 
 
 .maintable {
@@ -259,6 +287,16 @@ h1 {
   font-size: 120%;
 }
 
+.noto-font-small {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 100%;
+}
+
+.noto-font-big{
+  font-family: 'Noto Serif JP', serif;
+  font-size: 24px;
+}
+
 .gothic {
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   font-size: 80%;
@@ -298,31 +336,52 @@ ul.footer-menu li {
   display: inline;
 }
 
-@media screen and (max-width: 560px) {
+
+
+
+
+
+
+@media screen and (526px <= width <= 625px) {
+  h1 {
+    font-size: 24px;
+    height: 50px;
+  }
+}
+
+  .searchForm {
+        top: 20px;
+    font-size: 16px;
+  }
+
+@media screen and (max-width: 525px) {
 
   body {
     padding: 2px 0 2px 0;
   }
 
   h1 {
-    position: fixed;
     height: 72px;
     text-align: left;
     font-size: 24px;
+        z-index: 2;
   }
 
 
   .searchForm {
     position: fixed;
     z-index: 1;
-    top: 38px;
-    left: 20px;
+    /* top: 142px; */
+        top: 38px;
+    left: 10px;
     font-size: 16px;
   }
 
   .idou {
+    position:  fixed;
+        z-index: 1;
     top: 44px;
-    left: 190px;
+    left: 120px;
     font-size: 15px;
     border: none;
   }
@@ -330,6 +389,7 @@ ul.footer-menu li {
 
 
   .maintable {
+    z-index: 3;
     margin: 69px 0 0 0;
   }
 
