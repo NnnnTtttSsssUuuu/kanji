@@ -228,7 +228,7 @@ main {
   position: fixed;
   top: 60px;
   left: 25px;
-  width: 500px;
+  /* width: 500px; */
   z-index: 3;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   font-size: 14px;
