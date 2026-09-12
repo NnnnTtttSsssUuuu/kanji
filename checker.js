@@ -11,7 +11,7 @@
   const checkString2 = '煙𤇆芽芽吉𠮷橋𣘺稽𥡴隙𨻶剣𠝏眞眞巽巽兎兔曜𫞂卉卉竈𥧄鋏𨦇饒𩜙';
 
 
- let inputText = [];
+  let inputText = [];
 
   let countString1 = new Array(checkString1.length);
   let countString2 = new Array(checkString2.length);
@@ -49,7 +49,7 @@
   // チェックボタン押下の処理
   function checkCharacter() {
     // const inputText = document.querySelector('#input').value;
-        inputText = document.querySelector('#input').value;
+    inputText = document.querySelector('#input').value;
     const outputText = document.querySelector('#output');
     const chuukiText = document.querySelector('#chuuki');
     outputText.textContent = "";
@@ -109,61 +109,6 @@
         // サロゲートペア文字の対応
         if (isSurrogatePair(c)) {
 
-          // // 「𠮟」の対応
-          // if (c + d === "𠮟") {
-          //   countShikaruJ = countShikaruJ + 1;
-          //   c = c + d;
-          //   i++;
-          //   klass.push("surro");
-          //   generate(c, klass);
-          //   cText = "";
-          //   continue;
-          // }
-
-          // //リスト内のサロゲートペア
-          // const checkindex2cd = checkString2.indexOf(c + d);
-          // if (checkindex2cd % 3 === 1) {  //checkString2内の奇数番目＝異体字
-          //   countString2[checkindex2cd]++;
-          //   let hyojun = checkString2[checkindex2cd - 1];
-          //   hyojun = tankanjiCheck(hyojun);
-          //   c = "<span class=\"itaiji surro\">" + c + d + "</span>[=" + hyojun + "] ";
-          //   i++;
-          //   const template = document.createElement('template');
-          //   template.innerHTML = c;
-          //   fragment.appendChild(template.content);
-
-
-          //   cText = "";
-          //   continue;
-          // }
-
-          // //リスト外のサロゲートペア…カウントせず
-          // let f = inputText[i + 3];
-          // if (isItaijiSelector(e)) {  //サロゲートペア＋異体字セレクタ
-          //   checkSIKitei[surIvsCount] = c + d;
-          //   checkSIItaiji[surIvsCount] = c + d + e + f
-          //   surIvsCount++;
-          //   c = "<span class=\"itaiji surroivs\">" + c + d + e + f + "</span>[=<span class=\"surro\">" + c + d + "</span>] ";
-          //   i = i + 3;
-          //   const template = document.createElement('template');
-          //   template.innerHTML = c;
-          //   fragment.appendChild(template.content);
-          //   cText = "";
-          //   continue;
-
-          // } else { //サロゲートペアのみ
-          //   c = "<span class=\"surro\">" + c + d + "</span>";
-          //   i = i + 1;
-          //   const template = document.createElement('template');
-          //   template.innerHTML = c;
-          //   fragment.appendChild(template.content);
-          //   cText = "";
-          //   continue;
-          // }
-          // // サロゲートペア文字の対応、終了
-
-
-          //サロゲートペア…カウントする
           let f = inputText[i + 3];
           if (isItaijiSelector(e)) {  //サロゲートペア＋異体字セレクタ
             const checkit = checkSIItaiji.indexOf(c + d + e + f);
@@ -192,7 +137,6 @@
 
           } else { //サロゲートペアのみ
 
-
             // 「𠮟」の対応
             if (c + d === "𠮟") {
               countShikaruJ++;
@@ -215,13 +159,11 @@
               const template = document.createElement('template');
               template.innerHTML = c;
               fragment.appendChild(template.content);
-
-
               cText = "";
               continue;
             }
 
-
+            //リスト外のサロゲートペア
             c = "<span class=\"surro\">" + c + d + "</span>";
             i = i + 1;
             const template = document.createElement('template');
@@ -231,8 +173,6 @@
             continue;
           }
           // サロゲートペア文字の対応、終了
-
-
 
 
 
@@ -266,7 +206,8 @@
 
 
           } else { //単体コードの対応
-            // 「叱」の対応
+
+            // 「叱」の対応…単体コードだが、唯一サロゲートペアの異体字
             if (c === "叱") {
               countShikaruI++;
               c = "<span class=\"itaiji\">叱</span>[=𠮟] ";
@@ -372,9 +313,10 @@
 
         // let checkit = checkSIItaiji.indexOf(c + d);
         let textcheckSIItaiji = checkSIItaiji.join("");
-        const checkit = textcheckSIItaiji.indexOf(c + d)/4;
+        const checkit = textcheckSIItaiji.indexOf(c + d) / 4;
 
-        if (checkit > -1 && !(isItaijiSelector(e))) { ;
+        if (checkit > -1 && !(isItaijiSelector(e))) {
+          ;
           countSIKitei[checkit]++;
         }
       }
@@ -410,20 +352,11 @@
     listup.style.display = 'block';
 
 
-  // //テキストから検出回数を返す
-  // function countWord(word) {
-  //   let count = 0;
-  //   let pos = 0;
-  //   while ((pos = inputText.indexOf(word, pos)) !== -1) {
-  //     count++;
-  //     pos += word.length;
-  //   }
-  //   return count;
-  // }
 
 
-// console.log("checkIvsItaiji",checkIvsItaiji);
-// console.log("checkSIItaiji",checkSIItaiji);
+
+    // console.log("checkIvsItaiji",checkIvsItaiji);
+    // console.log("checkSIItaiji",checkSIItaiji);
 
   } //funchtion checkCharacter() 終わり
 
@@ -786,11 +719,13 @@
 
     //並べ替え 第1列でソートする
     firstsortRows();
+    //検出数を補正
+    countCorrect();
 
     // display: noneを削除
-    let elementEndOfTable = document.getElementById('endOfTable');
+    // let elementEndOfTable = document.getElementById('endOfTable');
     let elementChukiTable = document.getElementById('chukiTable');
-    elementEndOfTable.style.display = 'block';
+    // elementEndOfTable.style.display = 'block';
     elementChukiTable.style.display = 'block';
   });
 
@@ -821,25 +756,46 @@
     return 0;
   }
 
-
-
-
-
-  //アコーディオンメニュー
-  document.addEventListener("DOMContentLoaded", () => {
-    const title = document.querySelectorAll('.js-accordion-title');
-
-    for (let i = 0; i < title.length; i++) {
-      let titleEach = title[i];
-      let content = titleEach.nextElementSibling;
-      titleEach.addEventListener('click', () => {
-        titleEach.classList.toggle('is-active');
-        content.classList.toggle('is-open');
-      });
+  //表の「標準的な字体数」を正す
+  function countCorrect() {
+    const table = document.getElementById("wordTable");
+    for (let i = 1; i < table.rows.length; i++) {
+      if (table.rows[i-1].cells[0].textContent === table.rows[i].cells[0].textContent) {
+        table.rows[i].cells[1].textContent = table.rows[i-1].cells[1].textContent ;
+      }
     }
+  }
+
+
+
+  //how to useボタン
+
+  // document.querySelector('#howToUseButton').forEach(element => {
+  //   element.addEventListener('click', () => {
+
+
+  document.querySelector('#howToUseButton').addEventListener('click', () => {
+    const howToUseBox = document.querySelector('#howToUse');
+    howToUseBox.classList.toggle("toggleOn");
+
+    const howToUseClose = document.querySelector('#howToUseClose');
+    howToUseClose.classList.toggle("toggleOn");
+
+    const howToUseButton = document.querySelector('#howToUseButton');
+    howToUseButton.classList.toggle("toggleOff");
   });
 
 
+  document.querySelector('#howToUseClose').addEventListener('click', () => {
+    const howToUseBox = document.querySelector('#howToUse');
+    howToUseBox.classList.toggle("toggleOn");
+
+    const howToUseClose = document.querySelector('#howToUseClose');
+    howToUseClose.classList.toggle("toggleOn");
+
+    const howToUseButton = document.querySelector('#howToUseButton');
+    howToUseButton.classList.toggle("toggleOff");
+  });
 
 
   // 字典へ

@@ -10,60 +10,60 @@
 body {
   display: flex;
   flex-direction: column;
-  margin: 0 10px 0 20px;
-  padding: 5px 0 5px 0;
+  margin: 0;
+  padding: 0;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   text-size-adjust: none;
 }
 
 header {
-  position: fixed;
+  display: block;
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 5;
+  align-content: flex-start;
+
+  margin: 0;
+  padding: 5px 0 5px 8px;
   top: 0;
   left: 0;
   width: 100%;
   background-color: steelblue;
+
 }
 
-
-main {
-  flex: 1;
-}
 
 h1 {
-  /* position: fixed; */
-  display: inline-block;
   top: 0px;
   margin: 0;
-  padding: 0 0 0 10px;
-  /* width: 100%; */
-  z-index: 2;
+  padding: 0;
   font-family: 'Noto Serif JP', serif;
   font-size: 32px;
-  /* background-color: steelblue; */
   color: white;
-    /* font-feature-settings: "palt"; */
-        font-feature-settings: "pwid";
+  font-feature-settings: "palt";
 }
 
 
 .searchForm {
-  /* position: fixed; */
-    display: inline-block;
-  z-index: 1;
-  top: 9px;
-  /* left: 340px; */
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
   height: 31px;
-  /* display: flex; */
+  margin: 0 0 5px 5px;
+  padding: 0;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
   border: none;
   border-radius: 8px;
   background-color: white;
+
 }
 
 .searchForm input {
-  width: 100px;
+  width: 90px;
   padding: 2px 5px;
   border: none;
   box-sizing: border-box;
@@ -90,16 +90,13 @@ h1 {
   width: 24px;
   height: 24px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z' fill='%23777777'%3E%3C/path%3E%3C/svg%3E");
+
   background-repeat: no-repeat;
   content: '';
 }
 
 .idou {
-  /* position:  fixed; */
-     display: inline-block;
-  z-index: 1;
-  top: 20px;
-  left: 490px;
+  align-self: flex-end;
   font-family: 'Noto Serif JP', serif;
   font-size: 15px;
   color: white;
@@ -107,32 +104,22 @@ h1 {
   margin-left: 10px;
 }
 
-#toKaisetsu:hover, #toChecker:hover
- {
+#toKaisetsu:hover,
+#toChecker:hover {
   border-bottom: 1px solid white;
 }
 
 
-/* #hanrei{
-  z-index: 1;
-  position: relative;
-  top: 26px;
-  left: 10px;
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
-  font-size: 15px;
-  color: black;
+main {
+  /* flex: 1; */
+  display: block;
+}
 
-
-} */
 
 
 .maintable {
   table-layout: fixed;
-  position: static;
-  top: 45px;
-  /* width:730px; */
   border-collapse: collapse;
-  margin: 40px 0 0 0;
   padding: 0 0 0 10px;
   font-size: 14px;
   font-weight: normal;
@@ -141,8 +128,8 @@ h1 {
 
 .maintable th {
   position: sticky;
+  top: 56px;
   height: 80px;
-  top: 42px;
   font-weight: normal;
   text-align: center;
   background-color: dodgerblue;
@@ -292,7 +279,7 @@ h1 {
   font-size: 100%;
 }
 
-.noto-font-big{
+.noto-font-big {
   font-family: 'Noto Serif JP', serif;
   font-size: 24px;
 }
@@ -316,7 +303,7 @@ h1 {
 
 }
 
-.apifield{
+.apifield {
   margin: 1em 1em 1em 1em;
 }
 
@@ -339,59 +326,11 @@ ul.footer-menu li {
 
 
 
-
-
-
-@media screen and (526px <= width <= 625px) {
-  h1 {
-    font-size: 24px;
-    height: 50px;
-  }
-}
-
-  .searchForm {
-        top: 20px;
-    font-size: 16px;
-  }
-
 @media screen and (max-width: 525px) {
-
-  body {
-    padding: 2px 0 2px 0;
-  }
-
   h1 {
-    height: 72px;
-    text-align: left;
     font-size: 24px;
-        z-index: 2;
   }
 
-
-  .searchForm {
-    position: fixed;
-    z-index: 1;
-    /* top: 142px; */
-        top: 38px;
-    left: 10px;
-    font-size: 16px;
-  }
-
-  .idou {
-    position:  fixed;
-        z-index: 1;
-    top: 44px;
-    left: 120px;
-    font-size: 15px;
-    border: none;
-  }
-
-
-
-  .maintable {
-    z-index: 3;
-    margin: 69px 0 0 0;
-  }
 
   .mini {
     font-size: 10px;
@@ -401,7 +340,6 @@ ul.footer-menu li {
 
   .maintable th {
     height: 50px;
-    top: 70px;
 
     &.sort {
       cursor: pointer;

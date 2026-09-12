@@ -8,37 +8,42 @@
 
 
 body {
-  margin: 0 10px 0 20px;
-  padding: 5px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* margin: 0 10px 0 20px;
+  padding: 5px 0 0 0; */
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   text-size-adjust: none;
 }
 
 header {
-  position: fixed;
+  display: block;
+  display: flex;
+  /* position: fixed; */
+  position: sticky;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 5;
+  align-content: flex-start;
+
+  margin: 0;
+  padding: 5px 0 5px 8px;
   top: 0;
   left: 0;
-  height: 50px;
+  /* height: 50px; */
   width: 100%;
   background-color: steelblue;
-  z-index: 3;
 }
 
 
-main {
-  position: relative;
-  top: 85px;
-  z-index: 1;
-  /* background-color: palegreen; */
-  /* flex: 1; */
-}
 
 h1 {
-  display: inline-block;
   top: 0px;
   margin: 0;
-  padding: 0 0 0 10px;
-  text-align: left;
+  padding: 0;
   font-family: 'Noto Serif JP', serif;
   font-size: 32px;
   color: white;
@@ -48,10 +53,7 @@ h1 {
 
 
 .idou {
-  display: inline-block;
-  z-index: 1;
-  top: 20px;
-  left: 490px;
+  align-self: flex-end;
   font-family: 'Noto Serif JP', serif;
   font-size: 15px;
   color: white;
@@ -59,26 +61,96 @@ h1 {
   margin-left: 10px;
 }
 
-#toKaisetsu:hover, #toJiten:hover
- {
+#toKaisetsu:hover,
+#toJiten:hover {
   border-bottom: 1px solid white;
 }
 
-#topOfPage{
-  position: fixed; 
+#topOfPage {
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  flex-wrap: wrap;
+
   top: 50px;
-  left: 100px;
-  padding: 2px 0 2px 0;
-  width: 600px;
-  height: 37px;
-  /* height: 300px; */
-  /* border-bottom: solid 1px gray; */
+  padding: 2px 0 2px 10px;
+  width: 100%;
+
   z-index: 3;
   background-color: white;
-
 }
 
-#hanrei{
+#howToUseButton {
+  align-self: flex-end;
+  border: 0px black;
+  border-radius: 14px;
+  padding: 0.2em 0.5em 0.5em 0.5em;
+  margin: 0 0 5px 0;
+  color: white;
+  background-color: black;
+  height: 14px;
+  width: 40px;
+  font-size: 13px;
+    cursor: pointer;
+}
+
+#howToUseClose {
+  align-self: flex-end;
+
+  position: absolute;
+
+  border: 0px black;
+  border-radius: 14px;
+  padding: 0.2em 0.5em 0.5em 0.5em;
+  margin: 0 0 5px 0;
+  z-index: 5;
+  color: white;
+  background-color: black;
+  height: 14px;
+    width: 14px;
+  font-size: 14px;
+    cursor: pointer;
+}
+
+#howToUseButton:hover,
+#howToUseClose:hover 
+ {
+  background-color: gray;
+}
+
+
+
+#howToUseClose::before{
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 2px;
+  transform: rotate(-45deg);
+  background-color: white;
+}
+
+#howToUseClose::after{
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 2px;
+  transform: rotate(-135deg);
+  background-color: white;
+}
+
+
+#topHanrei {
+  /* display:flex;
+flex-wrap:wrap; */
+  min-width: 0;
+  outline: 1px solid red;
+}
+
+#hanrei {
   z-index: 1;
   position: relative;
   top: 56px;
@@ -86,11 +158,23 @@ h1 {
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   font-size: 15px;
   color: black;
-
-
 }
 
+.hanreimini {
+  /* align-self: flex-end; */
+    align-self: center;
+  padding: 6px 4px 0 0;
+}
 
+main {
+  /* position: relative; */
+  top: 85px;
+  margin: 10px;
+  /* margin-top: 100px; */
+  z-index: 1;
+  /* background-color: palegreen; */
+  flex: 1;
+}
 
 .noto-font {
   font-family: 'Noto Serif JP', serif;
@@ -102,7 +186,7 @@ h1 {
   font-size: 14px;
 }
 
-.noto-font-big{
+.noto-font-big {
   font-family: 'Noto Serif JP', serif;
   font-size: 24px;
 }
@@ -129,43 +213,57 @@ h1 {
 
 
 
-.hanreimini{
+.hanreimini {
   display: inline-block;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   font-size: 11px;
   margin: -5px -4px 0 10px;
   padding: 0 -2px 0 0;
   line-height: 12px;
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 
-.checkertable{
-  position:static;
-  top: 100px;
+#howToUse {
+  position: fixed;
+  top: 60px;
+  left: 25px;
+  width: 500px;
   z-index: 3;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
   font-size: 14px;
-  /* border-top: solid 1px lightgray;
-  border-bottom: solid 1px lightgray;
-  border-left: solid 1px lightgray;
-  border-right: solid 1px lightgray; */
-  width: 500px;
-  /* background-color: whitesmoke; */
+  padding: 0.5em;
+
+  background-color: white;
+  /* display: none; */
+
+
+
+  border: solid 3px lightgray;
+  border-radius: 20px;
+
+
 }
 
+.howToTable{
+border:solid 1px black;
+margin: 10px 0 0 20px;
+}
+
+
 .checkertable tr td:nth-child(1) {
-  padding: 0 0 0 10px;
+  margin: 0 0 0 20px;
+  padding: 0 0 0 20px;
   text-align: right;
   vertical-align: middle;
   line-height: 1.2em;
-  width: 140px;
+  width: 150px;
 }
 
 .checkertable tr td:nth-child(2) {
   padding: 0 0 0 10px;
   text-align: left;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   width: 145px;
 }
 
@@ -175,44 +273,49 @@ h1 {
   vertical-align: middle;
 }
 
-.tsukaikataText{
-  font-family:  'Noto Serif JP', serif;
+.tsukaikataText {
+  margin: 0;
+  padding: 0 5px;
+  font-family: 'Noto Serif JP', serif;
   font-size: 14px;
 }
 
-#input{
-    position: relative;
-  width: 85%;
+#input {
+  position: relative;
+  width: 90%;
   height: 10em;
+  border: 2px solid gray;
+  margin: 1em;
+  padding: 2px;
 }
 
-#output{
-  font-family:  'Noto Serif JP', serif;
+#output {
+  font-family: 'Noto Serif JP', serif;
   font-size: 140%;
+  /* height: 400px; */
 }
 
-.itaiji{
-  color:red;
+.itaiji {
+  color: red;
 }
 
-.ivs{
-  background-color:yellow;
+.ivs {
+  background-color: yellow;
 }
 
-.surro{
+.surro {
   background-color: powderblue;
 }
 
-.surroivs{
-  background-color:limegreen;
+.surroivs {
+  background-color: limegreen;
 }
 
-.percent80
-{
+.percent80 {
   font-size: 80%;
 }
 
-.toInfo{
+.toInfo {
   display: inline-block;
   position: relative;
   width: 40px;
@@ -225,7 +328,7 @@ h1 {
 }
 
 
-.information{
+.information {
   display: none;
   position: absolute;
   z-index: 1;
@@ -240,8 +343,8 @@ h1 {
   text-align: left;
 }
 
-#listup{
-  display:none;
+#listup {
+  display: none;
 }
 
 #wordTable {
@@ -265,45 +368,46 @@ h1 {
 
 #wordTable td:nth-of-type(1) {
   /* background: rgb(188, 233, 248); */
-    background: mintcream;
+  background: mintcream;
   width: 140px;
   font-size: 24px;
   text-align: center;
 }
 
 #wordTable td:nth-of-type(2) {
-    background: mintcream;
+  background: mintcream;
   width: 60px;
   text-align: center;
 }
 
 #wordTable td:nth-of-type(3) {
   /* background: rgba(255, 192, 203, 0.678); */
-    background: oldlace;
+  background: oldlace;
   width: 140px;
   font-size: 24px;
   text-align: center;
 }
 
 #wordTable td:nth-of-type(4) {
-    background: oldlace;
+  background: oldlace;
   width: 60px;
   text-align: center;
 }
 
 
 
-#endOfTable {
+/* #endOfTable {
   margin: 0 0.25em 0.1em 0.25em;
   padding: 0.25em 2em 0.1em 2em;
   display: none;
-}
+} */
 
 
 footer {
-
+  /* position: fixed; */
   width: 110%;
   height: 30px;
+  /* top: 100vh; */
   bottom: 0;
   margin: 0 0 0 -20px;
   padding: 0 0 15px 0;
@@ -315,119 +419,38 @@ footer {
 }
 
 
-.accordion{
-    margin: 3em 0 0 0;
+
+.toggleOn {
+  display:none;
 }
 
-.accordion_title {
-  /* display: inline-block;
-  position: relative; */
-  position: fixed;
-  top: 60px;
-  z-index: 6;
-  cursor: pointer;
-  user-select: none;
-
- border: solid 1px lightgray;
- border-radius: 14px;
-  padding: 0.5em 0.5em 0.5em 2em;
-  margin: 0;
-  color: white;
-  background-color: black;
-  width: 48px;
-  height: 14px;
-  font-size: 12px;
-
+.toggleOff{
+  display:none;
 }
-
-.accordion_title:hover {
-  background-color: gray;
-}
-
-.accordion_title::before,
-.accordion_title::after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  width: 15px;
-  height: 2px;
-  /* background-color: #333; */
-    background-color: white
-    ;
-}
-
-.accordion_title::before {
-  top: 48%;
-  left: 15px;
-  transform: rotate(0deg);
-  transition-duration: .3s;
-}
-
-.accordion_title::after {
-  top: 48%;
-  left: 15px;
-  transform: rotate(-90deg);
-  transition-duration: .3s;
-}
-
-.accordion_title.is-active::before {
-  transform: rotate(45deg);
-}
-
-.accordion_title.is-active::after {
-  transform: rotate(-45deg);
-}
-
-.accordion_content {
-  line-height: 0;
-  height: 0;
-  width: 520px;;
-  left: -100px;
-  opacity: 0;
-  overflow: hidden;
-  transition-duration: .3s;
-   border: solid 3px lightgray;
-   border-radius: 20px;
-   z-index: 5;
-   padding: 2px;
-}
-
-.accordion_content.is-open {
-  height: auto;
-  opacity: 1;
-  line-height: normal;
-}
-
-
-
 
 
 @media screen and (max-width: 525px) {
 
-  body {
-    padding: 2px 0 2px 0;
-  }
 
   h1 {
     font-size: 30px;
-    /* top: 20px; */
   }
 
-  .idou {
+  /* .idou {
     position:  fixed;
     left: 240px;
     font-size: 15px;
+  } */
+
+  .information {
+    top: 30px;
+    left: 60px;
+    width: 20em;
   }
 
-.information{
-  top: 30px;
-  left: 60px;
-  width: 20em;
-}
+  #input {
+    width: 95%;
 
-  #input{
-  width: 95%;
-}
+  }
 
 }
