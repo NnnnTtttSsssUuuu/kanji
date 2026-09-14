@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
 
-
 @font-face {
   font-family: "NotoSerifCJKJP-IVS";
   src: url("fonts/NotoSerifCJKjp-IVS-Subset.woff2") format("woff2");
@@ -15,36 +14,47 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 5px 0 5px 0;
+  padding: 0;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
 }
 
 
-
-#headpart {
-  position: fixed;
+header{
   display: flex;
-  align-items: flex-end;
-  z-index: 2;
+  /* position: fixed; */
+      position: sticky;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 5;
+  align-content: flex-start;
+
+  /* height: 45px; */
+
+  margin: 0;
+  padding: 5px 0 5px 8px;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: steelblue;
+
 }
 
 h1 {
-  position: fixed;
   top: 0px;
-  width: 100%;
-  height: 44px;
   margin: 0;
-  padding: 0 0 0 10px;
-
+  padding: 0;
   font-family: 'Noto Serif JP', serif;
   font-size: 32px;
-  background-color: steelblue;
   color: white;
+  font-feature-settings: "palt";
 }
+
 
 .h1after {
 
-  position: fixed;
+  /* position: fixed; */
+      position: sticky;
   display: flex;
   align-items: flex-end;
   top: 0px;
@@ -95,7 +105,10 @@ pre {
 .itaiji3,
 .itaiji4 {
   float: left;
-  margin: 0 0 0 0;
+  /* margin: 0 0 0 0; */
+    margin: 10px 0 0 0;
+    padding: 0 0 0 0;
+    /* background-color: lemonchiffon; */
 }
 
 
@@ -103,8 +116,8 @@ pre {
 .hanrei {
   float: left;
   margin: 0 0 0 0;
-  /* padding-top: 55px; */
-    padding:57px 0 0 0;
+    padding:60px 0 0 0;
+        /* padding: 0; */
   text-align: right;
   /* background-color: yellow; */
 }
@@ -112,8 +125,16 @@ pre {
 
 
 .kanjigun {
-  margin: 45px 10px 10px 1px;
+  /* margin: 48px 10px 10px 1px; */
+    margin: 0 10px 10px 1px;
 }
+
+
+  .small{
+    transform: scale(0.9,1);
+    transform-origin:left;
+  }
+
 
 
 .midashi {
@@ -189,7 +210,7 @@ pre {
 
 .youso1 {
   line-height: 120%;
-  margin-top: -13px;
+  margin-top: -7px;
 }
 
 .youso {
@@ -205,6 +226,7 @@ pre {
 .chuui
 {
   background-color: lightcyan;
+  /* margin: 0; */
   padding-right: 1em;
   font-feature-settings: "palt"
 
@@ -220,7 +242,7 @@ pre {
   font-feature-settings: "palt"
 }
 
-.menkuten,
+.menkuten
  {
   font-family: Arial, Helvetica, sans-serif;
   
@@ -264,9 +286,9 @@ pre {
 }
 
 
-.menkutenran {
+/* .menkutenran {
   width: 90px;
-}
+} */
 
 .moji {
   font-size: 30px;
@@ -416,6 +438,7 @@ pre {
   text-align: center;
   /* background-color: honeydew; */
   background-color: azure;
+
 }
 
 
@@ -465,13 +488,16 @@ ul.footer-menu li {
   /* @media screen and (max-width: 380px) { */
 
   body {
-    padding: 2px;
     font-size: 16px;
   }
 
+header{
+  height: 35px;
+}
+
+
 
   h1 {
-    height: 35px;
     text-align: left;
     font-size: 24px;
   }
@@ -480,23 +506,20 @@ ul.footer-menu li {
     left: 260px;
     height: 31px;
         line-height: 12px;
-    padding: 0 0 0 0;
   }
 
-  /* .tojiru {
-    line-height: 12px;
-    padding: 0 0 0 0;
-  }
 
-  .kugiri {
-    margin: 0 3px 0 3px;
-  }
-
-  .idou {
-    font-size: 12px;
-    line-height: 14px;
-    margin: 0 0 0 5px;
-  } */
+ #menkutenran::before,
+ #kakusu2ran::before{
+content: "";
+position: absolute;
+top: 0;
+left: -35px;
+z-index: -1;
+width: 151px;
+height: 100%;
+ background-color: lightcyan;
+ }
 
 
   .menkuten_,
@@ -508,9 +531,8 @@ ul.footer-menu li {
   .hanrei {
     float:left;
     text-align: right;
-    margin: 0 0 0 -20px;
+    margin: 10px0 0 0 -30px;
     padding: 61px 0 0 0;
-    /* padding-top: 60px; */
 
 
   }
@@ -538,14 +560,14 @@ ul.footer-menu li {
   }
 
   .gazoname {
-    margin: 0 0 40px 30px;
-        padding: 0 0 0 0;
+    /* margin: 0; */
+      margin: 0 0 49px 50px;
+    padding: 0;
     width: 32px;
     font-size: 16px;
   }
 
   .fontname {
-    /* font-family: ArchivoNarrow, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif; */
     font-size: 16px;
     line-height: 3px;
     margin-top: 0;
@@ -553,11 +575,6 @@ ul.footer-menu li {
   }
 
 
-  .small{
-    font-size: 12px;
-    /* transform: scale(2,1); */
-    /* background-color: red; */
-  }
 
 
   .midashi {
@@ -602,7 +619,10 @@ ul.footer-menu li {
 
   .chotai{
     transform: scale(0.7,1) translate(12px);
+
   }
+
+
 
   /* .chotaileft{
     transform: scale(0.7,1);

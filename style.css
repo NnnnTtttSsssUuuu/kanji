@@ -17,7 +17,6 @@ body {
 }
 
 header {
-  display: block;
   display: flex;
   position: sticky;
   flex-direction: row;

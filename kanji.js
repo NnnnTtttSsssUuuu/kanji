@@ -337,7 +337,8 @@ function openKanji(theUnicode) {
     newDiv12.className = "chuui naiyo";
     newDiv12.textContent = theItaiji.chuui;
 
-    const chuuiHeight = Math.floor(theItaiji.chuui.length / 9) + 1;
+    // const chuuiHeight = Math.floor(theItaiji.chuui.length / 9) + 1;
+        const chuuiHeight = Math.floor(theItaiji.chuui.length / 8) + 1;
     // if (chuuiHeight > maxHofChuui) { maxHofChuui = chuuiHeight }
     maxHofChuui = Math.max(maxHofChuui, chuuiHeight);
 
@@ -371,8 +372,7 @@ function openKanji(theUnicode) {
 }
 
 
-
-document.getElementById('headpart').addEventListener('click', () => {
+document.querySelector('header').addEventListener('click', () => {
   if (window.opener && !window.opener.closed) {
     window.close();
   } else {

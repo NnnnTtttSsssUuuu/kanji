@@ -9,33 +9,51 @@
 body {
   display: flex;
   flex-direction: column;
-  margin: 0 10px 10px -5px;
-  padding: 5px;
+  margin: 0;
+  padding: 0;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+}
 
+
+
+header{
+  display: flex;
+  /* position: fixed; */
+    position: sticky;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 5;
+  align-content: flex-start;
+
+  /* height: 45px; */
+
+  margin: 0;
+  padding: 5px 0 5px 8px;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: steelblue;
+
+}
+
+h1 {
+  top: 0px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 32px;
+  color: white;
+    font-feature-settings: "palt";
 }
 
 main {
-  flex: 1;
-  margin: 0 0 0 0;
+  display: block;
+  /* flex: 1; */
+  /* margin: 0 0 0 0; */
+    margin: 0 10px 10px -5px;
 }
 
-
-
-h1 {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  height: 44px;
-  margin: 0;
-  padding: 0 0 0 10px;
-  z-index: 1;
-
-  font-family: 'Noto Serif JP', serif;
-  font-size: 32px;
-  background-color: steelblue;
-  color: white;
-}
 
 h2 {
   margin: 20px 5px 5px 5px;
@@ -141,7 +159,7 @@ dd {
 }
 
 .accordion {
-  margin: 3em 0 0 0;
+  margin: 0;
 }
 
 .accordion_title {
@@ -286,31 +304,49 @@ ul.footer-menu li {
   margin: 70px 1em 1em 3em;
 }
 
-@media screen and (max-width: 440px) {
+.sample{
+  display:flex;
+    flex-direction: row;
+      flex-wrap: wrap;
+        gap: 20px;
+}
 
-  body {
-    margin: 0 10px 10px -3px;
-    padding: 3px 3px 3px 3px;
-  }
+.centering{
+  text-align: center;
+}
+
+@media screen and (max-width: 489px) {
+
+
 
   h1 {
     font-size: 24px;
-    position: fixed;
+    /* position: fixed; */
     padding: 0 0 0 5px;
-    height: 40px;
-    text-align: left;
-    z-index: 1;
+    /* height: 40px; */
+    /* text-align: left; */
+    /* z-index: 1; */
   }
 
+  main{
+    margin: 0;
+  }
 
   .mini {
     font-size: 9px;
     line-height: 12px;
   }
 
+
+.accordion_title {
+margin: 0;
+padding: 0 0 0 30px;
+/* background-color: bisque; */
+}
+
+
   dt {
     font-size: 120%;
-
   }
 
 
