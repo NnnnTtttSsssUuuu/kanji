@@ -4,6 +4,7 @@
 @font-face {
   font-family: "NotoSerifCJKJP-IVS";
   src: url("fonts/NotoSerifCJKjp-IVS-Subset.woff2") format("woff2");
+  /* src: url("fonts/NotoSerifCJKjp-Regular.otf"); */
 }
 
 body {
@@ -243,7 +244,8 @@ dd {
 }
 
 .largemax{
-  font-family: 'Noto Serif JP', serif;
+   font-family: 'NotoSerifCJKJP-IVS', 'Noto Serif JP', sans-serif;
+  /* font-family: 'Noto Serif JP', serif; */
   font-size: 150px;
 }
 
@@ -326,6 +328,10 @@ ul.footer-menu li {
     /* height: 40px; */
     /* text-align: left; */
     /* z-index: 1; */
+  }
+
+  .yellow{
+    font-size: 18px;
   }
 
   main{

@@ -514,9 +514,9 @@ header{
 content: "";
 position: absolute;
 top: 0;
-left: -35px;
+/* left: 0px; */
 z-index: -1;
-width: 151px;
+width: 107px;
 height: 100%;
  background-color: lightcyan;
  }
@@ -531,7 +531,7 @@ height: 100%;
   .hanrei {
     float:left;
     text-align: right;
-    margin: 10px0 0 0 -30px;
+    margin: 1px 0 0 -30px;
     padding: 61px 0 0 0;
 
 
@@ -542,12 +542,14 @@ height: 100%;
     line-height: 20px;
     margin-top: 30px;
     font-size: 16px;
+
   }
 
   .youso {
     line-height: 20px;
     margin-top: 11px;
     font-size: 16px;
+
   }
 
 
@@ -560,8 +562,8 @@ height: 100%;
   }
 
   .gazoname {
-    /* margin: 0; */
       margin: 0 0 49px 50px;
+            /* margin: 0 0 49px 0; */
     padding: 0;
     width: 32px;
     font-size: 16px;
@@ -572,6 +574,7 @@ height: 100%;
     line-height: 3px;
     margin-top: 0;
     text-align: right;
+
   }
 
 
