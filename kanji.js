@@ -11,7 +11,6 @@ let kanjiShugo = [];
 
 //ユーザーのリファラ情報
 const ref = document.referrer;
-console.log("リファラ", ref);
 
 let needJson = !ref.includes(location.origin);
 
@@ -55,8 +54,6 @@ if (window.opener && !window.opener.closed) {
 
 //漢字ごとの表を作る
 function openKanji(theUnicode) {
-  // kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-
   //kanjiShugoのなかで、tKanjiと合致するものを選ぶ
   for (let i = 0; i < kanjiShugo.length; i++) {
     if (kanjiShugo[i].unicode === theUnicode) {
@@ -92,7 +89,6 @@ function openKanji(theUnicode) {
   mojigun.textContent = theKanji.mojigun;
 
   let jislevel = document.querySelector('#jislevel_');
-  // jislevel.textContent = theKanji.jislevel;
   jislevel.textContent = "第" + theKanji.jislevel + "水準";
 
   let unicode = document.querySelector('#unicode_');
@@ -116,8 +112,8 @@ function openKanji(theUnicode) {
   let sokakusu = document.querySelector('#sokakusu_');
   sokakusu.textContent = Number(theKanji.kakusu1) + Number(theKanji.kakusu2);
 
-  let chuui = document.querySelector('#chuui_');
-  chuui.textContent = theKanji.chuui;
+  let chuuiNaiyo = document.querySelector('#chuui_');
+  chuuiNaiyo.textContent = theKanji.chuui;
 
 
 
@@ -249,7 +245,11 @@ function openKanji(theUnicode) {
     const kanjigun = document.getElementById('kanjigun_');
     const newSection = document.createElement('section');
     newSection.className = "itaiji";
-    newSection.textContent = "(" + (i + 1) + ")";
+
+    const newDiv0 = document.createElement('div');
+    newDiv0.classname = "jishuTop";
+    newDiv0.textContent = "(" + (i + 1) + ")";
+
 
     const newDiv1 = document.createElement('span');
     newDiv1.className = "jishu";
@@ -258,6 +258,9 @@ function openKanji(theUnicode) {
     if (theItaiji.jishu.length > 4) {
       newDiv1.classList.add("small");
     }
+
+newDiv0.appendChild(newDiv1);
+
 
     const newDiv2 = document.createElement('div');
     newDiv2.setAttribute('src', theItaiji.jikei);
@@ -315,10 +318,6 @@ function openKanji(theUnicode) {
     newDiv8.className = "menkuten";
     newDiv8.textContent = theItaiji.menkuten;
 
-    // const newDiv9 = document.createElement('div');
-    // newDiv9.className = "jiscode";
-    // newDiv9.textContent = theItaiji.jiscode;
-
     const newDiv9 = document.createElement('div');
     newDiv9.className = "bushu";
     newDiv9.textContent = theItaiji.bushu + "(" + theItaiji.kakusu1 + ")";
@@ -334,17 +333,16 @@ function openKanji(theUnicode) {
 
 
     const newDiv12 = document.createElement('div');
-    newDiv12.className = "chuui naiyo";
+    // newDiv12.className = "chuui naiyo";
+    newDiv12.className = "chuui";
     newDiv12.textContent = theItaiji.chuui;
 
     // const chuuiHeight = Math.floor(theItaiji.chuui.length / 9) + 1;
-        const chuuiHeight = Math.floor(theItaiji.chuui.length / 8) + 1;
-    // if (chuuiHeight > maxHofChuui) { maxHofChuui = chuuiHeight }
+    const chuuiHeight = Math.floor(theItaiji.chuui.length / 8) + 1;
     maxHofChuui = Math.max(maxHofChuui, chuuiHeight);
 
 
-
-    newSection.appendChild(newDiv1);
+    newSection.appendChild(newDiv0);
     newSection.appendChild(newDiv2);
     newSection.appendChild(newDiv3);
     newSection.appendChild(newDiv3b);
@@ -369,26 +367,25 @@ function openKanji(theUnicode) {
     el.style.height = maxHofChuui * 18 + 'px';
   });
 
+  document.querySelector('.chuuiHan').style.height = maxHofChuui * 18 + 'px';
 }
 
-
+// ヘッダークリックで閉じる
 document.querySelector('header').addEventListener('click', () => {
   if (window.opener && !window.opener.closed) {
     window.close();
   } else {
     location.href = 'index.html';
-    // location.href = 'https://nnnnttttssssuuuu.github.io/kanji/';
   }
-
 });
 
 
 // プリントボタン押下の処理
 document.querySelector('#printButton').addEventListener('click', () => {
   document.getElementById('endOfKanji').style.display = 'none';
-  document.getElementById('h1chuki').style.display = 'none';
-  window.print()
-  document.getElementById('h1chuki').style.display = 'flex';
+  document.querySelector('.h1after').style.display = 'none';
+    window.print()
+  document.querySelector('.h1after').style.display = 'inline';
   document.getElementById('endOfKanji').style.display = 'block';
 
 });

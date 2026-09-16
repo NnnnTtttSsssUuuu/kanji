@@ -19,21 +19,16 @@ body {
 
 header{
   display: flex;
-  /* position: fixed; */
-    position: sticky;
   flex-direction: row;
   flex-wrap: wrap;
+  position: sticky;
   z-index: 5;
   align-content: flex-start;
-
-  /* height: 45px; */
-
+  align-items: flex-end;
   margin: 0;
   padding: 5px 0 5px 8px;
   top: 0;
-  left: 0;
   width: 100%;
-
   background-color: steelblue;
 
 }
@@ -46,6 +41,16 @@ h1 {
   font-size: 32px;
   color: white;
     font-feature-settings: "palt";
+}
+
+.h1after{
+  display:inline;
+  font-size: 10px;
+  line-height: 12px;
+  font-family: 'Noto Serif JP', serif;
+  color:white;
+  margin: 0 0 6px 10px;
+  vertical-align:text-bottom;
 }
 
 main {
@@ -323,11 +328,6 @@ ul.footer-menu li {
 
   h1 {
     font-size: 24px;
-    /* position: fixed; */
-    padding: 0 0 0 5px;
-    /* height: 40px; */
-    /* text-align: left; */
-    /* z-index: 1; */
   }
 
   .yellow{

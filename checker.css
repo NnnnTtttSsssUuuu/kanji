@@ -22,7 +22,6 @@ body {
 header {
   display: block;
   display: flex;
-  /* position: fixed; */
   position: sticky;
   flex-direction: row;
   flex-wrap: wrap;
@@ -433,7 +432,7 @@ footer {
 
 
   h1 {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   /* .idou {
