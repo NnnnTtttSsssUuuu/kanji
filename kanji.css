@@ -521,9 +521,11 @@ height: 100%;
 
   }
 
-
+  .unicodeHan,
   .unicode {
     font-size: 16px;
+   height:var(--height-Unicode);
+   line-height: 16px;
   }
 
   .unicode.narrow {

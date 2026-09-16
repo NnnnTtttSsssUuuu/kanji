@@ -66,6 +66,7 @@ function openKanji(theUnicode) {
 
   let maxHofChuui = 1; //注意欄の高さ
 
+
   //親字の情報を入れる
   let title = document.querySelector('#title_');
   title.textContent = theKanji.midashi;
@@ -303,6 +304,14 @@ newDiv0.appendChild(newDiv1);
       newDiv7.classList.add("narrow");
     }
 
+    //Unicodeが2行になる場合、行の高さを変える
+    if (theItaiji.unicode.length > 12) {
+      // const heightValue = 36;
+      // document.documentElement.style.setProperty("--height-Unicode", heightValue + "px");
+
+      document.documentElement.style.setProperty("--height-Unicode", 36 + "px");
+    }
+
 
     const newDiv7b = document.createElement('div');
     newDiv7b.className = "block";
@@ -360,6 +369,8 @@ newDiv0.appendChild(newDiv1);
     newSection.appendChild(newDiv4);
     kanjigun.appendChild(newSection);
   }
+
+
 
 
   //「注意」欄の高さ設定
