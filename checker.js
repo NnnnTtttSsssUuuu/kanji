@@ -2,9 +2,7 @@
 
 {
   // 異体字リスト1  標準字（単独コード）・異体字（単独コード）の順で並ぶ
-
   const checkString1 = '亜亞悪惡圧壓囲圍為爲医醫壱壹逸逸稲稻飲飮陰隂隠隱羽羽閏閠営營栄榮穎頴衛衞鋭銳益益駅驛悦悅謁謁閲閱円圓園薗煙烟縁緣艶艷塩鹽奥奧応應横橫欧歐殴毆黄黃温溫穏穩仮假価價禍禍画畫会會回囘回囬壊壞悔悔懐懷海海絵繪崖崕慨慨概槪拡擴殻殼覚覺学學岳嶽楽樂潟泻喝喝渇渴褐褐刈苅勧勸巻卷寛寬歓歡漢漢澗㵎缶罐観觀関關陥陷館館館舘岸㟁巌巖顔顏喜㐂器器既既既旣帰歸気氣祈祈亀龜偽僞戯戲犠犧糾糺旧舊拠據挙擧虚虛京亰峡峽挟挾教敎狭狹郷鄕響響尭堯暁曉勤勤謹謹区區駆駈駆驅勲勳薫薰径徑恵惠掲揭渓溪渓谿経經継繼茎莖荊荆蛍螢軽輕鶏鷄芸藝撃擊欠缺倹儉剣劍剣劔剣劒剣剱剣釼圏圈検檢権權献獻研硏県縣険險顕顯験驗厳嚴戸戶呉吳娯娛効效広廣恒恆昂昻晃晄紘綋鉱鑛鉱磺高髙号號轟軣告吿国圀国國穀穀黒黑歳歲済濟砕碎斎齋剤劑崎﨑柵栅桜櫻冊册殺殺雑雜参參惨慘桟棧産產蚕蠶賛贊残殘祉祉糸絲視視飼飼歯齒児兒爾尓辞辭湿濕実實舎舍写寫煮煮社社者者釈釋寿壽収收秋穐臭臭讐讎従從渋澁渋澀獣獸縦縱祝祝粛肅処處暑暑渚渚緒緖署署諸諸叙敍升舛奨奬将將尚尙渉涉焼燒祥祥称稱証證乗乘剰剩壌壤嬢孃条條浄淨状狀畳疊穣穰譲讓醸釀嘱囑触觸寝寢慎愼晋晉真眞神神尽盡図圖粋粹酔醉随隨髄髓数數枢樞杉椙杉杦世卋瀬瀨晴晴清淸精精声聲青靑静靜斉齊税稅摂攝窃竊節節説說絶絕専專戦戰浅淺潜潛繊纖船舩践踐銭錢禅禪曽曾祖祖鼠鼡僧僧双雙壮壯層層捜搜挿插挿揷巣巢争爭痩瘦総總聡聰荘莊装裝騒騷増增憎憎臓臟蔵藏贈贈即卽属屬続續卒卆村邨堕墮体體対對帯帶滞滯台臺第㐧滝瀧択擇沢澤琢琢鐸鈬脱脫単單嘆嘆担擔胆膽団團弾彈断斷痴癡遅遲昼晝虫蟲鋳鑄瀦潴猪猪著著庁廳徴徵懲懲聴聽勅敕鎮鎭塚塚禎禎逓遞鉄銕鉄鐵鉄鐡転轉点點伝傳兎兔都都党黨島嶋島嶌盗盜灯燈当當闘鬪闘鬭同仝徳德独獨読讀突突届屆内內縄繩難難弐貳肉宍禰祢悩惱脳腦覇霸廃廢拝拜杯盃梅梅梅楳売賣麦麥発發髪髮抜拔繁繁飯飯晩晚蛮蠻卑卑碑碑秘祕彦彥姫姬氷冰浜濱賓賓頻頻敏敏瓶甁富冨侮侮風凮福福淵渕払拂仏佛併倂塀塀並竝変變辺邊辺邉勉勉弁辨弁辧弁瓣弁辯舗舖歩步穂穗宝寶峰峯萌萠褒襃豊豐墨墨没沒翻飜毎每槙槇万萬満滿婿聟婿壻免免麺麵黙默餅餠戻戾野埜弥彌薬藥訳譯靖靖祐祐予豫余餘与與誉譽揺搖様樣謡謠遥遙来來頼賴乱亂欄欄蘭蘭覧覽隆隆竜龍虜虜両兩涼凉猟獵糧粮遼遼緑綠塁壘涙泪涙淚類類励勵礼禮霊靈齢齡暦曆歴歷恋戀練練蓮蓮錬鍊炉爐労勞廊廊朗朗楼樓郎郞禄祿録錄亘亙湾灣儘侭喩喻埒埓壺壷彎弯彙彚懺懴拿拏攪撹曠昿枡桝檜桧檮梼櫟檪欅﨔鬱欝濤涛灌潅滲渗濾沪瑶瑤疇畴稟禀竈竃竈灶竈䆴箋䇳箏筝籠篭藪薮蘆芦蠣蛎蠅蝿諫諌賤賎邇迩鉤鈎靱靭頸頚頽頹鰺鯵鶯鴬凜凛熙煕俠侠俱倶剝剥吞呑啞唖噓嘘嚙噛囊嚢塡填姸妍屛屏屢屡幷并搔掻摑掴攢攅潑溌瀆涜焰焔禱祷簞箪繡繍繫繋萊莱蔣蒋﨟臈蟬蝉蠟蝋軀躯醬醤醱醗頰頬顚顛驒騨鷗鴎鹼鹸麴麹'
-
 
 
   // 異体字リスト2 標準字（単独コード）・異体字（サロゲートペア）の順で並ぶ
@@ -12,21 +10,22 @@
 
 
   let inputText = [];
-
   let countString1 = new Array(checkString1.length);
   let countString2 = new Array(checkString2.length);
   let checkIvsItaiji = [];
   let checkIvsKitei = [];
   let countIvsItaiji = [];
-  let countIvsKitei = [];
+  // let countIvsKitei = [];
   let countShikaruJ;
   let countShikaruI;
-  let newItaijiAri = 0;
-  let surIvsCount = 0;
+  // let newItaijiAri = 0;
+  // let surIvsCount = 0;
   let checkSIKitei = [];
   let checkSIItaiji = [];
-  let countSIKitei = [];
+  // let countSIKitei = [];
   let countSIItaiji = [];
+
+  // let kanjiShugo = [];
 
   document.getElementById('input').focus();
 
@@ -48,7 +47,6 @@
 
   // チェックボタン押下の処理
   function checkCharacter() {
-    // const inputText = document.querySelector('#input').value;
     inputText = document.querySelector('#input').value;
     const outputText = document.querySelector('#output');
     const chuukiText = document.querySelector('#chuuki');
@@ -63,27 +61,22 @@
     checkIvsItaiji = [];
     checkIvsKitei = [];
     countIvsItaiji = [];
-    countIvsKitei = [];
+    // countIvsKitei = [];
     countShikaruJ = 0;
     countShikaruI = 0;
-    newItaijiAri = 0;
+    // newItaijiAri = 0;
 
-    surIvsCount = 0;
+    // surIvsCount = 0;
     checkSIKitei = [];
     checkSIItaiji = [];
-    countSIKitei = [];
+    // countSIKitei = [];
     countSIItaiji = [];
-
     let cText = "";
 
-
-    // let timeGenerate = 0;
-    // let timeDOM = 0;
 
     //Safariでの実行速度向上のため、fragmentを使用
     const fragment = document.createDocumentFragment();
 
-    // const startTime = performance.now();
 
     // ★以下、全文をチェックするループ
     for (let i = 0; i < inputText.length; i++) {
@@ -99,7 +92,6 @@
         if (d !== "\n") {
           const br = document.createElement('br');
           fragment.appendChild(br);
-
         }
         continue;
       }
@@ -120,14 +112,10 @@
               checkSIItaiji.push(c + d + e + f);
               checkSIKitei.push(c + d);
               countSIItaiji.push(1);
-              countSIKitei.push(0);
+              // countSIKitei.push(0);
             }
-
-            surIvsCount++;
-
-
+            // surIvsCount++;
             c = "<span class=\"itaiji surroivs\">" + c + d + e + f + "</span>[=" + surroCheck(c + d) + "] ";
-
             i = i + 3;
             const template = document.createElement('template');
             template.innerHTML = c;
@@ -136,7 +124,6 @@
             continue;
 
           } else { //サロゲートペアのみ
-
             // 「𠮟」の対応
             if (c + d === "𠮟") {
               countShikaruJ++;
@@ -152,8 +139,7 @@
             const checkindex2cd = checkString2.indexOf(c + d);
             if (checkindex2cd % 3 === 1) {  //checkString2内の奇数番目＝異体字
               countString2[checkindex2cd]++;
-              let hyojun = checkString2[checkindex2cd - 1];
-              hyojun = tankanjiCheck(hyojun);
+              let hyojun = tankanjiCheck(checkString2[checkindex2cd - 1]);
               c = "<span class=\"itaiji surro\">" + c + d + "</span>[=" + hyojun + "] ";
               i++;
               const template = document.createElement('template');
@@ -179,8 +165,7 @@
         } else {
           //異体字セレクタの対応
           if (isItaijiSelector(d)) {
-
-            newItaijiAri = 1;  //異体字セレクタの文字数カウント
+            // newItaijiAri = 1;  //異体字セレクタの文字数カウント
             const checkit = checkIvsItaiji.indexOf(c + d + e);
 
             if (checkit > -1) {   //既出の異体字セレクタ
@@ -190,12 +175,11 @@
               checkIvsItaiji.push(c + d + e);
               checkIvsKitei.push(c);
               countIvsItaiji.push(1);
-              countIvsKitei.push(0);
+              // countIvsKitei.push(0);
             }
 
 
-            const hyojun = tankanjiCheck(c)
-            c = "<span class=\"itaiji ivs\">" + c + d + e + "</span>[=" + hyojun + "] ";
+            c = "<span class=\"itaiji ivs\">" + c + d + e + "</span>[=" + tankanjiCheck(c) + "] ";
             i = i + 2;
             const template = document.createElement('template');
             template.innerHTML = c;
@@ -210,7 +194,7 @@
             // 「叱」の対応…単体コードだが、唯一サロゲートペアの異体字
             if (c === "叱") {
               countShikaruI++;
-              c = "<span class=\"itaiji\">叱</span>[=𠮟] ";
+              c = "<span class=\"itaiji\">叱</span>[=<span class=\"surro\">𠮟</span>] ";
               const template = document.createElement('template');
               template.innerHTML = c;
               fragment.appendChild(template.content);
@@ -218,7 +202,7 @@
               continue;
             }
 
-            //サロゲートペアリストの頻度計算
+            //サロゲートペアリストの頻度計算……ここに入っていてOK？
             const checkindex2c = checkString2.indexOf(c);
             if (checkindex2c % 3 === 0) {  //checkString2内の偶数番目＝標準字
               countString2[checkindex2c]++;
@@ -240,14 +224,13 @@
             const checkindex1 = checkString1.indexOf(c);
             if (checkindex1 > -1) {
               countString1[checkindex1]++;
+
               if (checkindex1 % 2 === 1) {   //checkString1内の奇数番目＝異体字
                 let hyojun = checkString1[checkindex1 - 1];
                 c = "<span class=\"itaiji\">" + c + "</span>" + "[=" + hyojun + "] ";
-                // let t = performance.now();
                 const template = document.createElement('template');
                 template.innerHTML = c;
                 fragment.appendChild(template.content);
-                // timeDOM += performance.now() - t;
                 cText = "";
                 continue;
               } else {
@@ -267,9 +250,7 @@
 
       } else { //漢字以外の処理
         if (isKanji(d) || i === inputText.length - 1 || d === "\n") {  //可能ならまとめて処理
-          // let t = performance.now();
           generate(c, klass);
-          // timeGenerate += performance.now() - t;
           cText = "";
           continue;
         } else {
@@ -290,49 +271,42 @@
       chuukiText.insertAdjacentHTML('afterbegin', "【注意】テキスト中に漢字の部首のコードが" + bushu + "字検出されました。<hr>");
     }
 
-    //異体字セレクタがあった際、基底文字をカウントする
-    if (newItaijiAri > 0) {
-      for (let i = 0; i < inputText.length; i++) {
-        let c = inputText[i];
-        let d = inputText[i + 1];
+    //異体字セレクタがあった際、基底文字をカウントする→不要
+    // if (newItaijiAri > 0) {
+    //   for (let i = 0; i < inputText.length; i++) {
+    //     let c = inputText[i];
+    //     let d = inputText[i + 1];
 
-        const checkit = checkIvsKitei.indexOf(c);
-        if (checkit > -1 && !(isItaijiSelector(d))) {
-          countIvsKitei[checkit]++;
-        }
-      }
-    }
-
-
-    //サロゲートペア+異体字セレクタがあった際、基底文字をカウントする
-    if (surIvsCount > 0) {
-      for (let i = 0; i < inputText.length; i++) {
-        let c = inputText[i];
-        let d = inputText[i + 1];
-        let e = inputText[i + 2];
-
-        // let checkit = checkSIItaiji.indexOf(c + d);
-        let textcheckSIItaiji = checkSIItaiji.join("");
-        const checkit = textcheckSIItaiji.indexOf(c + d) / 4;
-
-        if (checkit > -1 && !(isItaijiSelector(e))) {
-          ;
-          countSIKitei[checkit]++;
-        }
-      }
-    }
+    //     const checkit = checkIvsKitei.indexOf(c);
+    //     if (checkit > -1 && !(isItaijiSelector(d))) {
+    //       countIvsKitei[checkit]++;
+    //     }
+    //   }
+    // }
 
 
+    //サロゲートペア+異体字セレクタがあった際、基底文字をカウントする→不要
+    // if (surIvsCount > 0) {
+    //   for (let i = 0; i < inputText.length; i++) {
+    //     let c = inputText[i];
+    //     let d = inputText[i + 1];
+    //     let e = inputText[i + 2];
+
+    //     // let checkit = checkSIItaiji.indexOf(c + d);
+    //     let textcheckSIItaiji = checkSIItaiji.join("");
+    //     const checkit = textcheckSIItaiji.indexOf(c + d) / 4;
+
+    //     if (checkit > -1 && !(isItaijiSelector(e))) {
+    //       countSIKitei[checkit]++;
+    //     }
+    //   }
+    // }
 
 
     //カーソルを戻す
     document.body.style.cursor = 'default';
     document.querySelector('#input').style.cursor = 'default';
 
-    //const endTime = performance.now();
-    //console.log(`ループの実行時間: ${endTime - startTime} ミリ秒`);
-    //console.log("generate:", timeGenerate);
-    //console.log("DOM:", timeDOM);
 
     //HTML生成…文字から
     function generate(text, klass) {
@@ -351,12 +325,6 @@
 
     listup.style.display = 'block';
 
-
-
-
-
-    // console.log("checkIvsItaiji",checkIvsItaiji);
-    // console.log("checkSIItaiji",checkSIItaiji);
 
   } //funchtion checkCharacter() 終わり
 
@@ -401,6 +369,17 @@
   }
 
 
+  //単漢字の異体字を調べ、色付けする
+  function ifItaijiColor(c) {
+    const checkit = checkString1.indexOf(c);
+    if (checkit > -1 && checkit % 2 === 1) {   //checkString1内の奇数番目＝異体字
+      c = "<span class=\"itaiji\">" + c + "</span>";
+    }
+    return c;
+  }
+
+
+
   //サロゲートペアの異体字を調べ、親字を返す
   function surroCheck(c) {
     const checkit = checkString2.indexOf(c);
@@ -414,18 +393,32 @@
   }
 
 
-  //テキストから検出回数を返す
+  //サロゲートペアの異体字を調べ、色付けする
+  function ifSurItaijiColor(c) {
+    const checkit = checkString2.indexOf(c);
+    if (checkit > -1 && checkit % 3 === 1) {
+      c = "<span class=\"surro itaiji\">" + c + "</span>";
+    } else {
+      c = "<span class=\"surro\">" + c + "</span>";
+    }
+    return c;
+  }
+
+
+
+
+  //テキストから異体字セレクタなしの検出回数を返す
   function countWord(word) {
     let count = 0;
     let pos = 0;
     while ((pos = inputText.indexOf(word, pos)) !== -1) {
+      if(! isItaijiSelector(inputText[pos + word.length]) ){
       count++;
+      }
       pos += word.length;
     }
     return count;
   }
-
-
 
 
   // クリアボタン押下の処理
@@ -433,100 +426,6 @@
     document.getElementById('input').value = "";
     location.reload();
   });
-
-
-  // プリントボタン押下の処理
-  //   document.querySelector('#printButton').addEventListener('click', printLists);
-  //   function printLists() {
-  //     const target = document.getElementById("Lists");
-
-  //     //Blobでプリント図像を作成
-  //     const css = `
-  //     body { margin: 20px; }
-  //     table {
-  //     border-collapse: collapse;
-  //     margin: 0 2em;
-  //     font-family: "YuMincho", "游明朝", "Hiragino Mincho ProN", serif;
-  //     font-size: 100%;
-  //     font-weight: normal;
-  //     }
-
-  //     table th {
-  //     border: solid 1px;
-  //     font-weight: normal;
-  //     }
-
-  //     table td {
-  //     font-weight: normal;
-  //     border: solid 1px;
-  //     margin: 2em;
-  //     }
-
-  //     td:nth-of-type(1) {
-  //     background: rgb(188, 233, 248);
-  //     width: 140px;
-  //     font-size: 24px;
-  //     text-align: center;
-  //     }
-
-  //     td:nth-of-type(2) {
-  //     background: rgb(188, 233, 248);
-  //     width: 60px;
-  //     text-align: center;
-  //     }
-
-  //     td:nth-of-type(3) {
-  //     background: rgba(255, 192, 203, 0.678);
-  //     width: 140px;
-  //     font-size: 24px;
-  //     text-align: center;
-  //     }
-
-  //     td:nth-of-type(4) {
-  //     background: rgba(255, 192, 203, 0.678);
-  //     width: 60px;
-  //     text-align: center;
-  //     }
-
-  //     td:nth-of-type(5) {
-  //   width: auto;
-  //   font-size: 12px;
-  // }
-
-  //     [data-color-scheme="greenyellow"] td:nth-of-type(1) {
-  //     background: rgb(200, 255, 170);
-  //     }
-
-  //     [data-color-scheme="greenyellow"] td:nth-of-type(2) {
-  //     background: rgb(200, 255, 170);
-  //     }
-  //    `;
-
-  //     const html = `<!DOCTYPE html><html lang="ja"><head>
-  //         <meta charset="UTF-8">
-  //         <style>${css}</style>
-  //         </head><body>
-  //         <p>字体ごとの出現数リスト</p>
-  //         ${target.outerHTML}
-  //         </body></html>`;
-
-  //     const blob = new Blob([html], { type: 'text/html' });
-  //     const url = URL.createObjectURL(blob);
-  //     const printWindow = window.open(url, "PrintWindow", "width=900,height=700");
-
-  //     printWindow.onload = () => {
-  //       printWindow.focus();
-  //       printWindow.print();
-  //       setTimeout(() => {
-  //         printWindow.close();
-  //         URL.revokeObjectURL(url);
-  //       }, 300);
-  //     }
-
-  //   }
-
-
-
 
 
   //表を表示する
@@ -540,11 +439,12 @@
     const allth2 = document.createElement("th");
     const allth3 = document.createElement("th");
     const allth4 = document.createElement("th");
+    const allth5 = document.createElement("th");
     const alltd1 = document.createElement("td");
     const alltd2 = document.createElement("td");
     const alltd3 = document.createElement("td");
     const alltd4 = document.createElement("td");
-
+    const alltd5 = document.createElement("td");
 
 
     allList.textContent = "";
@@ -553,18 +453,17 @@
     allth2.textContent = "検出数";
     allth3.textContent = "異体字など";
     allth4.textContent = "検出数";
-    // allth5.textContent = "字体選びのヒント";
+    allth5.textContent = "字体字典で調べる";
 
     alltr1.appendChild(allth1);
     alltr1.appendChild(allth2);
     alltr1.appendChild(allth3);
     alltr1.appendChild(allth4);
-    // alltr1.appendChild(allth5);
+    alltr1.appendChild(allth5);
 
     alltbody.appendChild(alltr1);
     allTable.appendChild(alltbody);
     allList.appendChild(allTable);
-
 
     allTable.id = 'wordTable';
 
@@ -572,14 +471,17 @@
     //𠮟と叱の対応
     if (countShikaruJ + countShikaruI > 0) {
       alltd1.textContent = "𠮟";
+      alltd1.style.backgroundColor = "lightcyan";
       alltd2.textContent = countShikaruJ;
       alltd3.textContent = "叱";
       alltd4.textContent = countShikaruI;
+      alltd5.innerHTML = "<button class=\"toKanji\">𠮟</button>";
 
       alltr2.appendChild(alltd1);
       alltr2.appendChild(alltd2);
       alltr2.appendChild(alltd3);
       alltr2.appendChild(alltd4);
+      alltr2.appendChild(alltd5);
 
       alltbody.appendChild(alltr2);
       allTable.appendChild(alltbody);
@@ -594,14 +496,14 @@
         const cellText2 = document.createElement("td");
         const cellText3 = document.createElement("td");
         const cellText4 = document.createElement("td");
-        // const cellText5 = document.createElement("td");
+        const cellText5 = document.createElement("td");
 
         //第1列
         cellText1.innerHTML = checkString1.at(i);
         row.appendChild(cellText1);
 
         //第2列
-        cellText2.innerHTML = countString1.at(i);
+        cellText2.innerHTML = countWord(checkString1.at(i));
         row.appendChild(cellText2);
 
         //第3列
@@ -612,6 +514,9 @@
         cellText4.innerHTML = countString1.at(i + 1);
         row.appendChild(cellText4);
 
+        //第5列
+        cellText5.innerHTML = "<button class=\"toKanji\">" + checkString1.at(i) +"</button>";
+        row.appendChild(cellText5);
 
         alltbody.appendChild(row);
         allTable.appendChild(alltbody);
@@ -627,10 +532,11 @@
         const cellText2 = document.createElement("td");
         const cellText3 = document.createElement("td");
         const cellText4 = document.createElement("td");
-        // const cellText5 = document.createElement("td");
+        const cellText5 = document.createElement("td");
 
         //第1列
-        cellText1.innerHTML = checkString2.at(i);
+        cellText1.innerHTML = ifItaijiColor(checkString2.at(i));
+        console.log(ifItaijiColor(checkString2.at(i)));
         row.appendChild(cellText1);
 
         //第2列
@@ -640,11 +546,16 @@
         //第3列
         let salomoji = checkString2.substring(i + 1, i + 3);
         cellText3.innerHTML = salomoji;
+        cellText3.style.backgroundColor = "lightcyan";
         row.appendChild(cellText3);
 
         //第4列
         cellText4.innerHTML = countString2.at(i + 1);
         row.appendChild(cellText4);
+
+        //第5列
+        cellText5.innerHTML = "<button class=\"toKanji\">" + checkString2.at(i) +"</button>";
+        row.appendChild(cellText5);
 
         alltbody.appendChild(row);
         allTable.appendChild(alltbody);
@@ -658,24 +569,28 @@
       const cellText2 = document.createElement("td");
       const cellText3 = document.createElement("td");
       const cellText4 = document.createElement("td");
-      // const cellText5 = document.createElement("td");
+      const cellText5 = document.createElement("td");
 
       //第1列
       cellText1.innerHTML = checkIvsKitei.at(i);
       row.appendChild(cellText1);
 
       //第2列
-      cellText2.innerHTML = countIvsKitei.at(i);
+      cellText2.innerHTML = countWord(checkIvsKitei.at(i));
       row.appendChild(cellText2);
 
       //第3列
       cellText3.innerHTML = checkIvsItaiji.at(i);
+      cellText3.style.backgroundColor = "yellow";
       row.appendChild(cellText3);
 
       //第4列
       cellText4.innerHTML = countIvsItaiji.at(i);
       row.appendChild(cellText4);
 
+       //第5列
+       cellText5.innerHTML = "<button class=\"toKanji\">" + checkIvsKitei.at(i) +"</button>";
+       row.appendChild(cellText5);
 
       alltbody.appendChild(row);
       allTable.appendChild(alltbody);
@@ -683,34 +598,36 @@
 
 
     //サロゲートペア+IVSがあった際
-    if (surIvsCount > 0) {
-      nOfSurIvs = checkSIItaiji.length;
-      for (let i = 0; i < nOfSurIvs; i++) {
+    if (countSIItaiji.length > 0) {
+      for (let i = 0; i < checkSIItaiji.length; i++) {
         const row = document.createElement("tr");
         const cellText1 = document.createElement("td");
         const cellText2 = document.createElement("td");
         const cellText3 = document.createElement("td");
         const cellText4 = document.createElement("td");
-        // const cellText5 = document.createElement("td");
+        const cellText5 = document.createElement("td");
 
         //第1列
-        cellText1.innerHTML = checkSIKitei.at(i);
+        cellText1.innerHTML = ifSurItaijiColor(checkSIKitei.at(i));
+        cellText1.style.backgroundColor = "lightcyan";
         row.appendChild(cellText1);
 
         //第2列
-        // theCount = countWord(checkSIKitei.at(i))-countSIItaiji.at(i);
-        // cellText2.innerHTML = theCount;
-        cellText2.innerHTML = countSIKitei.at(i);
+        cellText2.innerHTML = countWord(checkSIKitei.at(i));
         row.appendChild(cellText2);
 
         //第3列
         cellText3.innerHTML = checkSIItaiji.at(i);
         row.appendChild(cellText3);
+        row.style.backgroundColor = "lawngreen";
 
         //第4列
         cellText4.innerHTML = countSIItaiji.at(i);
         row.appendChild(cellText4);
 
+        //第5列
+        cellText5.innerHTML = "<button class=\"toKanji\">" + checkSIKitei.at(i) +"</button>";
+        row.appendChild(cellText5);
 
         alltbody.appendChild(row);
         allTable.appendChild(alltbody);
@@ -719,14 +636,11 @@
 
     //並べ替え 第1列でソートする
     firstsortRows();
-    //検出数を補正
-    countCorrect();
 
     // display: noneを削除
-    // let elementEndOfTable = document.getElementById('endOfTable');
     let elementChukiTable = document.getElementById('chukiTable');
-    // elementEndOfTable.style.display = 'block';
     elementChukiTable.style.display = 'block';
+
   });
 
 
@@ -742,9 +656,7 @@
       record.key = table.rows[i].cells[0].textContent;
       records.push(record);
     }
-
     records.sort(compareKeys);
-
     for (let i = 0; i < records.length; i++) {
       table.appendChild(records[i].row);
     }
@@ -756,24 +668,8 @@
     return 0;
   }
 
-  //表の「標準的な字体数」を正す
-  function countCorrect() {
-    const table = document.getElementById("wordTable");
-    for (let i = 1; i < table.rows.length; i++) {
-      if (table.rows[i-1].cells[0].textContent === table.rows[i].cells[0].textContent) {
-        table.rows[i].cells[1].textContent = table.rows[i-1].cells[1].textContent ;
-      }
-    }
-  }
-
-
 
   //how to useボタン
-
-  // document.querySelector('#howToUseButton').forEach(element => {
-  //   element.addEventListener('click', () => {
-
-
   document.querySelector('#howToUseButton').addEventListener('click', () => {
     const howToUseBox = document.querySelector('#howToUse');
     howToUseBox.classList.toggle("toggleOn");
@@ -830,5 +726,16 @@
     // document.querySelectorAll('.accordion_content').forEach(element => {
     element.addEventListener('click', hideAllInformation);
   });
+
+//字典の各ページへ
+//動的に後で作られたボタンの要素を取得する
+document.addEventListener("click", function(event) {
+    const button = event.target.closest(".toKanji");
+    if (!button) return;
+    const checkKanji = "U%2B" + button.textContent.codePointAt(0).toString(16).toUpperCase();
+    window.open(`kanji.html?unicode=${checkKanji}`, "_blank");
+});
+
+
 
 }

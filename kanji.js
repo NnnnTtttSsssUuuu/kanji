@@ -17,7 +17,7 @@ let needJson = !ref.includes(location.origin);
 
 //外部からならjsonを読み込む
 if (needJson) {
-  console.log("外部から開く");
+  // console.log("外部から開く");
   fetch('kanjiFile.json?v=20260731')
     // fetch(location.origin + '/kanjiFile.json')
     .then(response => {
@@ -29,15 +29,13 @@ if (needJson) {
     .then(kanjiFile => {
       kanjiShugo = kanjiFile;
       localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
-      // console.log("外部として入手");
       openKanji(unicodeValue);
     })
     .catch(error => console.error('Error loading JSON:', error));
   // alert('JSONの読み込みに失敗しました: ' + error.message)
 } else {
-
+  // console.log("内部から開く");
   kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-  console.log("内部から開く");
   setTimeout(() => {
     openKanji(unicodeValue);
   }, 200); //1秒間タイマー
@@ -55,15 +53,32 @@ if (window.opener && !window.opener.closed) {
 //漢字ごとの表を作る
 function openKanji(theUnicode) {
   //kanjiShugoのなかで、tKanjiと合致するものを選ぶ
+  let found = false;
   for (let i = 0; i < kanjiShugo.length; i++) {
     if (kanjiShugo[i].unicode === theUnicode) {
+      //異体字の場合は親字を選ぶ
+      for (let j = 0; j < kanjiShugo.length; j++) {
+        if (kanjiShugo[j].unicode === kanjiShugo[i].unicodeOya) {
+          i = j;
+          break;
+        }
+      }
       targetKanji = i;
-      continue;
+      found = true;
+      break;
     }
   }
 
-  let theKanji = kanjiShugo[targetKanji];
+  //合致しないときはalertを出す
+  if (!found) {
+    alert("該当する漢字のページがありません。");
+    return;
+  }
 
+
+
+
+  let theKanji = kanjiShugo[targetKanji];
   let maxHofChuui = 1; //注意欄の高さ
 
 
@@ -138,8 +153,6 @@ function openKanji(theUnicode) {
       }
     }
   }
-
-  // console.log("thisKanji", thisKanji);
 
 
   //JIS字形の表を作成する
@@ -260,7 +273,7 @@ function openKanji(theUnicode) {
       newDiv1.classList.add("small");
     }
 
-newDiv0.appendChild(newDiv1);
+    newDiv0.appendChild(newDiv1);
 
 
     const newDiv2 = document.createElement('div');
@@ -395,7 +408,7 @@ document.querySelector('header').addEventListener('click', () => {
 document.querySelector('#printButton').addEventListener('click', () => {
   document.getElementById('endOfKanji').style.display = 'none';
   document.querySelector('.h1after').style.display = 'none';
-    window.print()
+  window.print()
   document.querySelector('.h1after').style.display = 'inline';
   document.getElementById('endOfKanji').style.display = 'block';
 
